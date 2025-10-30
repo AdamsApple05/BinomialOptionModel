@@ -17,7 +17,9 @@ strike_price = 105
 risk_free_rate = 0.389
 timeframe = 3
 
-def underlying_value_tree(up_factor, down_factor, underlying_price, t): #t = time
+#NOTE rfr is risk free rate and t = time in most cases
+
+def underlying_value_tree(up_factor, down_factor, underlying_price, t):
 
     price_tree = np.zeros((t + 1, t + 1)) #Create an empty array size t + 1
     price_tree[0,0]= underlying_price
