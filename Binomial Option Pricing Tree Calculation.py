@@ -10,17 +10,10 @@
 import numpy as np
 from math import e
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-up_factor = 1.1
-=======
+
+
 #test variables
 up_factor = 1.2
->>>>>>> Stashed changes
-=======
-#test variables
-up_factor = 1.2
->>>>>>> Stashed changes
 down_factor = 0.9
 underlying_price = 100
 strike_price = 105
@@ -28,18 +21,10 @@ risk_free_rate = 0.0389
 timeframe = 3
 option = 'call'
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-def underlying_value_tree(up_factor, down_factor, underlying_price, t): #t = time
-=======
-=======
->>>>>>> Stashed changes
-#NOTE rfr is risk free rate, t = time, k = underlying price in most cases
+
 
 def underlying_value_tree(up_factor, down_factor, k, t):
     #OUTPUTS a single list form t+1 by t+1. Can iterate through it by calling list[row, colum]
->>>>>>> Stashed changes
-
     underlying_price_tree = np.zeros((t + 1, t + 1)) #Create an empty array size t + 1
     underlying_price_tree[0,0]= k
 
@@ -64,13 +49,7 @@ def calculate_option_value_node(node_price_up, node_price_down, rfr, t, risk_neu
 
     return option_value
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-#test
-underlying_tree = underlying_value_tree(up_factor,down_factor,underlying_price,timeframe)
-=======
-=======
->>>>>>> Stashed changes
+
 def create_payoff_tree(strike_k, t, underlying_value_tree_matrix, option_type):
     #Returns the payoff tree (underlying value matrix with each node substracted by the strike price)
 
@@ -94,21 +73,8 @@ def create_payoff_tree(strike_k, t, underlying_value_tree_matrix, option_type):
 def option_value_tree(up_f, down_f, k, rfr, t, payoff_tree_matrix):
 
 
-
-
-#test underlying_tree
 underlying_tree = underlying_value_tree(up_factor,down_factor,underlying_price,timeframe)
-
 print(underlying_tree)
-
 payoff_tree = create_payoff_tree(strike_price,timeframe,underlying_tree,option)
-
 print(payoff_tree)
-
-
-<<<<<<< Updated upstream
 print(option_value_tree(up_factor, down_factor, underlying_price, risk_free_rate, timeframe, payoff_tree))
->>>>>>> Stashed changes
-=======
-print(option_value_tree(up_factor, down_factor, underlying_price, risk_free_rate, timeframe, payoff_tree))
->>>>>>> Stashed changes
