@@ -10,6 +10,7 @@
 import numpy as np
 from math import e
 
+#test variables
 up_factor = 1.1
 down_factor = 0.9
 underlying_price = 100
@@ -20,6 +21,7 @@ timeframe = 3
 #NOTE rfr is risk free rate and t = time in most cases
 
 def underlying_value_tree(up_factor, down_factor, underlying_price, t):
+    #OUTPUTS a single list form t+1 by t+1. Can iterate through it by calling list[row, colum]
 
     price_tree = np.zeros((t + 1, t + 1)) #Create an empty array size t + 1
     price_tree[0,0]= underlying_price
@@ -49,5 +51,6 @@ def option_value_node(node_price_up, node_price_down, rfr, t, risk_neutral_prob)
     option_value = e**(-rfr * t) * (risk_neutral_prob * node_price_up + (1 - risk_neutral_prob) * node_price_down)
     return option_value
 
-#test
+#test underlying_tree
 underlying_tree = underlying_value_tree(up_factor,down_factor,underlying_price,timeframe)
+print(underlying_tree)
