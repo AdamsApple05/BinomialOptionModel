@@ -11,7 +11,12 @@ import numpy as np
 from math import e
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 up_factor = 1.1
+=======
+#test variables
+up_factor = 1.2
+>>>>>>> Stashed changes
 =======
 #test variables
 up_factor = 1.2
@@ -24,8 +29,11 @@ timeframe = 3
 option = 'call'
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 def underlying_value_tree(up_factor, down_factor, underlying_price, t): #t = time
 =======
+=======
+>>>>>>> Stashed changes
 #NOTE rfr is risk free rate, t = time, k = underlying price in most cases
 
 def underlying_value_tree(up_factor, down_factor, k, t):
@@ -57,9 +65,12 @@ def calculate_option_value_node(node_price_up, node_price_down, rfr, t, risk_neu
     return option_value
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #test
 underlying_tree = underlying_value_tree(up_factor,down_factor,underlying_price,timeframe)
 =======
+=======
+>>>>>>> Stashed changes
 def create_payoff_tree(strike_k, t, underlying_value_tree_matrix, option_type):
     #Returns the payoff tree (underlying value matrix with each node substracted by the strike price)
 
@@ -95,5 +106,9 @@ payoff_tree = create_payoff_tree(strike_price,timeframe,underlying_tree,option)
 print(payoff_tree)
 
 
+<<<<<<< Updated upstream
+print(option_value_tree(up_factor, down_factor, underlying_price, risk_free_rate, timeframe, payoff_tree))
+>>>>>>> Stashed changes
+=======
 print(option_value_tree(up_factor, down_factor, underlying_price, risk_free_rate, timeframe, payoff_tree))
 >>>>>>> Stashed changes
