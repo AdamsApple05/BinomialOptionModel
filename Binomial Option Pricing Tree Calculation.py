@@ -2,37 +2,39 @@
 # CHECKLIST:
 #-Underlying Value Tree (✅)
 #-Option Value Tree (X)
-#       -Risk Neutral Prob (✅)
+#       -Risk Neutral Prob Function(✅)
+#       -Payoff Tree (✅)
 #       -Option Value Node Function (✅)
+#-Test Function (X)
 
 #Jaydon Thinh-To Oct 29 2025
 
+#Updated: Oct 30 2025
+#Fully working code, needs cleaning? probably. And probably needs a more clean testing function
+
 import numpy as np
-from math import e
 
-
-
-#test variables
-up_factor = 1.2
-down_factor = 0.9
-underlying_price = 100
-strike_price = 105
-risk_free_rate = 0.0389
-timeframe = 3
+#VARIABLES AND REFERAL NAMES
+up_factor = 1.2 #up_f
+down_factor = 0.9 #down_f
+underlying_price = 100 #k
+strike_price = 105 #strike_k
+risk_free_rate = 0.0389 #rfr
+timeframe = 3 #t
 option = 'call'
 
 
 
-def underlying_value_tree(up_factor, down_factor, k, t):
+def underlying_value_tree(up_f, down_f, k, t):
     #OUTPUTS a single list form t+1 by t+1. Can iterate through it by calling list[row, colum]
     underlying_price_tree = np.zeros((t + 1, t + 1)) #Create an empty array size t + 1
     underlying_price_tree[0,0]= k
 
     #Recursive loop to create the tree (multiplying top row by up factor, then multiplying all the rows to the bottom
     for i in range(1, t + 1):
-        underlying_price_tree[0, i] = underlying_price_tree[0, i-1] * up_factor
+        underlying_price_tree[0, i] = underlying_price_tree[0, i-1] * up_f
         for j in range(1, i + 1):
-            underlying_price_tree[j, i] = underlying_price_tree[j-1, i-1] * down_factor
+            underlying_price_tree[j, i] = underlying_price_tree[j-1, i-1] * down_f
 
     return underlying_price_tree
 
@@ -51,7 +53,7 @@ def calculate_option_value_node(node_price_up, node_price_down, rfr, t, risk_neu
 
 
 def create_payoff_tree(strike_k, t, underlying_value_tree_matrix, option_type):
-    #Returns the payoff tree (underlying value matrix with each node substracted by the strike price)
+    #Returns the payoff tree (underlying value matrix with each node subtracted by the strike price)
 
     payoff = underlying_value_tree_matrix
     payoff[0,0] = 0
@@ -65,16 +67,43 @@ def create_payoff_tree(strike_k, t, underlying_value_tree_matrix, option_type):
             elif strike_k - underlying_value_tree_matrix[b,a] >= 0 and (option_type == 'put'): #hecks for non-negativity, passes if option type is a put
                 payoff[b,a] = strike_k - underlying_value_tree_matrix[b,a]
 
-            else:
+            else: #Else condition if negative, do not sell option thus keep's payoff at 0
                 payoff[b,a] = 0
 
     return payoff
 
 def option_value_tree(up_f, down_f, k, rfr, t, payoff_tree_matrix):
+C
+    pass
 
+#TEST
+underlying_tree = underlying_value_tree(
+    up_factor,
+    down_factor,
+    underlying_price,
+    timeframe
+)
 
-underlying_tree = underlying_value_tree(up_factor,down_factor,underlying_price,timeframe)
 print(underlying_tree)
-payoff_tree = create_payoff_tree(strike_price,timeframe,underlying_tree,option)
+
+payoff_tree = create_payoff_tree(
+    strike_price,
+    timeframe,
+    underlying_tree,
+    option
+)
+
 print(payoff_tree)
-print(option_value_tree(up_factor, down_factor, underlying_price, risk_free_rate, timeframe, payoff_tree))
+
+option_tree = option_value_tree(
+    up_factor,
+    down_factor,
+    underlying_price,
+    risk_free_rate,
+    timeframe,
+    payoff_tree
+)
+
+print(option_tree)
+
+
