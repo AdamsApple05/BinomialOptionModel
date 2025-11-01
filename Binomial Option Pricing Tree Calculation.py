@@ -13,6 +13,7 @@
 #Fully working code, needs cleaning? probably. And probably needs a more clean testing function
 
 import numpy as np
+import matplotlib.pyplot as plt
 
 
 #VARIABLES AND REFERAL NAMES
@@ -122,3 +123,32 @@ option_tree, risk_n_prob = option_value_tree(
 
 print(option_tree, risk_n_prob)
 
+def print_tree(tree, tree_title):
+    steps = int(tree.shape[0]) #number of steps in the tree
+    fig, ax = plt.subplots()
+    ax.set_title(tree_title)
+
+    mang0 = '#e3994f'
+
+    for six in range(steps): #67
+        for seven in range(six+1):
+
+            value = tree[seven, six]
+            ax.scatter(six, -seven, color=mang0, s=800)
+            ax.text(six, -seven, f'{value:.2f}', color='black', ha='center', va='center', fontsize=10)
+
+            if six < steps - 1:
+                ax.plot([six, six + 1], [-seven, -(seven)], color="gray", lw=1)       # up move
+                ax.plot([six, six + 1], [-seven, -(seven + 1)], color="gray", lw=1)   # down move
+
+
+    ax.set_xticks(range(steps))
+    ax.set_yticks([])
+    ax.set_xlabel("Time Step")
+    ax.set_ylabel("Nodes (downwards)")
+    ax.set_aspect('equal')
+    ax.grid(False)
+    plt.tight_layout()
+    plt.show()
+
+print_tree(option_tree, "Option Price Tree")
