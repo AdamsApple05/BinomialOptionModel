@@ -94,7 +94,7 @@ def option_value_tree(up_f, down_f, k, rfr, t, payoff_tree_matrix):
 
             option_value_tree[x,q] = round(option_value_node,2) #Inserts the calculated option value into the option value tree
 
-    return option_value_tree, risk_neutral_prob
+    return option_value_tree, round(risk_neutral_prob,4)
 
 
 
@@ -125,5 +125,5 @@ option_tree, risk_n_prob = option_value_tree(
     payoff_tree
 )
 
-print(option_tree, risk_n_prob)
+print(option_tree, f"\n{risk_n_prob*100}%")
 
