@@ -1,11 +1,16 @@
-# These functions take inputs up factor, down factor, underlying price, strike price, RFR, Time to expiration
+# These functions take inputs up factor, down factor, underlying price, strike price, RFR, Time to expiration and option type to-
+#create a binomial option pricing tree for european style options.
 # CHECKLIST:
 #-Underlying Value Tree (✅)
-#-Option Value Tree (X)
+#-Option Value Tree (✅)
 #       -Risk Neutral Prob Function(✅)
 #       -Payoff Tree (✅)
 #       -Option Value Node Function (✅)
-#-Test Function (X)
+#       -Logic changes for 'puts' (✅)
+#-Test Function (X) (still needs work maybe we could modify to use oop to be able to handle more than 1 option at a time)?
+#Things we could add:
+#-American Style-Option Pricing
+#-Arbitrage Detector
 
 #Jaydon Thinh-To Oct 29 2025
 
@@ -22,7 +27,7 @@ underlying_price = 100 #k
 strike_price = 95 #strike_k
 risk_free_rate = 0.0389 #rfr
 timeframe = 3 #t
-option = 'put'
+option = 'call'
 
 def underlying_value_tree(up_f, down_f, k, t):
     #OUTPUTS a single list form t+1 by t+1. Can iterate through it by calling list[row, colum]
