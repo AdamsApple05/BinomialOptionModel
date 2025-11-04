@@ -13,16 +13,18 @@
 #Fully working code, needs cleaning? probably. And probably needs a more clean testing function
 
 import numpy as np
+import igraph as grph
 import matplotlib.pyplot as plt
+from igraph import Graph, EdgeSeq
 
 
 #VARIABLES AND REFERAL NAMES
 up_factor = 1.2 #up_f
 down_factor = 0.9 #down_f
 underlying_price = 100 #k
-strike_price = 95 #strike_k
+strike_price = 90 #strike_k
 risk_free_rate = 0.0389 #rfr
-timeframe = 3 #t
+timeframe = 5 #t
 option = 'put'
 
 def underlying_value_tree(up_f, down_f, k, t):
@@ -92,37 +94,6 @@ def option_value_tree(up_f, down_f, k, rfr, t, payoff_tree_matrix):
 
     return option_value_tree, risk_neutral_prob
 
-
-
-underlying_tree = underlying_value_tree(
-    up_factor,
-    down_factor,
-    underlying_price,
-    timeframe
-)
-
-print(underlying_tree)
-
-payoff_tree = create_payoff_tree(
-    strike_price,
-    timeframe,
-    underlying_tree,
-    option
-)
-
-print(payoff_tree)
-
-option_tree, risk_n_prob = option_value_tree(
-    up_factor,
-    down_factor,
-    underlying_price,
-    risk_free_rate,
-    timeframe,
-    payoff_tree
-)
-
-print(option_tree, risk_n_prob)
-
 def print_tree(tree, tree_title):
     steps = int(tree.shape[0]) #number of steps in the tree
     fig, ax = plt.subplots()
@@ -135,7 +106,7 @@ def print_tree(tree, tree_title):
 
             value = tree[seven, six]
             ax.scatter(six, -seven, color=mang0, s=800)
-            ax.text(six, -seven, f'{value:.2f}', color='black', ha='center', va='center', fontsize=10)
+            ax.text(six, -seven, f'{value:.2f}$', color='black', ha='center', va='center', fontsize=8)
 
             if six < steps - 1:
                 ax.plot([six, six + 1], [-seven, -(seven)], color="gray", lw=1)       # up move
@@ -148,7 +119,35 @@ def print_tree(tree, tree_title):
     ax.set_ylabel("Nodes (downwards)")
     ax.set_aspect('equal')
     ax.grid(False)
-    plt.tight_layout()
+    plt.tight_layout(h_pad=0.5, w_pad=0.1)
     plt.show()
 
-print_tree(option_tree, "Option Price Tree")
+    steps = int(tree.shape[0])
+
+underlying_tree = underlying_value_tree(
+    up_factor,
+    down_factor,
+    underlying_price,
+    timeframe
+)
+
+copy_under_tree = underlying_tree.copy()
+
+
+payoff_tree = create_payoff_tree(
+    strike_price,
+    timeframe,
+    copy_under_tree,
+    option
+)
+
+option_tree, risk_n_prob = option_value_tree(
+    up_factor,
+    down_factor,
+    underlying_price,
+    risk_free_rate,
+    timeframe,
+    payoff_tree
+)
+
+print_tree(underlying_tree, "Underlying Price Tree")
