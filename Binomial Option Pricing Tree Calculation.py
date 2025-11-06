@@ -122,7 +122,7 @@ def print_tree(tree, tree_title):
     plt.tight_layout(h_pad=2, w_pad=2)
     plt.show()
 
-    steps = int(tree.shape[0])
+#TEST FUNCTIONS BELOW
 
 underlying_tree = underlying_value_tree(
     up_factor,
