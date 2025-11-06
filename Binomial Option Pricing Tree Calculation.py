@@ -19,12 +19,12 @@ from igraph import Graph, EdgeSeq
 
 
 #VARIABLES AND REFERAL NAMES
-up_factor = 1.2 #up_f
+up_factor = 1 #up_f
 down_factor = 0.9 #down_f
 underlying_price = 100 #k
-strike_price = 90 #strike_k
+strike_price = 110 #strike_k
 risk_free_rate = 0.0389 #rfr
-timeframe = 5 #t
+timeframe = 10#t
 option = 'put'
 
 def underlying_value_tree(up_f, down_f, k, t):
@@ -151,3 +151,4 @@ option_tree, risk_n_prob = option_value_tree(
 )
 
 print_tree(underlying_tree, f"Underlying Price Tree, {option}")
+print_tree(option_tree, f"Option Price Tree, {option}")
