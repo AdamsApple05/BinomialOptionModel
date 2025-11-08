@@ -1,10 +1,11 @@
 # These functions take inputs up factor, down factor, underlying price, strike price, RFR, Time to expiration
 # CHECKLIST:
 #-Underlying Value Tree (✅)
-#-Option Value Tree (X)
+#-Option Value Tree (✅)
 #       -Risk Neutral Prob Function(✅)
 #       -Payoff Tree (✅)
 #       -Option Value Node Function (✅)
+#-Printing (Kinda done)
 #-Test Function (X)
 
 #Jaydon Thinh-To Oct 29 2025
@@ -19,6 +20,7 @@ from igraph import Graph, EdgeSeq
 
 
 #VARIABLES AND REFERAL NAMES
+option_character = 'European' #o_c
 up_factor = 1.2 #up_f
 down_factor = 0.9 #down_f
 underlying_price = 100 #k
@@ -74,24 +76,28 @@ def create_payoff_tree(strike_k, t, underlying_value_tree_matrix, option_type):
     return payoff
 
 
-def option_value_tree(up_f, down_f, k, rfr, t, payoff_tree_matrix):
+def option_value_tree(up_f, down_f, k, rfr, t, payoff_tree_matrix, o_c):
     #Returns the option value tree by iterating backwards through the payoff tree
 
     risk_neutral_prob = calculate_risk_neutral_probability(up_f, down_f, rfr, t)
-    option_value_tree = payoff_tree_matrix.copy()
+    op_value_tree = payoff_tree_matrix.copy()
+    max_payoff = None
+
 
     for q in range(t-1, -1, -1): #Iterates backwards through the matrix starting at T - 1 to 0
         for x in range(q , -1, -1):
-            option_value_node = calculate_option_value_node(
-            option_value_tree[x,q + 1], #Sends the value of the node up
-            option_value_tree[x + 1,q + 1], #Sends the value of the node down
+            op_value_node = calculate_option_value_node(
+            op_value_tree[x,q + 1], #Sends the value of the node up
+            op_value_tree[x + 1,q + 1], #Sends the value of the node down
             rfr,
             t,
             risk_neutral_prob
             )
+            if o_c == "American":
+                max_payoff = max(max_payoff, op_value_node)
 
-            option_value_tree[x,q] = round(option_value_node,2) #Inserts the calculated option value into the option value tree
-
+            op_value_tree[x,q] = round(op_value_node,2) #Inserts the calculated option value into the option value tree
+    print(max_payoff)
     return option_value_tree, risk_neutral_prob
 
 def print_tree(tree, tree_title):
@@ -147,7 +153,8 @@ option_tree, risk_n_prob = option_value_tree(
     underlying_price,
     risk_free_rate,
     timeframe,
-    payoff_tree
+    payoff_tree,
+    option_character
 )
 
 print_tree(underlying_tree, "Underlying Price Tree")
