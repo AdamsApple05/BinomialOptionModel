@@ -19,12 +19,12 @@ from igraph import Graph, EdgeSeq
 
 
 #VARIABLES AND REFERAL NAMES
-up_factor = 1 #up_f
+up_factor = 1.1 #up_f
 down_factor = 0.9 #down_f
 underlying_price = 100 #k
-strike_price = 110 #strike_k
+strike_price = 90 #strike_k
 risk_free_rate = 0.0389 #rfr
-timeframe = 10#t
+timeframe = 3#t
 option = 'put'
 
 def underlying_value_tree(up_f, down_f, k, t):
@@ -113,6 +113,7 @@ def print_tree(tree, tree_title):
             ax.scatter(six, seven - six / 2, color=mang0, s=800)
             ax.text(six, seven - six / 2, f'{value:.2f}$', color='black', ha='center', va='center', fontsize=8)
 
+    plt.gca().invert_yaxis()
     ax.set_xticks(range(steps))
     ax.set_yticks([])
     ax.set_xlabel("Time Step")
