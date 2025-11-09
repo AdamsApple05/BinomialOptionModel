@@ -21,12 +21,12 @@ from igraph import Graph, EdgeSeq
 
 #VARIABLES AND REFERAL NAMES
 option_character = 'European' #o_c
-up_factor = 1.2 #up_f
+up_factor = 1.1 #up_f
 down_factor = 0.9 #down_f
 underlying_price = 100 #k
 strike_price = 90 #strike_k
 risk_free_rate = 0.0389 #rfr
-timeframe = 5 #t
+timeframe = 3#t
 option = 'put'
 
 def underlying_value_tree(up_f, down_f, k, t):
@@ -102,7 +102,7 @@ def option_value_tree(up_f, down_f, k, rfr, t, payoff_tree_matrix, o_c):
 
 def print_tree(tree, tree_title):
     steps = int(tree.shape[0]) #number of steps in the tree
-    fig, ax = plt.subplots()
+    fig, ax = plt.subplots(figsize=(10,10))
     ax.set_title(tree_title)
 
     mang0 = '#e3994f'
@@ -110,25 +110,26 @@ def print_tree(tree, tree_title):
     for six in range(steps): #67
         for seven in range(six+1):
 
+            y = seven - six /2
             value = tree[seven, six]
-            ax.scatter(six, -seven, color=mang0, s=800)
-            ax.text(six, -seven, f'{value:.2f}$', color='black', ha='center', va='center', fontsize=8)
 
             if six < steps - 1:
-                ax.plot([six, six + 1], [-seven, -(seven)], color="gray", lw=1)       # up move
-                ax.plot([six, six + 1], [-seven, -(seven + 1)], color="gray", lw=1)   # down move
+                ax.plot([six, six + 1], [y, (y + 0.5)], color="gray", lw=1)       # up move
+                ax.plot([six, six + 1], [y, (y - 0.5)], color="gray", lw=1)   # down move
+            ax.scatter(six, seven - six / 2, color=mang0, s=800)
+            ax.text(six, seven - six / 2, f'{value:.2f}$', color='black', ha='center', va='center', fontsize=8)
 
-
+    plt.gca().invert_yaxis()
     ax.set_xticks(range(steps))
     ax.set_yticks([])
     ax.set_xlabel("Time Step")
-    ax.set_ylabel("Nodes (downwards)")
+    ax.set_ylabel("Nodes Steps")
     ax.set_aspect('equal')
     ax.grid(False)
-    plt.tight_layout(h_pad=0.5, w_pad=0.1)
+    plt.tight_layout(h_pad=2, w_pad=2)
     plt.show()
 
-    steps = int(tree.shape[0])
+#TEST FUNCTIONS BELOW
 
 underlying_tree = underlying_value_tree(
     up_factor,
@@ -157,4 +158,5 @@ option_tree, risk_n_prob = option_value_tree(
     option_character
 )
 
-print_tree(underlying_tree, "Underlying Price Tree")
+print_tree(underlying_tree, f"Underlying Price Tree, {option}")
+print_tree(option_tree, f"Option Price Tree, {option}")
