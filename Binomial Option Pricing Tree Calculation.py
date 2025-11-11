@@ -18,16 +18,19 @@
 #Fully working code, needs cleaning? probably. And probably needs a more clean testing function
 
 import numpy as np
+import matplotlib.pyplot as plt
+
 
 
 #VARIABLES AND REFERAL NAMES
-up_factor = 1.2 #up_f
+up_factor = 1.1 #up_f
 down_factor = 0.9 #down_f
 underlying_price = 100 #k
-strike_price = 95 #strike_k
+strike_price = 90 #strike_k
 risk_free_rate = 0.0389 #rfr
-timeframe = 3 #t
-option = 'call'
+timeframe = 3#t
+option = 'put'
+
 
 def underlying_value_tree(up_f, down_f, k, t):
     #OUTPUTS a single list form t+1 by t+1. Can iterate through it by calling list[row, colum]
@@ -94,7 +97,37 @@ def option_value_tree(up_f, down_f, k, rfr, t, payoff_tree_matrix):
 
             option_value_tree[x,q] = round(option_value_node,2) #Inserts the calculated option value into the option value tree
 
-    return option_value_tree, round(risk_neutral_prob,4)
+
+    return option_value_tree, risk_neutral_prob
+
+def print_tree(tree, tree_title):
+    steps = int(tree.shape[0]) #number of steps in the tree
+    fig, ax = plt.subplots(figsize=(10,10))
+    ax.set_title(tree_title)
+
+    mang0 = '#e3994f'
+
+    for six in range(steps): #67
+        for seven in range(six+1):
+
+            y = seven - six /2
+            value = tree[seven, six]
+
+            if six < steps - 1:
+                ax.plot([six, six + 1], [y, (y + 0.5)], color="gray", lw=1)       # up move
+                ax.plot([six, six + 1], [y, (y - 0.5)], color="gray", lw=1)   # down move
+            ax.scatter(six, seven - six / 2, color=mang0, s=800)
+            ax.text(six, seven - six / 2, f'{value:.2f}$', color='black', ha='center', va='center', fontsize=8)
+
+    plt.gca().invert_yaxis()
+    ax.set_xticks(range(steps))
+    ax.set_yticks([])
+    ax.set_xlabel("Time Step")
+    ax.set_ylabel("Nodes Steps")
+    ax.set_aspect('equal')
+    ax.grid(False)
+    plt.tight_layout(h_pad=2, w_pad=2)
+    plt.show()
 
 
 
@@ -105,16 +138,16 @@ underlying_tree = underlying_value_tree(
     timeframe
 )
 
-print(underlying_tree)
+copy_under_tree = underlying_tree.copy()
+
 
 payoff_tree = create_payoff_tree(
     strike_price,
     timeframe,
-    underlying_tree,
+    copy_under_tree,
     option
 )
 
-print(payoff_tree)
 
 option_tree, risk_n_prob = option_value_tree(
     up_factor,
@@ -125,5 +158,7 @@ option_tree, risk_n_prob = option_value_tree(
     payoff_tree
 )
 
-print(option_tree, f"\n{risk_n_prob*100}%")
+
+print_tree(underlying_tree, f"Underlying Price Tree, {option}")
+print_tree(option_tree, f"Option Price Tree, {option}")
 
