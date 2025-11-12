@@ -22,7 +22,7 @@ import matplotlib.pyplot as plt
 
 
 
-#VARIABLES AND REFERAL NAMES
+#VARIABLES AND REFFERAL NAMES
 up_factor = 1.1 #up_f
 down_factor = 0.9 #down_f
 underlying_price = 100 #k
@@ -70,7 +70,7 @@ def create_payoff_tree(strike_k, t, underlying_value_tree_matrix, option_type):
             if  underlying_value_tree_matrix[b,a] - strike_k >= 0 and (option_type == 'call'): #checks for non-negativity, passes if option type is a call
                 payoff[b,a] =  underlying_value_tree_matrix[b,a] - strike_k #inserts payoff into payoff table
 
-            elif strike_k - underlying_value_tree_matrix[b,a] >= 0 and (option_type == 'put'): #hecks for non-negativity, passes if option type is a put
+            elif strike_k - underlying_value_tree_matrix[b,a] >= 0 and (option_type == 'put'): #checks for non-negativity, passes if option type is a put
                 payoff[b,a] = strike_k - underlying_value_tree_matrix[b,a]
 
             else: #Else condition if negative, do not sell option thus keep's payoff at 0
@@ -114,7 +114,7 @@ def print_tree(tree, tree_title):
             value = tree[seven, six]
 
             if six < steps - 1:
-                ax.plot([six, six + 1], [y, (y + 0.5)], color="gray", lw=1)       # up move
+                ax.plot([six, six + 1], [y, (y + 0.5)], color="grey", lw=1)       # up move
                 ax.plot([six, six + 1], [y, (y - 0.5)], color="gray", lw=1)   # down move
             ax.scatter(six, seven - six / 2, color=mang0, s=800)
             ax.text(six, seven - six / 2, f'{value:.2f}$', color='black', ha='center', va='center', fontsize=8)
@@ -139,7 +139,6 @@ underlying_tree = underlying_value_tree(
 )
 
 copy_under_tree = underlying_tree.copy()
-
 
 payoff_tree = create_payoff_tree(
     strike_price,
