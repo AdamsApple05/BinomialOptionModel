@@ -28,7 +28,7 @@ down_factor = 0.9 #down_f
 underlying_price = 100 #k
 strike_price = 90 #strike_k
 risk_free_rate = 0.0389 #rfr
-timeframe = 3#t
+timeframe = 3 #t
 option = 'put'
 
 
