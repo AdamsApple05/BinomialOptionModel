@@ -92,8 +92,6 @@ def option_value_tree(up_f, down_f, k, rfr, t, payoff_tree_matrix):
 
     return option_value_tree, risk_neutral_prob
 
-def find_delta(option_tree):
-
 
 def print_tree(tree, tree_title):
     steps = int(tree.shape[0]) #number of steps in the tree
