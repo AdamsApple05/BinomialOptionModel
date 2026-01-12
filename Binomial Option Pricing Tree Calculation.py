@@ -1,21 +1,13 @@
 # These functions take inputs up factor, down factor, underlying price, strike price, RFR, Time to expiration and option type to-
 #create a binomial option pricing tree for european style options.
 # CHECKLIST:
-#-Underlying Value Tree (✅)
-#-Option Value Tree (✅)
-#       -Risk Neutral Prob Function(✅)
-#       -Payoff Tree (✅)
-#       -Option Value Node Function (✅)
-#       -Logic changes for 'puts' (✅)
-#-Test Function (X) (still needs work maybe we could modify to use oop to be able to handle more than 1 option at a time)?
-#Things we could add:
 #-American Style-Option Pricing
 #-Arbitrage Detector
+#-Calculating Delta-Neutral Portfolio
 
 #Jaydon Thinh-To Oct 29 2025
 
 #Updated: Oct 30 2025
-#Fully working code, needs cleaning? probably. And probably needs a more clean testing function
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -99,6 +91,9 @@ def option_value_tree(up_f, down_f, k, rfr, t, payoff_tree_matrix):
 
 
     return option_value_tree, risk_neutral_prob
+
+def find_delta(option_tree):
+
 
 def print_tree(tree, tree_title):
     steps = int(tree.shape[0]) #number of steps in the tree
