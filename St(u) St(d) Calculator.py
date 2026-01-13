@@ -14,8 +14,11 @@ volatility = 0 #Sigma (Volatility) |  vol
 div_yield = 0 #Dividend Yield | q
 height = 0 #Height of Tree | n
 
-def crr_calculation(T,K,r, vol, q, n):
-    print(T, K, r, vol, q, n)
+def crr_calculation(T, K, r, vol, q, n):
+    Su = math.exp(vol* math.sqrt(T/n))
+    Sd = 1/Su
+    p = math.exp((r*T/n-Sd)/(Su-Sd))
+    print(Su, Sd)
 
 
 
