@@ -22,7 +22,6 @@ def crr_calculation(T, K, r, vol, q, n):
     sd = 1/su
     p = math.exp((r*T/n-sd)/(su-sd))
 
-
     print(su, sd, p)
 
 

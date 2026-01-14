@@ -12,8 +12,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-
-
 #VARIABLES AND REFFERAL NAMES
 up_factor = 1.1 #up_f
 down_factor = 0.9 #down_f
@@ -153,4 +151,6 @@ option_tree, risk_n_prob = option_value_tree(
 
 print_tree(underlying_tree, f"Underlying Price Tree, {option}")
 print_tree(option_tree, f"Option Price Tree, {option}")
+print(option_tree)
+print(underlying_tree)
 
