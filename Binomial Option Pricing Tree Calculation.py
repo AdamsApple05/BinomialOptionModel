@@ -15,13 +15,18 @@ import matplotlib.pyplot as plt
 
 
 #VARIABLES AND REFFERAL NAMES
-up_factor = 1.1 #up_f
-down_factor = 0.9 #down_f
-underlying_price = 100 #k
-strike_price = 90 #strike_k
-risk_free_rate = 0.0389 #rfr
-timeframe = 3 #t
-option = 'put'
+up_factor = float(input("Please enter an up factor (e.g., 1.1): "))
+down_factor = float(input("Please enter a down factor (e.g., 0.9): "))
+underlying_price = float(input("Please enter the underlying price S₀ (e.g., 100): "))
+strike_price = float(input("Please enter the strike price K (e.g., 90): "))
+risk_free_rate = float(input("Please enter the risk-free rate r (decimal, e.g., 0.0389): "))
+timeframe = int(input("Please enter the number of time steps (e.g., 3): "))
+option = input("Please enter option type (call or put): ").strip().lower()
+while option not in ("call", "put"):
+    option = input("Invalid input. Please enter 'call' or 'put': ").strip().lower()
+style = input("Please enter option style (american or european): ").strip().lower()
+while style not in ("american", "european"):
+    style = input("Invalid input. Please enter 'american' or 'european': ").strip().lower()
 
 
 def underlying_value_tree(up_f, down_f, k, t):
@@ -88,6 +93,24 @@ def option_value_tree(up_f, down_f, k, rfr, t, payoff_tree_matrix):
             )
 
             option_value_tree[x,q] = round(option_value_node,2) #Inserts the calculated option value into the option value tree
+            hold = option_value_node
+            
+
+            if style == "american":
+                # Immediate exercise (intrinsic) at this node
+                S = underlying_tree[x, q]
+                if option == "call":
+                    exercise = max(S - k, 0.0)
+                else:  
+                    exercise = max(k - S, 0.0)
+
+                option_value_tree[x, q] = max(hold, exercise)
+            else:
+                
+                option_value_tree[x, q] = hold
+
+    return option_value_tree, risk_neutral_prob
+
 
 
     return option_value_tree, risk_neutral_prob
