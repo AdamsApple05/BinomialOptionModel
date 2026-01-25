@@ -1,2 +1,2 @@
 # BinomialOptionModel
-Program designed to price any European option using the binomial option pricing method.
+Program designed to price any European or American option using the binomial option pricing method.
