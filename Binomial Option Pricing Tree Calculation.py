@@ -1,13 +1,9 @@
 # These functions take inputs up factor, down factor, underlying price, strike price, RFR, Time to expiration and option type to-
 #create a binomial option pricing tree for european style options.
 # CHECKLIST:
-#-American Style-Option Pricing
 #-Arbitrage Detector
 #-Calculating Delta-Neutral Portfolio
 
-#Jaydon Thinh-To Oct 29 2025
-
-#Updated: Oct 30 2025
 
 import numpy as np
 import matplotlib.pyplot as plt
