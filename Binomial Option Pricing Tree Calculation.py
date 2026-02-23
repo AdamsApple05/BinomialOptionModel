@@ -8,25 +8,61 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import math
+import yfinance as yf
 
-annVol = float(input("Please enter the annualized volatility: "))
-timeToExpiry = float(input("Please enter the time to expiry (in years):"))
-underlying_price = float(input("Please enter the underlying price S₀ (e.g., 100): "))
-strike_price = float(input("Please enter the strike price K (e.g., 90): "))
-risk_free_rate = float(input("Please enter the risk-free rate r (decimal, e.g., 0.0389): "))
-timeSteps = int(input("Please enter the number of desired time steps: "))
+ticker = str(input("Input Option Ticker"))
+
+option_type: str = input("Please enter option type (call or put): ").strip().lower() 
+while option_type not in ("call", "put"):
+    option_type = input("Invalid input. Please enter 'call' or 'put': ").strip().lower()
+style = input("Please enter option style (american or european): ").strip().lower()
+while style not in ("american", "european"):
+    style = input("Invalid input. Please enter 'american' or 'european': ").strip().lower()
+lookback: str = "1y",               # used for volatility estimation
+interval_b: str = "1d",
+vol_method: str = "log",          
+timeSteps: int = 200,
+pick: str = "atm"    
+
+### OLD METHOD OF IMPUTS                        ###
+# annVol = float(input("Please enter the annualized volatility: "))
+# timeToExpiry = float(input("Please enter the time to expiry (in years):"))
+# underlying_price = float(input("Please enter the underlying price S₀ (e.g., 100): "))
+# strike_price = float(input("Please enter the strike price K (e.g., 90): "))
+# risk_free_rate = float(input("Please enter the risk-free rate r (decimal, e.g., 0.0389): "))
+# timeSteps = int(input("Please enter the number of desired time steps: "))
+###                                             ###
+
+tk = yf.Ticker(ticker)
+
+#Historical price of each day for the last 5 days
+hist = tk.history(period="5d",interval=interval_b)
+
+if hist.empty:
+    raise ValueError("Not enough historical data")
+underlying_price = float(hist["Close"].iloc[-1])
+
+px = tk.history(period=lookback, interval=interval_b)["Close"].dropna()
+if len(px) < 30:
+    raise ValueError("Not enough historical data to estimate volatility. Try a longer lookback.")
+
+if vol_method == "log":
+    rets = np.log(px / px.shift(1)).dropna()
+else:
+    rets = px.pct_change().dropna()
+    annVol = float(rets.std(ddof=1) * np.sqrt(252)) #252 -> num trading days 
+
+expiries = tk.options
+if not expiries:
+    raise ValueError("No option expiries returned. This ticker may not have listed options on yfinance.")
+
 
 # calculate up and down factors (CRR)
 up_factor = math.exp(annVol * math.sqrt(timeToExpiry / timeSteps))
 down_factor = math.exp(-annVol * math.sqrt(timeToExpiry / timeSteps))
 
-option = input("Please enter option type (call or put): ").strip().lower()
-while option not in ("call", "put"):
-    option = input("Invalid input. Please enter 'call' or 'put': ").strip().lower()
 
-style = input("Please enter option style (american or european): ").strip().lower()
-while style not in ("american", "european"):
-    style = input("Invalid input. Please enter 'american' or 'european': ").strip().lower()
+
 
 
 def underlying_value_tree(up_f, down_f, k, t):
