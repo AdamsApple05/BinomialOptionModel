@@ -97,7 +97,7 @@ def main():
         raise EnvironmentError(
             "POLYGON_API_KEY environment variable is not set.")
 
-    NUM_ITERATIONS = 10000  # How many random variations to test
+    NUM_ITERATIONS = 1000  # How many random variations to test
     print(
         f"Starting Parameter Optimization: {NUM_ITERATIONS} random configurations...")
 

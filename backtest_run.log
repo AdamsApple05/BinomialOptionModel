@@ -1,0 +1,1343 @@
+2026-03-02 13:57:05,039 - ERROR - Execution failed for A: backtest_engine.OptionBacktester.run_backtest() got multiple values for keyword argument 'expiry_days'
+2026-03-02 13:57:05,040 - ERROR - Execution failed for AA: backtest_engine.OptionBacktester.run_backtest() got multiple values for keyword argument 'expiry_days'
+2026-03-02 13:57:05,040 - ERROR - Execution failed for AAA: backtest_engine.OptionBacktester.run_backtest() got multiple values for keyword argument 'expiry_days'
+2026-03-02 13:57:05,040 - ERROR - Execution failed for AAAA: backtest_engine.OptionBacktester.run_backtest() got multiple values for keyword argument 'expiry_days'
+2026-03-02 13:57:05,041 - ERROR - Execution failed for AAAC: backtest_engine.OptionBacktester.run_backtest() got multiple values for keyword argument 'expiry_days'
+2026-03-02 13:57:05,041 - ERROR - Execution failed for AAAU: backtest_engine.OptionBacktester.run_backtest() got multiple values for keyword argument 'expiry_days'
+2026-03-02 13:57:05,041 - ERROR - Execution failed for AACB: backtest_engine.OptionBacktester.run_backtest() got multiple values for keyword argument 'expiry_days'
+2026-03-02 13:57:05,041 - ERROR - Execution failed for AACBR: backtest_engine.OptionBacktester.run_backtest() got multiple values for keyword argument 'expiry_days'
+2026-03-02 13:57:05,041 - ERROR - Execution failed for AACBU: backtest_engine.OptionBacktester.run_backtest() got multiple values for keyword argument 'expiry_days'
+2026-03-02 13:57:05,041 - ERROR - Execution failed for AACG: backtest_engine.OptionBacktester.run_backtest() got multiple values for keyword argument 'expiry_days'
+2026-03-02 13:57:05,041 - ERROR - Execution failed for AACIU: backtest_engine.OptionBacktester.run_backtest() got multiple values for keyword argument 'expiry_days'
+2026-03-02 13:57:05,041 - ERROR - Execution failed for AACOU: backtest_engine.OptionBacktester.run_backtest() got multiple values for keyword argument 'expiry_days'
+2026-03-02 13:57:05,042 - ERROR - Execution failed for AADR: backtest_engine.OptionBacktester.run_backtest() got multiple values for keyword argument 'expiry_days'
+2026-03-02 13:57:05,042 - ERROR - Execution failed for AAEQ: backtest_engine.OptionBacktester.run_backtest() got multiple values for keyword argument 'expiry_days'
+2026-03-02 13:57:05,042 - ERROR - Execution failed for AAL: backtest_engine.OptionBacktester.run_backtest() got multiple values for keyword argument 'expiry_days'
+2026-03-02 13:57:05,042 - ERROR - Execution failed for AALG: backtest_engine.OptionBacktester.run_backtest() got multiple values for keyword argument 'expiry_days'
+2026-03-02 13:57:05,042 - ERROR - Execution failed for AAME: backtest_engine.OptionBacktester.run_backtest() got multiple values for keyword argument 'expiry_days'
+2026-03-02 13:57:05,042 - ERROR - Execution failed for AAMI: backtest_engine.OptionBacktester.run_backtest() got multiple values for keyword argument 'expiry_days'
+2026-03-02 13:57:05,043 - ERROR - Execution failed for AAOI: backtest_engine.OptionBacktester.run_backtest() got multiple values for keyword argument 'expiry_days'
+2026-03-02 13:57:05,043 - ERROR - Execution failed for AAON: backtest_engine.OptionBacktester.run_backtest() got multiple values for keyword argument 'expiry_days'
+2026-03-02 13:57:05,043 - ERROR - Execution failed for AAP: backtest_engine.OptionBacktester.run_backtest() got multiple values for keyword argument 'expiry_days'
+2026-03-02 13:57:05,043 - ERROR - Execution failed for AAPB: backtest_engine.OptionBacktester.run_backtest() got multiple values for keyword argument 'expiry_days'
+2026-03-02 13:57:05,043 - ERROR - Execution failed for AAPD: backtest_engine.OptionBacktester.run_backtest() got multiple values for keyword argument 'expiry_days'
+2026-03-02 13:57:05,043 - ERROR - Execution failed for AAPG: backtest_engine.OptionBacktester.run_backtest() got multiple values for keyword argument 'expiry_days'
+2026-03-02 13:57:05,043 - ERROR - Execution failed for AAPL: backtest_engine.OptionBacktester.run_backtest() got multiple values for keyword argument 'expiry_days'
+2026-03-02 13:57:05,044 - ERROR - Execution failed for AAPR: backtest_engine.OptionBacktester.run_backtest() got multiple values for keyword argument 'expiry_days'
+2026-03-02 13:57:05,044 - ERROR - Execution failed for AAPU: backtest_engine.OptionBacktester.run_backtest() got multiple values for keyword argument 'expiry_days'
+2026-03-02 13:57:05,044 - ERROR - Execution failed for AAPW: backtest_engine.OptionBacktester.run_backtest() got multiple values for keyword argument 'expiry_days'
+2026-03-02 13:57:05,045 - ERROR - Execution failed for AAPX: backtest_engine.OptionBacktester.run_backtest() got multiple values for keyword argument 'expiry_days'
+2026-03-02 13:57:05,045 - ERROR - Execution failed for AAPY: backtest_engine.OptionBacktester.run_backtest() got multiple values for keyword argument 'expiry_days'
+2026-03-02 13:57:05,045 - ERROR - Execution failed for AARD: backtest_engine.OptionBacktester.run_backtest() got multiple values for keyword argument 'expiry_days'
+2026-03-02 13:57:05,045 - ERROR - Execution failed for AAT: backtest_engine.OptionBacktester.run_backtest() got multiple values for keyword argument 'expiry_days'
+2026-03-02 13:57:05,045 - ERROR - Execution failed for AAUC: backtest_engine.OptionBacktester.run_backtest() got multiple values for keyword argument 'expiry_days'
+2026-03-02 13:57:05,046 - ERROR - Execution failed for AAUM: backtest_engine.OptionBacktester.run_backtest() got multiple values for keyword argument 'expiry_days'
+2026-03-02 13:57:05,046 - ERROR - Execution failed for AAUS: backtest_engine.OptionBacktester.run_backtest() got multiple values for keyword argument 'expiry_days'
+2026-03-02 13:57:05,046 - ERROR - Execution failed for AAVM: backtest_engine.OptionBacktester.run_backtest() got multiple values for keyword argument 'expiry_days'
+2026-03-02 13:57:05,046 - ERROR - Execution failed for AAXJ: backtest_engine.OptionBacktester.run_backtest() got multiple values for keyword argument 'expiry_days'
+2026-03-02 13:57:05,046 - ERROR - Execution failed for AB: backtest_engine.OptionBacktester.run_backtest() got multiple values for keyword argument 'expiry_days'
+2026-03-02 13:57:05,046 - ERROR - Execution failed for ABAT: backtest_engine.OptionBacktester.run_backtest() got multiple values for keyword argument 'expiry_days'
+2026-03-02 13:57:05,047 - ERROR - Execution failed for ABBV: backtest_engine.OptionBacktester.run_backtest() got multiple values for keyword argument 'expiry_days'
+2026-03-02 13:57:05,047 - ERROR - Execution failed for ABCB: backtest_engine.OptionBacktester.run_backtest() got multiple values for keyword argument 'expiry_days'
+2026-03-02 13:57:05,047 - ERROR - Execution failed for ABCL: backtest_engine.OptionBacktester.run_backtest() got multiple values for keyword argument 'expiry_days'
+2026-03-02 13:57:05,047 - ERROR - Execution failed for ABCS: backtest_engine.OptionBacktester.run_backtest() got multiple values for keyword argument 'expiry_days'
+2026-03-02 13:57:05,047 - ERROR - Execution failed for ABEO: backtest_engine.OptionBacktester.run_backtest() got multiple values for keyword argument 'expiry_days'
+2026-03-02 13:57:05,047 - ERROR - Execution failed for ABEQ: backtest_engine.OptionBacktester.run_backtest() got multiple values for keyword argument 'expiry_days'
+2026-03-02 13:57:05,048 - ERROR - Execution failed for ABEV: backtest_engine.OptionBacktester.run_backtest() got multiple values for keyword argument 'expiry_days'
+2026-03-02 13:57:05,048 - ERROR - Execution failed for ABFL: backtest_engine.OptionBacktester.run_backtest() got multiple values for keyword argument 'expiry_days'
+2026-03-02 13:57:05,048 - ERROR - Execution failed for ABG: backtest_engine.OptionBacktester.run_backtest() got multiple values for keyword argument 'expiry_days'
+2026-03-02 13:57:05,048 - ERROR - Execution failed for ABI: backtest_engine.OptionBacktester.run_backtest() got multiple values for keyword argument 'expiry_days'
+2026-03-02 13:57:05,048 - ERROR - Execution failed for ABIG: backtest_engine.OptionBacktester.run_backtest() got multiple values for keyword argument 'expiry_days'
+ERROR:root:Failed AAAA: No spot data found for AAAA on 2023-01-01
+ERROR:root:Failed AAAC: No spot data found for AAAC on 2023-01-01
+ERROR:root:Failed AACB: No spot data found for AACB on 2023-01-01
+
+ERROR:root:Failed AACG: No spot data found for AACG on 2023-01-01
+ERROR:root:Failed A: No spot data found for A on 2023-01-01
+ERROR:root:Failed AAEQ: No spot data found for AAEQ on 2023-01-01
+ERROR:root:Failed AACOU: No spot data found for AACOU on 2023-01-01
+ERROR:root:Failed AAL: No spot data found for AAL on 2023-01-01
+ERROR:root:Failed AALG: No spot data found for AALG on 2023-01-01
+ERROR:root:Failed AAA: No spot data found for AAA on 2023-01-01
+ERROR:root:Failed AACBU: No spot data found for AACBU on 2023-01-01
+ERROR:root:Failed AAAU: No spot data found for AAAU on 2023-01-01
+ERROR:root:Failed AACBR: No spot data found for AACBR on 2023-01-01
+ERROR:root:Failed AAPD: No spot data found for AAPD on 2023-01-01
+ERROR:root:Failed AAPU: No spot data found for AAPU on 2023-01-01
+ERROR:root:Failed AAPL: No spot data found for AAPL on 2023-01-01
+ERROR:root:Failed AAOI: No spot data found for AAOI on 2023-01-01
+ERROR:root:Failed AAME: No spot data found for AAME on 2023-01-01
+ERROR:root:Failed AAPX: No spot data found for AAPX on 2023-01-01
+ERROR:root:Failed AAPG: No spot data found for AAPG on 2023-01-01
+ERROR:root:Failed AAMI: No spot data found for AAMI on 2023-01-01
+ERROR:root:Failed AAON: No spot data found for AAON on 2023-01-01
+ERROR:root:Failed AARD: No spot data found for AARD on 2023-01-01
+ERROR:root:Failed AAP: No spot data found for AAP on 2023-01-01
+ERROR:root:Failed AAT: No spot data found for AAT on 2023-01-01
+
+ERROR:root:Failed AAPB: No spot data found for AAPB on 2023-01-01
+ERROR:root:Failed AAUC: No spot data found for AAUC on 2023-01-01
+ERROR:root:Failed ABBV: No spot data found for ABBV on 2023-01-01
+ERROR:root:Failed AAVM: No spot data found for AAVM on 2023-01-01
+ERROR:root:Failed AAUM: No spot data found for AAUM on 2023-01-01
+ERROR:root:Failed AB: No spot data found for AB on 2023-01-01
+ERROR:root:Failed ABCS: No spot data found for ABCS on 2023-01-01
+ERROR:root:Failed ABEO: No spot data found for ABEO on 2023-01-01
+ERROR:root:Failed ABEV: No spot data found for ABEV on 2023-01-01
+ERROR:root:Failed ABEQ: No spot data found for ABEQ on 2023-01-01
+ERROR:root:Failed ABCL: No spot data found for ABCL on 2023-01-01
+ERROR:root:Failed ABFL: No spot data found for ABFL on 2023-01-01
+ERROR:root:Failed ABG: No spot data found for ABG on 2023-01-01
+ERROR:root:Failed ABCB: No spot data found for ABCB on 2023-01-01
+ERROR:root:Failed ABI: No spot data found for ABI on 2023-01-01
+ERROR:root:Failed ABIG: No spot data found for ABIG on 2023-01-01
+2026-03-02 14:07:30,274 - ERROR - Execution failed for AAA: Polygon API Error for AAA: No suitable call found for AAA near strike 26.8015
+2026-03-02 14:07:30,277 - ERROR - Execution failed for AAAC: No spot data found for AAAC within 5 days of 2023-01-01
+2026-03-02 14:07:30,328 - ERROR - Execution failed for AAAA: No spot data found for AAAA within 5 days of 2023-01-01
+2026-03-02 14:07:30,983 - ERROR - Execution failed for AACB: No spot data found for AACB within 5 days of 2023-01-01
+2026-03-02 14:07:31,123 - ERROR - Execution failed for AACBR: No spot data found for AACBR within 5 days of 2023-01-01
+2026-03-02 14:07:31,707 - ERROR - Execution failed for AACBU: No spot data found for AACBU within 5 days of 2023-01-01
+2026-03-02 14:07:31,872 - ERROR - Execution failed for AACG: Polygon API Error for AACG: No suitable call found for AACG near strike 1.3860000000000001
+2026-03-02 14:07:32,463 - ERROR - Execution failed for AACIU: Polygon API Error for AACIU: No suitable call found for AACIU near strike 11.154000000000002
+2026-03-02 14:07:32,511 - ERROR - Execution failed for AACOU: No spot data found for AACOU within 5 days of 2023-01-01
+2026-03-02 14:07:33,146 - ERROR - Execution failed for AADR: Polygon API Error for AADR: No suitable call found for AADR near strike 51.909
+2026-03-02 14:07:33,269 - ERROR - Execution failed for AAEQ: No spot data found for AAEQ within 5 days of 2023-01-01
+2026-03-02 14:07:33,799 - ERROR - Execution failed for A: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:07:34,027 - ERROR - Execution failed for AALG: No spot data found for AALG within 5 days of 2023-01-01
+2026-03-02 14:07:34,371 - ERROR - Execution failed for AAME: Polygon API Error for AAME: No suitable call found for AAME near strike 2.662
+2026-03-02 14:07:34,711 - ERROR - Execution failed for AAMI: No spot data found for AAMI within 5 days of 2023-01-01
+2026-03-02 14:07:37,682 - ERROR - Execution failed for AAAU: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:07:38,332 - ERROR - Execution failed for AAP: Polygon API Error for AAP: No suitable call found for AAP near strike 166.69400000000002
+2026-03-02 14:07:39,145 - ERROR - Execution failed for AAON: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:07:39,710 - ERROR - Execution failed for AAPD: Polygon API Error for AAPD: No suitable call found for AAPD near strike 34.54
+2026-03-02 14:07:40,388 - ERROR - Execution failed for AAPG: No spot data found for AAPG within 5 days of 2023-01-01
+2026-03-02 14:07:42,678 - ERROR - Execution failed for AAPB: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:07:43,316 - ERROR - Execution failed for AAPR: No spot data found for AAPR within 5 days of 2023-01-01
+2026-03-02 14:07:43,819 - ERROR - Execution failed for AAL: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:07:44,549 - ERROR - Execution failed for AAPW: No spot data found for AAPW within 5 days of 2023-01-01
+2026-03-02 14:07:44,944 - ERROR - Execution failed for AA: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:07:45,281 - ERROR - Execution failed for AAPX: No spot data found for AAPX within 5 days of 2023-01-01
+2026-03-02 14:07:45,603 - ERROR - Execution failed for AAPY: No spot data found for AAPY within 5 days of 2023-01-01
+2026-03-02 14:07:45,873 - ERROR - Execution failed for AARD: No spot data found for AARD within 5 days of 2023-01-01
+2026-03-02 14:07:46,147 - ERROR - Execution failed for AAT: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:07:46,724 - ERROR - Execution failed for AAUC: No spot data found for AAUC within 5 days of 2023-01-01
+2026-03-02 14:07:46,769 - ERROR - Execution failed for AAUM: No spot data found for AAUM within 5 days of 2023-01-01
+2026-03-02 14:07:47,360 - ERROR - Execution failed for AAVM: No spot data found for AAVM within 5 days of 2023-01-01
+2026-03-02 14:07:47,418 - ERROR - Execution failed for AAUS: No spot data found for AAUS within 5 days of 2023-01-01
+2026-03-02 14:07:49,854 - ERROR - Execution failed for AB: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:07:50,460 - ERROR - Execution failed for ABAT: No spot data found for ABAT within 5 days of 2023-01-01
+2026-03-02 14:07:51,287 - ERROR - Execution failed for AAPU: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:07:53,143 - ERROR - Execution failed for AAXJ: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:07:53,681 - ERROR - Execution failed for ABCL: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:07:53,733 - ERROR - Execution failed for ABCB: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:07:54,326 - ERROR - Execution failed for ABCS: No spot data found for ABCS within 5 days of 2023-01-01
+2026-03-02 14:07:54,854 - ERROR - Execution failed for ABEQ: Polygon API Error for ABEQ: No suitable call found for ABEQ near strike 30.822000000000003
+2026-03-02 14:07:54,958 - ERROR - Execution failed for ABEO: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:07:55,642 - ERROR - Execution failed for ABEV: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:07:55,796 - ERROR - Execution failed for ABFL: No spot data found for ABFL within 5 days of 2023-01-01
+2026-03-02 14:07:56,372 - ERROR - Execution failed for ABI: No spot data found for ABI within 5 days of 2023-01-01
+2026-03-02 14:07:56,963 - ERROR - Execution failed for ABIG: No spot data found for ABIG within 5 days of 2023-01-01
+2026-03-02 14:07:59,070 - ERROR - Execution failed for ABG: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:08:08,000 - ERROR - Execution failed for AAOI: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:08:08,898 - ERROR - Execution failed for ABBV: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:08:40,468 - ERROR - Execution failed for AAPL: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:13:54,844 - ERROR - Execution failed for AAME: Polygon API Error for AAME: No suitable call found for AAME near strike 2.662
+2026-03-02 14:13:54,913 - ERROR - Execution failed for AACB: No spot data found for AACB within 5 days of 2023-01-01
+2026-03-02 14:13:55,498 - ERROR - Execution failed for AAMI: No spot data found for AAMI within 5 days of 2023-01-01
+2026-03-02 14:13:56,549 - ERROR - Execution failed for A: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:13:57,162 - ERROR - Execution failed for AAP: Polygon API Error for AAP: No suitable call found for AAP near strike 166.69400000000002
+2026-03-02 14:13:58,362 - ERROR - Execution failed for AAON: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:13:59,034 - ERROR - Execution failed for AARD: No spot data found for AARD within 5 days of 2023-01-01
+2026-03-02 14:13:59,619 - ERROR - Execution failed for AAT: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:14:00,220 - ERROR - Execution failed for AAUC: No spot data found for AAUC within 5 days of 2023-01-01
+2026-03-02 14:14:01,145 - ERROR - Execution failed for AAL: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:14:01,450 - ERROR - Execution failed for AB: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:14:01,802 - ERROR - Execution failed for ABAT: No spot data found for ABAT within 5 days of 2023-01-01
+2026-03-02 14:14:03,721 - ERROR - Execution failed for ABCB: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:14:04,300 - ERROR - Execution failed for ABCL: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:14:04,500 - ERROR - Execution failed for AA: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:14:05,567 - ERROR - Execution failed for ABEO: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:14:06,215 - ERROR - Execution failed for ABLV: No spot data found for ABLV within 5 days of 2023-01-01
+2026-03-02 14:14:07,002 - ERROR - Execution failed for ABM: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:14:07,187 - ERROR - Execution failed for ABG: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:14:07,784 - ERROR - Execution failed for ABOS: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:14:09,061 - ERROR - Execution failed for ABR: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:14:10,207 - ERROR - Execution failed for ABSI: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:14:14,557 - ERROR - Execution failed for ABBV: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:14:15,251 - ERROR - Execution failed for ABTC: No spot data found for ABTC within 5 days of 2023-01-01
+2026-03-02 14:14:15,880 - ERROR - Execution failed for ABTS: No spot data found for ABTS within 5 days of 2023-01-01
+2026-03-02 14:14:17,361 - ERROR - Execution failed for ABUS: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:14:17,467 - ERROR - Execution failed for AAOI: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:14:17,902 - ERROR - Execution failed for ABVC: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:14:18,056 - ERROR - Execution failed for ABVE: No spot data found for ABVE within 5 days of 2023-01-01
+2026-03-02 14:14:18,390 - ERROR - Execution failed for ABT: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:14:18,576 - ERROR - Execution failed for ABX: No spot data found for ABX within 5 days of 2023-01-01
+2026-03-02 14:14:19,237 - ERROR - Execution failed for ACB: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:14:19,949 - ERROR - Execution failed for ACCL: No spot data found for ACCL within 5 days of 2023-01-01
+2026-03-02 14:14:20,497 - ERROR - Execution failed for ACCO: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:14:21,115 - ERROR - Execution failed for ACCS: No spot data found for ACCS within 5 days of 2023-01-01
+2026-03-02 14:14:21,636 - ERROR - Execution failed for ACAD: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:14:21,647 - ERROR - Execution failed for ACDC: Polygon API Error for ACDC: No suitable call found for ACDC near strike 23.54
+2026-03-02 14:14:22,242 - ERROR - Execution failed for ACET: Polygon API Error for ACET: No suitable call found for ACET near strike 150.83200000000002
+2026-03-02 14:14:22,784 - ERROR - Execution failed for ACFN: Polygon API Error for ACFN: No suitable call found for ACFN near strike 6.864000000000001
+2026-03-02 14:14:22,807 - ERROR - Execution failed for ACA: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:14:22,837 - ERROR - Execution failed for ACEL: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:14:23,393 - ERROR - Execution failed for ACGLN: Polygon API Error for ACGLN: No suitable call found for ACGLN near strike 19.459000000000003
+2026-03-02 14:14:23,694 - ERROR - Execution failed for ACH: No spot data found for ACH within 5 days of 2023-01-01
+2026-03-02 14:14:23,935 - ERROR - Execution failed for ACHC: Polygon API Error for ACHC: No suitable call found for ACHC near strike 89.62800000000001
+2026-03-02 14:14:24,668 - ERROR - Execution failed for ACHV: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:14:24,877 - ERROR - Execution failed for ACGL: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:14:25,120 - ERROR - Execution failed for ABNB: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:14:27,448 - ERROR - Execution failed for ACI: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:14:32,170 - ERROR - Execution failed for ACHR: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:14:37,800 - ERROR - Execution failed for AAPL: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:27:14,813 - ERROR - Execution failed for AAME: Polygon Discovery Error for AAME: No contracts found for AAME after 2023-05-31
+2026-03-02 14:27:14,836 - ERROR - Execution failed for AACB: No spot data found for AACB within 5 days of 2023-01-01
+2026-03-02 14:27:15,425 - ERROR - Execution failed for AAMI: No spot data found for AAMI within 5 days of 2023-01-01
+2026-03-02 14:27:15,862 - ERROR - Execution failed for A: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:27:16,218 - ERROR - Execution failed for AAON: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:27:17,154 - ERROR - Execution failed for AAL: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:27:17,810 - ERROR - Execution failed for AARD: No spot data found for AARD within 5 days of 2023-01-01
+2026-03-02 14:27:18,043 - ERROR - Execution failed for AA: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:27:18,366 - ERROR - Execution failed for AAT: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:27:18,666 - ERROR - Execution failed for AAUC: No spot data found for AAUC within 5 days of 2023-01-01
+2026-03-02 14:27:18,941 - ERROR - Execution failed for AB: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:27:19,159 - ERROR - Execution failed for AAP: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:27:19,290 - ERROR - Execution failed for ABAT: No spot data found for ABAT within 5 days of 2023-01-01
+2026-03-02 14:27:19,563 - ERROR - Execution failed for AAOI: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:27:19,886 - ERROR - Execution failed for ABCB: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:27:19,938 - ERROR - Execution failed for ABCL: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:27:20,156 - ERROR - Execution failed for ABEO: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:27:20,618 - ERROR - Execution failed for ABLV: No spot data found for ABLV within 5 days of 2023-01-01
+2026-03-02 14:27:20,687 - ERROR - Execution failed for ABM: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:27:21,075 - ERROR - Execution failed for ABG: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:27:21,285 - ERROR - Execution failed for ABOS: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:27:21,833 - ERROR - Execution failed for ABSI: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:27:22,896 - ERROR - Execution failed for ABBV: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:27:22,914 - ERROR - Execution failed for ABR: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:27:23,510 - ERROR - Execution failed for ABTC: No spot data found for ABTC within 5 days of 2023-01-01
+2026-03-02 14:27:23,596 - ERROR - Execution failed for ABTS: No spot data found for ABTS within 5 days of 2023-01-01
+2026-03-02 14:27:24,182 - ERROR - Execution failed for ABUS: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:27:24,195 - ERROR - Execution failed for ABVC: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:27:24,778 - ERROR - Execution failed for ABVE: No spot data found for ABVE within 5 days of 2023-01-01
+2026-03-02 14:27:24,810 - ERROR - Execution failed for ABX: No spot data found for ABX within 5 days of 2023-01-01
+2026-03-02 14:27:24,982 - ERROR - Execution failed for ABNB: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:27:25,351 - ERROR - Execution failed for AAPL: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:27:25,614 - ERROR - Execution failed for ACB: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:27:25,644 - ERROR - Execution failed for ABT: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:27:25,978 - ERROR - Execution failed for ACA: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:27:25,985 - ERROR - Execution failed for ACAD: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:27:25,987 - ERROR - Execution failed for ACCL: No spot data found for ACCL within 5 days of 2023-01-01
+2026-03-02 14:27:26,279 - ERROR - Execution failed for ACCO: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:27:26,359 - ERROR - Execution failed for ACCS: No spot data found for ACCS within 5 days of 2023-01-01
+2026-03-02 14:27:26,712 - ERROR - Execution failed for ACDC: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:27:26,722 - ERROR - Execution failed for ACEL: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:27:26,752 - ERROR - Execution failed for ACET: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:27:26,892 - ERROR - Execution failed for ACFN: Polygon Discovery Error for ACFN: No contracts found for ACFN after 2023-05-31
+2026-03-02 14:27:27,256 - ERROR - Execution failed for ACGL: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:27:27,326 - ERROR - Execution failed for ACGLN: Polygon Discovery Error for ACGLN: No contracts found for ACGLN after 2023-05-31
+2026-03-02 14:27:27,388 - ERROR - Execution failed for ACH: No spot data found for ACH within 5 days of 2023-01-01
+2026-03-02 14:27:27,533 - ERROR - Execution failed for ACHC: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:27:27,826 - ERROR - Execution failed for ACHV: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:27:28,849 - ERROR - Execution failed for ACHR: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:27:29,508 - ERROR - Execution failed for ACI: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:28:47,362 - ERROR - Execution failed for AAL: Polygon Error for AAL: ContractsClient.list_options_contracts() got an unexpected keyword argument 'active'
+2026-03-02 14:28:47,369 - ERROR - Execution failed for AAME: Polygon Error for AAME: ContractsClient.list_options_contracts() got an unexpected keyword argument 'active'
+2026-03-02 14:28:47,374 - ERROR - Execution failed for A: Polygon Error for A: ContractsClient.list_options_contracts() got an unexpected keyword argument 'active'
+2026-03-02 14:28:47,376 - ERROR - Execution failed for AA: Polygon Error for AA: ContractsClient.list_options_contracts() got an unexpected keyword argument 'active'
+2026-03-02 14:28:47,604 - ERROR - Execution failed for AACB: No spot data found for AACB within 7 days of 2023-01-01
+2026-03-02 14:28:47,924 - ERROR - Execution failed for AAOI: Polygon Error for AAOI: ContractsClient.list_options_contracts() got an unexpected keyword argument 'active'
+2026-03-02 14:28:47,938 - ERROR - Execution failed for AAON: Polygon Error for AAON: ContractsClient.list_options_contracts() got an unexpected keyword argument 'active'
+2026-03-02 14:28:47,952 - ERROR - Execution failed for AAP: Polygon Error for AAP: ContractsClient.list_options_contracts() got an unexpected keyword argument 'active'
+2026-03-02 14:28:48,103 - ERROR - Execution failed for AAPL: Polygon Error for AAPL: ContractsClient.list_options_contracts() got an unexpected keyword argument 'active'
+2026-03-02 14:28:48,174 - ERROR - Execution failed for AAMI: No spot data found for AAMI within 7 days of 2023-01-01
+2026-03-02 14:28:48,467 - ERROR - Execution failed for AAT: Polygon Error for AAT: ContractsClient.list_options_contracts() got an unexpected keyword argument 'active'
+2026-03-02 14:28:48,647 - ERROR - Execution failed for AB: Polygon Error for AB: ContractsClient.list_options_contracts() got an unexpected keyword argument 'active'
+2026-03-02 14:28:48,714 - ERROR - Execution failed for AARD: No spot data found for AARD within 7 days of 2023-01-01
+2026-03-02 14:28:48,763 - ERROR - Execution failed for AAUC: No spot data found for AAUC within 7 days of 2023-01-01
+2026-03-02 14:28:48,950 - ERROR - Execution failed for ABBV: Polygon Error for ABBV: ContractsClient.list_options_contracts() got an unexpected keyword argument 'active'
+2026-03-02 14:28:48,990 - ERROR - Execution failed for ABAT: No spot data found for ABAT within 7 days of 2023-01-01
+2026-03-02 14:28:49,179 - ERROR - Execution failed for ABCB: Polygon Error for ABCB: ContractsClient.list_options_contracts() got an unexpected keyword argument 'active'
+2026-03-02 14:28:49,227 - ERROR - Execution failed for ABCL: Polygon Error for ABCL: ContractsClient.list_options_contracts() got an unexpected keyword argument 'active'
+2026-03-02 14:28:49,274 - ERROR - Execution failed for ABEO: Polygon Error for ABEO: ContractsClient.list_options_contracts() got an unexpected keyword argument 'active'
+2026-03-02 14:28:49,464 - ERROR - Execution failed for ABG: Polygon Error for ABG: ContractsClient.list_options_contracts() got an unexpected keyword argument 'active'
+2026-03-02 14:28:49,702 - ERROR - Execution failed for ABM: Polygon Error for ABM: ContractsClient.list_options_contracts() got an unexpected keyword argument 'active'
+2026-03-02 14:28:49,706 - ERROR - Execution failed for ABLV: No spot data found for ABLV within 7 days of 2023-01-01
+2026-03-02 14:28:49,728 - ERROR - Execution failed for ABNB: Polygon Error for ABNB: ContractsClient.list_options_contracts() got an unexpected keyword argument 'active'
+2026-03-02 14:28:49,784 - ERROR - Execution failed for ABOS: Polygon Error for ABOS: ContractsClient.list_options_contracts() got an unexpected keyword argument 'active'
+2026-03-02 14:28:49,962 - ERROR - Execution failed for ABR: Polygon Error for ABR: ContractsClient.list_options_contracts() got an unexpected keyword argument 'active'
+2026-03-02 14:28:50,244 - ERROR - Execution failed for ABSI: Polygon Error for ABSI: ContractsClient.list_options_contracts() got an unexpected keyword argument 'active'
+2026-03-02 14:28:50,267 - ERROR - Execution failed for ABT: Polygon Error for ABT: ContractsClient.list_options_contracts() got an unexpected keyword argument 'active'
+2026-03-02 14:28:50,467 - ERROR - Execution failed for ABUS: Polygon Error for ABUS: ContractsClient.list_options_contracts() got an unexpected keyword argument 'active'
+2026-03-02 14:28:50,499 - ERROR - Execution failed for ABTC: No spot data found for ABTC within 7 days of 2023-01-01
+2026-03-02 14:28:50,761 - ERROR - Execution failed for ABVC: Polygon Error for ABVC: ContractsClient.list_options_contracts() got an unexpected keyword argument 'active'
+2026-03-02 14:28:51,045 - ERROR - Execution failed for ABVE: No spot data found for ABVE within 7 days of 2023-01-01
+2026-03-02 14:28:51,047 - ERROR - Execution failed for ACA: Polygon Error for ACA: ContractsClient.list_options_contracts() got an unexpected keyword argument 'active'
+2026-03-02 14:28:51,224 - ERROR - Execution failed for ACAD: Polygon Error for ACAD: ContractsClient.list_options_contracts() got an unexpected keyword argument 'active'
+2026-03-02 14:28:51,239 - ERROR - Execution failed for ABX: No spot data found for ABX within 7 days of 2023-01-01
+2026-03-02 14:28:51,570 - ERROR - Execution failed for ACB: Polygon Error for ACB: ContractsClient.list_options_contracts() got an unexpected keyword argument 'active'
+2026-03-02 14:28:51,746 - ERROR - Execution failed for ACCO: Polygon Error for ACCO: ContractsClient.list_options_contracts() got an unexpected keyword argument 'active'
+2026-03-02 14:28:51,802 - ERROR - Execution failed for ACCL: No spot data found for ACCL within 7 days of 2023-01-01
+2026-03-02 14:28:52,041 - ERROR - Execution failed for ACCS: No spot data found for ACCS within 7 days of 2023-01-01
+2026-03-02 14:28:52,068 - ERROR - Execution failed for ACDC: Polygon Error for ACDC: ContractsClient.list_options_contracts() got an unexpected keyword argument 'active'
+2026-03-02 14:28:52,263 - ERROR - Execution failed for ACEL: Polygon Error for ACEL: ContractsClient.list_options_contracts() got an unexpected keyword argument 'active'
+2026-03-02 14:28:52,329 - ERROR - Execution failed for ACET: Polygon Error for ACET: ContractsClient.list_options_contracts() got an unexpected keyword argument 'active'
+2026-03-02 14:28:52,544 - ERROR - Execution failed for ACFN: Polygon Error for ACFN: ContractsClient.list_options_contracts() got an unexpected keyword argument 'active'
+2026-03-02 14:28:52,584 - ERROR - Execution failed for ACGL: Polygon Error for ACGL: ContractsClient.list_options_contracts() got an unexpected keyword argument 'active'
+2026-03-02 14:28:53,056 - ERROR - Execution failed for ACHC: Polygon Error for ACHC: ContractsClient.list_options_contracts() got an unexpected keyword argument 'active'
+2026-03-02 14:28:53,130 - ERROR - Execution failed for ACHR: Polygon Error for ACHR: ContractsClient.list_options_contracts() got an unexpected keyword argument 'active'
+2026-03-02 14:28:53,143 - ERROR - Execution failed for ACH: No spot data found for ACH within 7 days of 2023-01-01
+2026-03-02 14:28:53,567 - ERROR - Execution failed for ACHV: Polygon Error for ACHV: ContractsClient.list_options_contracts() got an unexpected keyword argument 'active'
+2026-03-02 14:28:53,626 - ERROR - Execution failed for ACI: Polygon Error for ACI: ContractsClient.list_options_contracts() got an unexpected keyword argument 'active'
+2026-03-02 14:28:54,749 - ERROR - Execution failed for ACGLN: Polygon Error for ACGLN: ContractsClient.list_options_contracts() got an unexpected keyword argument 'active'
+2026-03-02 14:28:55,083 - ERROR - Execution failed for ABTS: No spot data found for ABTS within 7 days of 2023-01-01
+2026-03-02 14:32:57,646 - ERROR - Execution failed for AAME: Polygon Global Error for AAME: No call contracts found for AAME as of 2023-01-01
+2026-03-02 14:32:57,686 - ERROR - Execution failed for A: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:32:57,705 - ERROR - Execution failed for AAL: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:32:57,735 - ERROR - Execution failed for AA: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:32:57,977 - ERROR - Execution failed for AACB: Spot data missing for AACB near 2023-01-01
+2026-03-02 14:32:58,370 - ERROR - Execution failed for AAON: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:32:58,388 - ERROR - Execution failed for AAOI: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:32:58,522 - ERROR - Execution failed for AAP: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:32:58,856 - ERROR - Execution failed for AAPL: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:32:58,969 - ERROR - Execution failed for AAT: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:32:58,988 - ERROR - Execution failed for AAMI: Spot data missing for AAMI near 2023-01-01
+2026-03-02 14:32:59,302 - ERROR - Execution failed for AARD: Spot data missing for AARD near 2023-01-01
+2026-03-02 14:32:59,448 - ERROR - Execution failed for AAUC: Spot data missing for AAUC near 2023-01-01
+2026-03-02 14:32:59,463 - ERROR - Execution failed for AB: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:32:59,817 - ERROR - Execution failed for ABBV: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:32:59,947 - ERROR - Execution failed for ABCB: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:33:00,151 - ERROR - Execution failed for ABCL: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:33:00,153 - ERROR - Execution failed for ABAT: Spot data missing for ABAT near 2023-01-01
+2026-03-02 14:33:00,191 - ERROR - Execution failed for ABEO: Polygon Global Error for ABEO: No call contracts found for ABEO as of 2023-01-01
+2026-03-02 14:33:00,497 - ERROR - Execution failed for ABG: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:33:00,816 - ERROR - Execution failed for ABM: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:33:00,841 - ERROR - Execution failed for ABOS: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:33:00,902 - ERROR - Execution failed for ABLV: Spot data missing for ABLV near 2023-01-01
+2026-03-02 14:33:00,953 - ERROR - Execution failed for ABNB: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:33:01,163 - ERROR - Execution failed for ABR: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:33:01,467 - ERROR - Execution failed for ABSI: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:33:01,654 - ERROR - Execution failed for ABT: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:33:01,837 - ERROR - Execution failed for ABUS: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:33:02,042 - ERROR - Execution failed for ABTS: Spot data missing for ABTS near 2023-01-01
+2026-03-02 14:33:02,150 - ERROR - Execution failed for ABVC: Polygon Global Error for ABVC: No call contracts found for ABVC as of 2023-01-01
+2026-03-02 14:33:02,641 - ERROR - Execution failed for ACA: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:33:02,868 - ERROR - Execution failed for ACAD: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:33:02,901 - ERROR - Execution failed for ABVE: Spot data missing for ABVE near 2023-01-01
+2026-03-02 14:33:03,061 - ERROR - Execution failed for ABTC: Spot data missing for ABTC near 2023-01-01
+2026-03-02 14:33:03,095 - ERROR - Execution failed for ABX: Spot data missing for ABX near 2023-01-01
+2026-03-02 14:33:03,258 - ERROR - Execution failed for ACB: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:33:03,527 - ERROR - Execution failed for ACCO: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:33:03,731 - ERROR - Execution failed for ACDC: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:33:03,827 - ERROR - Execution failed for ACCL: Spot data missing for ACCL near 2023-01-01
+2026-03-02 14:33:03,840 - ERROR - Execution failed for ACEL: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:33:04,050 - ERROR - Execution failed for ACCS: Spot data missing for ACCS near 2023-01-01
+2026-03-02 14:33:04,326 - ERROR - Execution failed for ACFN: Polygon Global Error for ACFN: No call contracts found for ACFN as of 2023-01-01
+2026-03-02 14:33:04,443 - ERROR - Execution failed for ACGLN: Polygon Global Error for ACGLN: No call contracts found for ACGLN as of 2023-01-01
+2026-03-02 14:33:04,451 - ERROR - Execution failed for ACGL: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:33:04,936 - ERROR - Execution failed for ACH: Spot data missing for ACH near 2023-01-01
+2026-03-02 14:33:05,018 - ERROR - Execution failed for ACHR: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:33:05,044 - ERROR - Execution failed for ACHV: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:33:05,060 - ERROR - Execution failed for ACHC: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:33:05,590 - ERROR - Execution failed for ACI: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:33:06,055 - ERROR - Execution failed for ACET: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:29,062 - ERROR - Execution failed for AAON: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:29,062 - ERROR - Execution failed for AAME: Polygon Global Error for AAME: No call contracts found for AAME as of 2023-01-01
+2026-03-02 14:35:29,076 - ERROR - Execution failed for AAOI: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:29,118 - ERROR - Execution failed for ABG: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:29,134 - ERROR - Execution failed for ABEO: Polygon Global Error for ABEO: No call contracts found for ABEO as of 2023-01-01
+2026-03-02 14:35:29,139 - ERROR - Execution failed for ABCL: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:29,158 - ERROR - Execution failed for AB: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:29,194 - ERROR - Execution failed for A: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:29,238 - ERROR - Execution failed for ABCB: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:29,346 - ERROR - Execution failed for AAL: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:29,356 - ERROR - Execution failed for AAT: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:29,364 - ERROR - Execution failed for AAP: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:29,436 - ERROR - Execution failed for AA: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:29,529 - ERROR - Execution failed for ABBV: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:29,650 - ERROR - Execution failed for AARD: Spot data missing for AARD near 2023-01-01
+2026-03-02 14:35:29,775 - ERROR - Execution failed for ABAT: Spot data missing for ABAT near 2023-01-01
+2026-03-02 14:35:29,839 - ERROR - Execution failed for AAUC: Spot data missing for AAUC near 2023-01-01
+2026-03-02 14:35:29,840 - ERROR - Execution failed for AACB: Spot data missing for AACB near 2023-01-01
+2026-03-02 14:35:29,898 - ERROR - Execution failed for AAPL: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:29,904 - ERROR - Execution failed for AAMI: Spot data missing for AAMI near 2023-01-01
+2026-03-02 14:35:30,007 - ERROR - Execution failed for ABM: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:30,042 - ERROR - Execution failed for ABNB: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:30,239 - ERROR - Execution failed for ABOS: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:30,277 - ERROR - Execution failed for ABSI: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:30,335 - ERROR - Execution failed for ABVC: Polygon Global Error for ABVC: No call contracts found for ABVC as of 2023-01-01
+2026-03-02 14:35:30,347 - ERROR - Execution failed for ACA: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:30,418 - ERROR - Execution failed for ABT: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:30,511 - ERROR - Execution failed for ABR: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:30,671 - ERROR - Execution failed for ABUS: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:30,678 - ERROR - Execution failed for ABLV: Spot data missing for ABLV near 2023-01-01
+2026-03-02 14:35:30,688 - ERROR - Execution failed for ACCO: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:30,698 - ERROR - Execution failed for ACDC: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:30,761 - ERROR - Execution failed for ACAD: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:30,762 - ERROR - Execution failed for ABX: Spot data missing for ABX near 2023-01-01
+2026-03-02 14:35:30,764 - ERROR - Execution failed for ABTS: Spot data missing for ABTS near 2023-01-01
+2026-03-02 14:35:30,769 - ERROR - Execution failed for ABTC: Spot data missing for ABTC near 2023-01-01
+2026-03-02 14:35:30,778 - ERROR - Execution failed for ACET: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:30,842 - ERROR - Execution failed for ACEL: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:30,889 - ERROR - Execution failed for ABVE: Spot data missing for ABVE near 2023-01-01
+2026-03-02 14:35:30,931 - ERROR - Execution failed for ACB: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:30,976 - ERROR - Execution failed for ACFN: Polygon Global Error for ACFN: No call contracts found for ACFN as of 2023-01-01
+2026-03-02 14:35:31,100 - ERROR - Execution failed for ACHC: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:31,101 - ERROR - Execution failed for ACGLN: Polygon Global Error for ACGLN: No call contracts found for ACGLN as of 2023-01-01
+2026-03-02 14:35:31,117 - ERROR - Execution failed for ACCS: Spot data missing for ACCS near 2023-01-01
+2026-03-02 14:35:31,254 - ERROR - Execution failed for ACHR: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:31,435 - ERROR - Execution failed for ACGL: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:31,439 - ERROR - Execution failed for ACH: Spot data missing for ACH near 2023-01-01
+2026-03-02 14:35:31,551 - ERROR - Execution failed for ACIU: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:31,618 - ERROR - Execution failed for ACI: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:31,620 - ERROR - Execution failed for ACCL: Spot data missing for ACCL near 2023-01-01
+2026-03-02 14:35:31,673 - ERROR - Execution failed for ACMR: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:31,683 - ERROR - Execution failed for ACLX: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:31,690 - ERROR - Execution failed for ACHV: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:31,730 - ERROR - Execution failed for ACM: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:31,753 - ERROR - Execution failed for ACLS: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:31,872 - ERROR - Execution failed for ACIW: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:31,912 - ERROR - Execution failed for ACNT: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:31,918 - ERROR - Execution failed for ACN: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:32,039 - ERROR - Execution failed for ACRE: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:32,046 - ERROR - Execution failed for ACR: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:32,052 - ERROR - Execution failed for ACON: Polygon Global Error for ACON: No call contracts found for ACON as of 2023-01-01
+2026-03-02 14:35:32,124 - ERROR - Execution failed for ACIC: Spot data missing for ACIC near 2023-01-01
+2026-03-02 14:35:32,186 - ERROR - Execution failed for ACRV: Polygon Global Error for ACRV: No call contracts found for ACRV as of 2023-01-01
+2026-03-02 14:35:32,226 - ERROR - Execution failed for ACT: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:32,245 - ERROR - Execution failed for ACRS: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:32,310 - ERROR - Execution failed for ACTG: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:32,329 - ERROR - Execution failed for ACNB: Polygon Global Error for ACNB: No call contracts found for ACNB as of 2023-01-01
+2026-03-02 14:35:32,367 - ERROR - Execution failed for ACU: Polygon Global Error for ACU: No call contracts found for ACU as of 2023-01-01
+2026-03-02 14:35:32,534 - ERROR - Execution failed for ACVA: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:32,552 - ERROR - Execution failed for ACOG: Spot data missing for ACOG near 2023-01-01
+2026-03-02 14:35:32,617 - ERROR - Execution failed for ACXP: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:32,682 - ERROR - Execution failed for ACTU: Spot data missing for ACTU near 2023-01-01
+2026-03-02 14:35:32,869 - ERROR - Execution failed for ADAC: Spot data missing for ADAC near 2023-01-01
+2026-03-02 14:35:33,024 - ERROR - Execution failed for ADCT: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:33,052 - ERROR - Execution failed for ADAMI: Spot data missing for ADAMI near 2023-01-01
+2026-03-02 14:35:33,077 - ERROR - Execution failed for ADEA: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:33,089 - ERROR - Execution failed for ADC: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:33,146 - ERROR - Execution failed for AD: Spot data missing for AD near 2023-01-01
+2026-03-02 14:35:33,196 - ERROR - Execution failed for ADIL: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:33,196 - ERROR - Execution failed for ADAM: Spot data missing for ADAM near 2023-01-01
+2026-03-02 14:35:33,214 - ERROR - Execution failed for ADBE: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:33,267 - ERROR - Execution failed for ADAMH: Spot data missing for ADAMH near 2023-01-01
+2026-03-02 14:35:33,282 - ERROR - Execution failed for ADAML: Spot data missing for ADAML near 2023-01-01
+2026-03-02 14:35:33,308 - ERROR - Execution failed for ADI: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:33,313 - ERROR - Execution failed for ADAMG: Spot data missing for ADAMG near 2023-01-01
+2026-03-02 14:35:33,365 - ERROR - Execution failed for ADAMO: Spot data missing for ADAMO near 2023-01-01
+2026-03-02 14:35:33,426 - ERROR - Execution failed for ADMA: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:33,429 - ERROR - Execution failed for ADAMZ: Spot data missing for ADAMZ near 2023-01-01
+2026-03-02 14:35:33,475 - ERROR - Execution failed for ADNT: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:33,604 - ERROR - Execution failed for ADPT: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:33,683 - ERROR - Execution failed for ADM: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:33,737 - ERROR - Execution failed for ADP: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:33,930 - ERROR - Execution failed for ADGM: Spot data missing for ADGM near 2023-01-01
+2026-03-02 14:35:34,080 - ERROR - Execution failed for ADTX: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:34,110 - ERROR - Execution failed for ADSE: Polygon Global Error for ADSE: No call contracts found for ADSE as of 2023-01-01
+2026-03-02 14:35:34,111 - ERROR - Execution failed for ADT: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:34,143 - ERROR - Execution failed for ADSK: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:34,288 - ERROR - Execution failed for ADTN: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:34,307 - ERROR - Execution failed for ADUS: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:34,322 - ERROR - Execution failed for ADV: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:34,370 - ERROR - Execution failed for AEHL: Polygon Global Error for AEHL: No call contracts found for AEHL as of 2023-01-01
+2026-03-02 14:35:34,407 - ERROR - Execution failed for AEE: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:34,457 - ERROR - Execution failed for AEHR: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:34,490 - ERROR - Execution failed for AEM: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:34,507 - ERROR - Execution failed for AEIS: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:34,509 - ERROR - Execution failed for AEI: Polygon Global Error for AEI: No call contracts found for AEI as of 2023-01-01
+2026-03-02 14:35:34,623 - ERROR - Execution failed for AEMD: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:34,623 - ERROR - Execution failed for AEC: Spot data missing for AEC near 2023-01-01
+2026-03-02 14:35:34,666 - ERROR - Execution failed for ADVB: Spot data missing for ADVB near 2023-01-01
+2026-03-02 14:35:34,691 - ERROR - Execution failed for AEAQ: Spot data missing for AEAQ near 2023-01-01
+2026-03-02 14:35:34,707 - ERROR - Execution failed for ADUR: Spot data missing for ADUR near 2023-01-01
+2026-03-02 14:35:34,708 - ERROR - Execution failed for AEBI: Spot data missing for AEBI near 2023-01-01
+2026-03-02 14:35:34,825 - ERROR - Execution failed for AEG: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:34,911 - ERROR - Execution failed for AEO: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:34,947 - ERROR - Execution failed for AEP: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:35,104 - ERROR - Execution failed for AER: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:35,155 - ERROR - Execution failed for AES: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:35,257 - ERROR - Execution failed for AEVA: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:35,260 - ERROR - Execution failed for AEON: Spot data missing for AEON near 2023-01-01
+2026-03-02 14:35:35,260 - ERROR - Execution failed for AENT: Spot data missing for AENT near 2023-01-01
+2026-03-02 14:35:35,359 - ERROR - Execution failed for AEYE: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:35,372 - ERROR - Execution failed for AFBI: Polygon Global Error for AFBI: No call contracts found for AFBI as of 2023-01-01
+2026-03-02 14:35:35,478 - ERROR - Execution failed for AFG: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:35,526 - ERROR - Execution failed for AFRI: Polygon Global Error for AFRI: No call contracts found for AFRI as of 2023-01-01
+2026-03-02 14:35:35,548 - ERROR - Execution failed for AERT: Spot data missing for AERT near 2023-01-01
+2026-03-02 14:35:35,622 - ERROR - Execution failed for AFRM: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:35,700 - ERROR - Execution failed for AFL: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:35,755 - ERROR - Execution failed for AG: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:35,766 - ERROR - Execution failed for AFCG: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:35,781 - ERROR - Execution failed for AFYA: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:35,837 - ERROR - Execution failed for AESI: Spot data missing for AESI near 2023-01-01
+2026-03-02 14:35:35,872 - ERROR - Execution failed for AFJK: Spot data missing for AFJK near 2023-01-01
+2026-03-02 14:35:35,949 - ERROR - Execution failed for AEXA: Spot data missing for AEXA near 2023-01-01
+2026-03-02 14:35:36,040 - ERROR - Execution failed for AGCO: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:36,040 - ERROR - Execution failed for AGAE: Polygon Global Error for AGAE: No call contracts found for AGAE as of 2023-01-01
+2026-03-02 14:35:36,055 - ERROR - Execution failed for AGI: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:36,067 - ERROR - Execution failed for AGEN: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:36,143 - ERROR - Execution failed for AGIO: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:36,325 - ERROR - Execution failed for AGCC: Spot data missing for AGCC near 2023-01-01
+2026-03-02 14:35:36,346 - ERROR - Execution failed for AGM: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:36,368 - ERROR - Execution failed for AGL: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:36,417 - ERROR - Execution failed for AGMH: Polygon Global Error for AGMH: No call contracts found for AGMH as of 2023-01-01
+2026-03-02 14:35:36,440 - ERROR - Execution failed for AGM.A: Polygon Global Error for AGM.A: No call contracts found for AGM.A as of 2023-01-01
+2026-03-02 14:35:36,461 - ERROR - Execution failed for AGH: Spot data missing for AGH near 2023-01-01
+2026-03-02 14:35:36,532 - ERROR - Execution failed for AGNCO: Polygon Global Error for AGNCO: No call contracts found for AGNCO as of 2023-01-01
+2026-03-02 14:35:36,537 - ERROR - Execution failed for AGIG: Spot data missing for AGIG near 2023-01-01
+2026-03-02 14:35:36,629 - ERROR - Execution failed for AGNC: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:36,639 - ERROR - Execution failed for AGO: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:36,704 - ERROR - Execution failed for AGRO: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:36,763 - ERROR - Execution failed for AGNCL: Polygon Global Error for AGNCL: No call contracts found for AGNCL as of 2023-01-01
+2026-03-02 14:35:36,763 - ERROR - Execution failed for AGBK: Spot data missing for AGBK near 2023-01-01
+2026-03-02 14:35:36,836 - ERROR - Execution failed for AGYS: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:36,866 - ERROR - Execution failed for AGX: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:36,884 - ERROR - Execution failed for AHCO: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:36,977 - ERROR - Execution failed for AGPU: Spot data missing for AGPU near 2023-01-01
+2026-03-02 14:35:37,081 - ERROR - Execution failed for AHH: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:37,095 - ERROR - Execution failed for AGRZ: Spot data missing for AGRZ near 2023-01-01
+2026-03-02 14:35:37,159 - ERROR - Execution failed for AHT: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:37,246 - ERROR - Execution failed for AI: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:37,365 - ERROR - Execution failed for AHMA: Spot data missing for AHMA near 2023-01-01
+2026-03-02 14:35:37,466 - ERROR - Execution failed for AIHS: Polygon Global Error for AIHS: No call contracts found for AIHS as of 2023-01-01
+2026-03-02 14:35:37,541 - ERROR - Execution failed for AHR: Spot data missing for AHR near 2023-01-01
+2026-03-02 14:35:37,584 - ERROR - Execution failed for AIFF: Spot data missing for AIFF near 2023-01-01
+2026-03-02 14:35:37,588 - ERROR - Execution failed for AIM: Polygon Global Error for AIM: No call contracts found for AIM as of 2023-01-01
+2026-03-02 14:35:37,618 - ERROR - Execution failed for AIMD: Polygon Global Error for AIMD: No call contracts found for AIMD as of 2023-01-01
+2026-03-02 14:35:37,655 - ERROR - Execution failed for AIN: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:37,730 - ERROR - Execution failed for AIDX: Spot data missing for AIDX near 2023-01-01
+2026-03-02 14:35:37,837 - ERROR - Execution failed for AIG: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:37,918 - ERROR - Execution failed for AIR: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:37,937 - ERROR - Execution failed for AIRI: Polygon Global Error for AIRI: No call contracts found for AIRI as of 2023-01-01
+2026-03-02 14:35:37,965 - ERROR - Execution failed for AIRG: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:37,996 - ERROR - Execution failed for AIIO: Spot data missing for AIIO near 2023-01-01
+2026-03-02 14:35:38,045 - ERROR - Execution failed for AIIA: Spot data missing for AIIA near 2023-01-01
+2026-03-02 14:35:38,127 - ERROR - Execution failed for AIOS: Spot data missing for AIOS near 2023-01-01
+2026-03-02 14:35:38,143 - ERROR - Execution failed for AII: Spot data missing for AII near 2023-01-01
+2026-03-02 14:35:38,170 - ERROR - Execution failed for AIRE: Spot data missing for AIRE near 2023-01-01
+2026-03-02 14:35:38,220 - ERROR - Execution failed for AIRS: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:38,237 - ERROR - Execution failed for AIFU: Spot data missing for AIFU near 2023-01-01
+2026-03-02 14:35:38,262 - ERROR - Execution failed for AIP: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:38,346 - ERROR - Execution failed for AIRT: Polygon Global Error for AIRT: No call contracts found for AIRT as of 2023-01-01
+2026-03-02 14:35:38,364 - ERROR - Execution failed for AIV: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:38,394 - ERROR - Execution failed for AIT: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:38,525 - ERROR - Execution failed for AIRO: Spot data missing for AIRO near 2023-01-01
+2026-03-02 14:35:38,540 - ERROR - Execution failed for AIRJ: Spot data missing for AIRJ near 2023-01-01
+2026-03-02 14:35:38,555 - ERROR - Execution failed for AIOT: Spot data missing for AIOT near 2023-01-01
+2026-03-02 14:35:38,698 - ERROR - Execution failed for AIZ: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:38,699 - ERROR - Execution failed for AISP: Spot data missing for AISP near 2023-01-01
+2026-03-02 14:35:38,731 - ERROR - Execution failed for AJG: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:38,764 - ERROR - Execution failed for AKA: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:38,799 - ERROR - Execution failed for AKAN: Polygon Global Error for AKAN: No call contracts found for AKAN as of 2023-01-01
+2026-03-02 14:35:38,861 - ERROR - Execution failed for AKAM: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:38,918 - ERROR - Execution failed for AKBA: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:38,991 - ERROR - Execution failed for AKTS: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:39,009 - ERROR - Execution failed for AKR: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:39,058 - ERROR - Execution failed for AL: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:39,112 - ERROR - Execution failed for ALBT: Polygon Global Error for ALBT: No call contracts found for ALBT as of 2023-01-01
+2026-03-02 14:35:39,129 - ERROR - Execution failed for AIXC: Spot data missing for AIXC near 2023-01-01
+2026-03-02 14:35:39,180 - ERROR - Execution failed for ALC: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:39,204 - ERROR - Execution failed for ALCO: Polygon Global Error for ALCO: No call contracts found for ALCO as of 2023-01-01
+2026-03-02 14:35:39,362 - ERROR - Execution failed for ALDX: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:39,404 - ERROR - Execution failed for ALEC: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:39,540 - ERROR - Execution failed for ALEX: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:39,568 - ERROR - Execution failed for ALGM: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:39,595 - ERROR - Execution failed for ALCY: Spot data missing for ALCY near 2023-01-01
+2026-03-02 14:35:39,713 - ERROR - Execution failed for ALB: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:39,721 - ERROR - Execution failed for ALAB: Spot data missing for ALAB near 2023-01-01
+2026-03-02 14:35:39,745 - ERROR - Execution failed for ALG: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:39,750 - ERROR - Execution failed for ALGS: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:39,782 - ERROR - Execution failed for ALDF: Spot data missing for ALDF near 2023-01-01
+2026-03-02 14:35:39,869 - ERROR - Execution failed for ALGT: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:39,901 - ERROR - Execution failed for ALGN: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:40,026 - ERROR - Execution failed for ALF: Spot data missing for ALF near 2023-01-01
+2026-03-02 14:35:40,093 - ERROR - Execution failed for ALIT: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:40,116 - ERROR - Execution failed for ALHC: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:40,164 - ERROR - Execution failed for ALKT: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:40,171 - ERROR - Execution failed for ALKS: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:40,191 - ERROR - Execution failed for ALK: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:40,273 - ERROR - Execution failed for ALLE: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:40,319 - ERROR - Execution failed for ALLO: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:40,340 - ERROR - Execution failed for ALL: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:40,391 - ERROR - Execution failed for ALLR: Polygon Global Error for ALLR: No call contracts found for ALLR as of 2023-01-01
+2026-03-02 14:35:40,405 - ERROR - Execution failed for ALLT: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:40,451 - ERROR - Execution failed for ALIS: Spot data missing for ALIS near 2023-01-01
+2026-03-02 14:35:40,497 - ERROR - Execution failed for ALH: Spot data missing for ALH near 2023-01-01
+2026-03-02 14:35:40,563 - ERROR - Execution failed for ALLY: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:40,673 - ERROR - Execution failed for ALOT: Polygon Global Error for ALOT: No call contracts found for ALOT as of 2023-01-01
+2026-03-02 14:35:40,764 - ERROR - Execution failed for ALNY: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:40,877 - ERROR - Execution failed for ALPS: Polygon Global Error for ALPS: No call contracts found for ALPS as of 2023-01-01
+2026-03-02 14:35:40,936 - ERROR - Execution failed for ALM: Spot data missing for ALM near 2023-01-01
+2026-03-02 14:35:41,015 - ERROR - Execution failed for ALNT: Spot data missing for ALNT near 2023-01-01
+2026-03-02 14:35:41,015 - ERROR - Execution failed for ALMS: Spot data missing for ALMS near 2023-01-01
+2026-03-02 14:35:41,053 - ERROR - Execution failed for ALRM: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:41,058 - ERROR - Execution failed for ALMU: Spot data missing for ALMU near 2023-01-01
+2026-03-02 14:35:41,071 - ERROR - Execution failed for ALSN: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:41,080 - ERROR - Execution failed for ALRS: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:41,143 - ERROR - Execution failed for ALT: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:41,228 - ERROR - Execution failed for ALTO: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:41,239 - ERROR - Execution failed for ALTG: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:41,253 - ERROR - Execution failed for ALOY: Spot data missing for ALOY near 2023-01-01
+2026-03-02 14:35:41,298 - ERROR - Execution failed for ALTI: Polygon Global Error for ALTI: No call contracts found for ALTI as of 2023-01-01
+2026-03-02 14:35:41,361 - ERROR - Execution failed for ALV: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:41,361 - ERROR - Execution failed for ALVO: Polygon Global Error for ALVO: No call contracts found for ALVO as of 2023-01-01
+2026-03-02 14:35:41,419 - ERROR - Execution failed for ALX: Polygon Global Error for ALX: No call contracts found for ALX as of 2023-01-01
+2026-03-02 14:35:41,480 - ERROR - Execution failed for ALXO: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:41,569 - ERROR - Execution failed for ALTS: Spot data missing for ALTS near 2023-01-01
+2026-03-02 14:35:41,586 - ERROR - Execution failed for ALZN: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:41,591 - ERROR - Execution failed for ALUR: Spot data missing for ALUR near 2023-01-01
+2026-03-02 14:35:41,654 - ERROR - Execution failed for ALUB: Spot data missing for ALUB near 2023-01-01
+2026-03-02 14:35:41,780 - ERROR - Execution failed for AM: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:41,905 - ERROR - Execution failed for AMAL: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:41,928 - ERROR - Execution failed for AMBP: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:41,994 - ERROR - Execution failed for AMCI: Polygon Global Error for AMCI: No call contracts found for AMCI as of 2023-01-01
+2026-03-02 14:35:42,046 - ERROR - Execution failed for AMC: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:42,246 - ERROR - Execution failed for AMBA: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:42,264 - ERROR - Execution failed for AMAT: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:42,361 - ERROR - Execution failed for AMCX: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:42,379 - ERROR - Execution failed for AMCR: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:42,404 - ERROR - Execution failed for AME: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:42,533 - ERROR - Execution failed for AMD: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:42,568 - ERROR - Execution failed for AMG: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:42,588 - ERROR - Execution failed for AMPG: Polygon Global Error for AMPG: No call contracts found for AMPG as of 2023-01-01
+2026-03-02 14:35:42,647 - ERROR - Execution failed for AMBQ: Spot data missing for AMBQ near 2023-01-01
+2026-03-02 14:35:42,670 - ERROR - Execution failed for AMKR: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:42,746 - ERROR - Execution failed for AMPH: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:42,785 - ERROR - Execution failed for AMN: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:42,806 - ERROR - Execution failed for AMLX: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:42,917 - ERROR - Execution failed for AMPL: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:42,974 - ERROR - Execution failed for AMPX: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:43,041 - ERROR - Execution failed for AMPY: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:43,054 - ERROR - Execution failed for AMR: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:43,183 - ERROR - Execution failed for AMOD: Spot data missing for AMOD near 2023-01-01
+2026-03-02 14:35:43,187 - ERROR - Execution failed for AMRX: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:43,221 - ERROR - Execution failed for AMRC: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:43,300 - ERROR - Execution failed for AMS: Polygon Global Error for AMS: No call contracts found for AMS as of 2023-01-01
+2026-03-02 14:35:43,410 - ERROR - Execution failed for AMSC: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:43,446 - ERROR - Execution failed for AMGN: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:43,455 - ERROR - Execution failed for AMSF: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:43,498 - ERROR - Execution failed for AMST: Polygon Global Error for AMST: No call contracts found for AMST as of 2023-01-01
+2026-03-02 14:35:43,566 - ERROR - Execution failed for AMIX: Spot data missing for AMIX near 2023-01-01
+2026-03-02 14:35:43,594 - ERROR - Execution failed for AMTX: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:43,601 - ERROR - Execution failed for AMTB: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:43,660 - ERROR - Execution failed for AMT: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:43,724 - ERROR - Execution failed for AMWL: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:43,736 - ERROR - Execution failed for AMWD: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:43,965 - ERROR - Execution failed for ANAB: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:44,010 - ERROR - Execution failed for ANDE: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:44,094 - ERROR - Execution failed for AN: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:44,306 - ERROR - Execution failed for ANEB: Polygon Global Error for ANEB: No call contracts found for ANEB as of 2023-01-01
+2026-03-02 14:35:44,371 - ERROR - Execution failed for ANGH: Polygon Global Error for ANGH: No call contracts found for ANGH as of 2023-01-01
+2026-03-02 14:35:44,470 - ERROR - Execution failed for ANGO: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:44,526 - ERROR - Execution failed for AMZE: Spot data missing for AMZE near 2023-01-01
+2026-03-02 14:35:44,563 - ERROR - Execution failed for ANF: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:44,580 - ERROR - Execution failed for AMZN: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:44,628 - ERROR - Execution failed for ANIK: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:44,659 - ERROR - Execution failed for AMH: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:44,668 - ERROR - Execution failed for ANGI: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:44,810 - ERROR - Execution failed for AMP: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:44,871 - ERROR - Execution failed for ANDG: Spot data missing for ANDG near 2023-01-01
+2026-03-02 14:35:44,903 - ERROR - Execution failed for AMTM: Spot data missing for AMTM near 2023-01-01
+2026-03-02 14:35:44,936 - ERROR - Execution failed for ANGX: Spot data missing for ANGX near 2023-01-01
+2026-03-02 14:35:44,952 - ERROR - Execution failed for ANIX: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:45,220 - ERROR - Execution failed for ANNA: Spot data missing for ANNA near 2023-01-01
+2026-03-02 14:35:45,313 - ERROR - Execution failed for ANPA: Spot data missing for ANPA near 2023-01-01
+2026-03-02 14:35:45,390 - ERROR - Execution failed for ANVS: Polygon Global Error for ANVS: No call contracts found for ANVS as of 2023-01-01
+2026-03-02 14:35:45,398 - ERROR - Execution failed for AOMR: Polygon Global Error for AOMR: No call contracts found for AOMR as of 2023-01-01
+2026-03-02 14:35:45,401 - ERROR - Execution failed for ANTX: Polygon Global Error for ANTX: No call contracts found for ANTX as of 2023-01-01
+2026-03-02 14:35:45,425 - ERROR - Execution failed for AORT: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:45,492 - ERROR - Execution failed for AON: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:45,529 - ERROR - Execution failed for ANY: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:45,552 - ERROR - Execution failed for ANNX: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:45,570 - ERROR - Execution failed for AOS: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:45,607 - ERROR - Execution failed for AOSL: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:45,615 - ERROR - Execution failed for ANRO: Spot data missing for ANRO near 2023-01-01
+2026-03-02 14:35:45,631 - ERROR - Execution failed for AP: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:45,646 - ERROR - Execution failed for ANIP: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:45,703 - ERROR - Execution failed for AMRZ: Spot data missing for AMRZ near 2023-01-01
+2026-03-02 14:35:45,703 - ERROR - Execution failed for ANSC: Spot data missing for ANSC near 2023-01-01
+2026-03-02 14:35:45,749 - ERROR - Execution failed for APA: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:45,894 - ERROR - Execution failed for AOUT: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:45,934 - ERROR - Execution failed for APAC: Polygon Global Error for APAC: No call contracts found for APAC as of 2023-01-01
+2026-03-02 14:35:46,073 - ERROR - Execution failed for ANTA: Spot data missing for ANTA near 2023-01-01
+2026-03-02 14:35:46,264 - ERROR - Execution failed for APAM: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:46,365 - ERROR - Execution failed for APEI: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:46,422 - ERROR - Execution failed for APD: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:46,437 - ERROR - Execution failed for ANET: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:46,454 - ERROR - Execution failed for APH: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:46,505 - ERROR - Execution failed for APG: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:46,561 - ERROR - Execution failed for APLD: Polygon Global Error for APLD: No call contracts found for APLD as of 2023-01-01
+2026-03-02 14:35:46,582 - ERROR - Execution failed for APLE: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:46,636 - ERROR - Execution failed for APM: Polygon Global Error for APM: No call contracts found for APM as of 2023-01-01
+2026-03-02 14:35:46,656 - ERROR - Execution failed for APLS: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:46,683 - ERROR - Execution failed for APC: Spot data missing for APC near 2023-01-01
+2026-03-02 14:35:46,732 - ERROR - Execution failed for APOG: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:46,746 - ERROR - Execution failed for APAD: Spot data missing for APAD near 2023-01-01
+2026-03-02 14:35:46,802 - ERROR - Execution failed for APO: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:46,841 - ERROR - Execution failed for APP: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:46,894 - ERROR - Execution failed for APPF: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:46,918 - ERROR - Execution failed for APPN: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:47,016 - ERROR - Execution failed for APPS: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:47,021 - ERROR - Execution failed for APRE: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:47,017 - ERROR - Execution failed for APGE: Spot data missing for APGE near 2023-01-01
+2026-03-02 14:35:47,087 - ERROR - Execution failed for APLM: Spot data missing for APLM near 2023-01-01
+2026-03-02 14:35:47,270 - ERROR - Execution failed for APT: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:47,270 - ERROR - Execution failed for APVO: Polygon Global Error for APVO: No call contracts found for APVO as of 2023-01-01
+2026-03-02 14:35:47,300 - ERROR - Execution failed for APWC: Polygon Global Error for APWC: No call contracts found for APWC as of 2023-01-01
+2026-03-02 14:35:47,340 - ERROR - Execution failed for APTV: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:47,511 - ERROR - Execution failed for AQB: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:47,523 - ERROR - Execution failed for APYX: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:47,569 - ERROR - Execution failed for AQMS: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:47,603 - ERROR - Execution failed for AQN: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:47,616 - ERROR - Execution failed for APUS: Spot data missing for APUS near 2023-01-01
+2026-03-02 14:35:47,717 - ERROR - Execution failed for AR: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:47,827 - ERROR - Execution failed for APXT: Spot data missing for APXT near 2023-01-01
+2026-03-02 14:35:47,870 - ERROR - Execution failed for AQST: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:47,883 - ERROR - Execution failed for ARBE: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:47,912 - ERROR - Execution failed for ARCO: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:47,944 - ERROR - Execution failed for ARCC: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:47,960 - ERROR - Execution failed for ARCT: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:47,972 - ERROR - Execution failed for ARAY: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:48,076 - ERROR - Execution failed for AREB: Polygon Global Error for AREB: No call contracts found for AREB as of 2023-01-01
+2026-03-02 14:35:48,098 - ERROR - Execution failed for ARDX: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:48,147 - ERROR - Execution failed for ARE: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:48,269 - ERROR - Execution failed for AREC: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:48,269 - ERROR - Execution failed for ARBB: Spot data missing for ARBB near 2023-01-01
+2026-03-02 14:35:48,292 - ERROR - Execution failed for ARES: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:48,308 - ERROR - Execution failed for AREN: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:48,403 - ERROR - Execution failed for ARI: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:48,433 - ERROR - Execution failed for ARCB: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:48,440 - ERROR - Execution failed for ARHS: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:48,452 - ERROR - Execution failed for ARAI: Spot data missing for ARAI near 2023-01-01
+2026-03-02 14:35:48,456 - ERROR - Execution failed for ARIS: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:48,489 - ERROR - Execution failed for ARDT: Spot data missing for ARDT near 2023-01-01
+2026-03-02 14:35:48,709 - ERROR - Execution failed for ARKO: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:48,753 - ERROR - Execution failed for ARKR: Polygon Global Error for ARKR: No call contracts found for ARKR as of 2023-01-01
+2026-03-02 14:35:48,810 - ERROR - Execution failed for ARMP: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:48,839 - ERROR - Execution failed for ARLP: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:48,851 - ERROR - Execution failed for ARLO: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:48,879 - ERROR - Execution failed for ARMK: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:48,955 - ERROR - Execution failed for AROW: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:49,151 - ERROR - Execution failed for ARQQ: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:49,154 - ERROR - Execution failed for ARQT: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:49,192 - ERROR - Execution failed for ARR: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:49,271 - ERROR - Execution failed for ARTW: Polygon Global Error for ARTW: No call contracts found for ARTW as of 2023-01-01
+2026-03-02 14:35:49,286 - ERROR - Execution failed for ARTL: Polygon Global Error for ARTL: No call contracts found for ARTL as of 2023-01-01
+2026-03-02 14:35:49,313 - ERROR - Execution failed for ARL: Polygon Global Error for ARL: No call contracts found for ARL as of 2023-01-01
+2026-03-02 14:35:49,347 - ERROR - Execution failed for ARVN: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:49,348 - ERROR - Execution failed for ARTNA: Polygon Global Error for ARTNA: No call contracts found for ARTNA as of 2023-01-01
+2026-03-02 14:35:49,520 - ERROR - Execution failed for ARWR: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:49,538 - ERROR - Execution failed for ARRY: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:49,564 - ERROR - Execution failed for ARW: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:49,571 - ERROR - Execution failed for AROC: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:49,683 - ERROR - Execution failed for ASB: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:49,767 - ERROR - Execution failed for ARTV: Spot data missing for ARTV near 2023-01-01
+2026-03-02 14:35:49,841 - ERROR - Execution failed for ASAN: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:49,917 - ERROR - Execution failed for ASGN: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:49,919 - ERROR - Execution failed for ARX: Spot data missing for ARX near 2023-01-01
+2026-03-02 14:35:49,981 - ERROR - Execution failed for ARTC: Spot data missing for ARTC near 2023-01-01
+2026-03-02 14:35:49,991 - ERROR - Execution failed for ASH: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:49,992 - ERROR - Execution failed for AS: Spot data missing for AS near 2023-01-01
+2026-03-02 14:35:50,139 - ERROR - Execution failed for ASLE: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:50,147 - ERROR - Execution failed for ASIX: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:50,166 - ERROR - Execution failed for ASM: Polygon Global Error for ASM: No call contracts found for ASM as of 2023-01-01
+2026-03-02 14:35:50,174 - ERROR - Execution failed for ASBP: Spot data missing for ASBP near 2023-01-01
+2026-03-02 14:35:50,266 - ERROR - Execution failed for ASMB: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:50,311 - ERROR - Execution failed for ASNS: Polygon Global Error for ASNS: No call contracts found for ASNS as of 2023-01-01
+2026-03-02 14:35:50,365 - ERROR - Execution failed for ASPI: Polygon Global Error for ASPI: No call contracts found for ASPI as of 2023-01-01
+2026-03-02 14:35:50,457 - ERROR - Execution failed for ASPN: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:50,465 - ERROR - Execution failed for ASIC: Spot data missing for ASIC near 2023-01-01
+2026-03-02 14:35:50,535 - ERROR - Execution failed for ASO: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:50,538 - ERROR - Execution failed for ARQ: Spot data missing for ARQ near 2023-01-01
+2026-03-02 14:35:50,650 - ERROR - Execution failed for ASRT: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:50,744 - ERROR - Execution failed for ASPS: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:50,776 - ERROR - Execution failed for ASRV: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:50,843 - ERROR - Execution failed for ASTE: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:50,844 - ERROR - Execution failed for ASPC: Spot data missing for ASPC near 2023-01-01
+2026-03-02 14:35:50,953 - ERROR - Execution failed for ASTC: Polygon Global Error for ASTC: No call contracts found for ASTC as of 2023-01-01
+2026-03-02 14:35:51,006 - ERROR - Execution failed for ASUR: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:51,017 - ERROR - Execution failed for ASTL: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:51,025 - ERROR - Execution failed for ASTI: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:51,056 - ERROR - Execution failed for ASYS: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:51,096 - ERROR - Execution failed for ASTS: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:51,105 - ERROR - Execution failed for ASC: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:51,172 - ERROR - Execution failed for ATAI: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:51,232 - ERROR - Execution failed for ASTH: Spot data missing for ASTH near 2023-01-01
+2026-03-02 14:35:51,245 - ERROR - Execution failed for ASST: Spot data missing for ASST near 2023-01-01
+2026-03-02 14:35:51,372 - ERROR - Execution failed for ATEN: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:51,399 - ERROR - Execution failed for ATER: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:51,411 - ERROR - Execution failed for ATEC: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:51,419 - ERROR - Execution failed for ATCX: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:51,493 - ERROR - Execution failed for ATEX: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:51,512 - ERROR - Execution failed for ATCH: Spot data missing for ATCH near 2023-01-01
+2026-03-02 14:35:51,702 - ERROR - Execution failed for ATI: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:51,813 - ERROR - Execution failed for ATKR: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:51,885 - ERROR - Execution failed for ATGL: Spot data missing for ATGL near 2023-01-01
+2026-03-02 14:35:51,885 - ERROR - Execution failed for ATLCL: Polygon Global Error for ATLCL: No call contracts found for ATLCL as of 2023-01-01
+2026-03-02 14:35:51,988 - ERROR - Execution failed for ATLO: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:52,011 - ERROR - Execution failed for ATHR: Spot data missing for ATHR near 2023-01-01
+2026-03-02 14:35:52,023 - ERROR - Execution failed for ATNI: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:52,052 - ERROR - Execution failed for ATLC: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:52,118 - ERROR - Execution failed for ATNM: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:52,175 - ERROR - Execution failed for ATII: Spot data missing for ATII near 2023-01-01
+2026-03-02 14:35:52,263 - ERROR - Execution failed for ATO: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:52,278 - ERROR - Execution failed for ATLCZ: Spot data missing for ATLCZ near 2023-01-01
+2026-03-02 14:35:52,295 - ERROR - Execution failed for ATOM: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:52,275 - ERROR - Execution failed for ATOS: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:52,376 - ERROR - Execution failed for ATR: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:52,380 - ERROR - Execution failed for ATLN: Spot data missing for ATLN near 2023-01-01
+2026-03-02 14:35:52,393 - ERROR - Execution failed for ATMU: Spot data missing for ATMU near 2023-01-01
+2026-03-02 14:35:52,443 - ERROR - Execution failed for ATLX: Polygon Global Error for ATLX: No call contracts found for ATLX as of 2023-01-01
+2026-03-02 14:35:52,462 - ERROR - Execution failed for ATRA: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:52,573 - ERROR - Execution failed for ATON: Spot data missing for ATON near 2023-01-01
+2026-03-02 14:35:52,625 - ERROR - Execution failed for ATRC: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:52,678 - ERROR - Execution failed for ATRO: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:52,705 - ERROR - Execution failed for ATPC: Spot data missing for ATPC near 2023-01-01
+2026-03-02 14:35:52,811 - ERROR - Execution failed for ATXG: Polygon Global Error for ATXG: No call contracts found for ATXG as of 2023-01-01
+2026-03-02 14:35:52,913 - ERROR - Execution failed for AU: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:52,924 - ERROR - Execution failed for AUB: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:52,970 - ERROR - Execution failed for AUBN: Polygon Global Error for AUBN: No call contracts found for AUBN as of 2023-01-01
+2026-03-02 14:35:53,047 - ERROR - Execution failed for ATS: Spot data missing for ATS near 2023-01-01
+2026-03-02 14:35:53,133 - ERROR - Execution failed for AUDC: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:53,196 - ERROR - Execution failed for AUID: Polygon Global Error for AUID: No call contracts found for AUID as of 2023-01-01
+2026-03-02 14:35:53,282 - ERROR - Execution failed for AUR: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:53,297 - ERROR - Execution failed for AURA: Polygon Global Error for AURA: No call contracts found for AURA as of 2023-01-01
+2026-03-02 14:35:53,295 - ERROR - Execution failed for AUPH: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:53,303 - ERROR - Execution failed for AUST: Polygon Global Error for AUST: No call contracts found for AUST as of 2023-01-01
+2026-03-02 14:35:53,349 - ERROR - Execution failed for AUUD: Polygon Global Error for AUUD: No call contracts found for AUUD as of 2023-01-01
+2026-03-02 14:35:53,464 - ERROR - Execution failed for AVA: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:53,471 - ERROR - Execution failed for AVAH: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:53,562 - ERROR - Execution failed for AVB: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:53,567 - ERROR - Execution failed for AUGO: Spot data missing for AUGO near 2023-01-01
+2026-03-02 14:35:53,598 - ERROR - Execution failed for AVAV: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:53,625 - ERROR - Execution failed for AUNA: Spot data missing for AUNA near 2023-01-01
+2026-03-02 14:35:53,679 - ERROR - Execution failed for AURE: Spot data missing for AURE near 2023-01-01
+2026-03-02 14:35:53,760 - ERROR - Execution failed for AVBH: Polygon Global Error for AVBH: No call contracts found for AVBH as of 2023-01-01
+2026-03-02 14:35:53,776 - ERROR - Execution failed for AVD: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:53,905 - ERROR - Execution failed for AVIR: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:54,067 - ERROR - Execution failed for AVBC: Spot data missing for AVBC near 2023-01-01
+2026-03-02 14:35:54,120 - ERROR - Execution failed for AVGO: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:54,132 - ERROR - Execution failed for AVNS: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:54,184 - ERROR - Execution failed for AVBP: Spot data missing for AVBP near 2023-01-01
+2026-03-02 14:35:54,242 - ERROR - Execution failed for ATYR: Spot data missing for ATYR near 2023-01-01
+2026-03-02 14:35:54,270 - ERROR - Execution failed for AVNT: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:54,312 - ERROR - Execution failed for AVNW: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:54,326 - ERROR - Execution failed for AVPT: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:54,399 - ERROR - Execution failed for AVO: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:54,406 - ERROR - Execution failed for AVTX: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:54,449 - ERROR - Execution failed for AVT: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:54,471 - ERROR - Execution failed for AVY: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:54,563 - ERROR - Execution failed for AVTR: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:54,633 - ERROR - Execution failed for AWI: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:54,644 - ERROR - Execution failed for AWK: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:54,695 - ERROR - Execution failed for AWR: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:54,725 - ERROR - Execution failed for AVXL: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:54,878 - ERROR - Execution failed for AVR: Spot data missing for AVR near 2023-01-01
+2026-03-02 14:35:54,932 - ERROR - Execution failed for AWRE: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:55,030 - ERROR - Execution failed for AWX: Polygon Global Error for AWX: No call contracts found for AWX as of 2023-01-01
+2026-03-02 14:35:55,062 - ERROR - Execution failed for AXGN: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:55,051 - ERROR - Execution failed for AX: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:55,068 - ERROR - Execution failed for AVX: Spot data missing for AVX near 2023-01-01
+2026-03-02 14:35:55,227 - ERROR - Execution failed for AXON: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:55,363 - ERROR - Execution failed for AXP: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:55,372 - ERROR - Execution failed for AXS: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:55,396 - ERROR - Execution failed for AXTA: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:55,396 - ERROR - Execution failed for AXR: Polygon Global Error for AXR: No call contracts found for AXR as of 2023-01-01
+2026-03-02 14:35:55,563 - ERROR - Execution failed for AXSM: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:55,614 - ERROR - Execution failed for AYTU: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:55,617 - ERROR - Execution failed for AXG: Spot data missing for AXG near 2023-01-01
+2026-03-02 14:35:55,619 - ERROR - Execution failed for AXIL: Spot data missing for AXIL near 2023-01-01
+2026-03-02 14:35:55,627 - ERROR - Execution failed for AXTI: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:55,681 - ERROR - Execution failed for AZ: Polygon Global Error for AZ: No call contracts found for AZ as of 2023-01-01
+2026-03-02 14:35:55,681 - ERROR - Execution failed for AXIN: Spot data missing for AXIN near 2023-01-01
+2026-03-02 14:35:55,721 - ERROR - Execution failed for AYI: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:55,870 - ERROR - Execution failed for B: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:55,927 - ERROR - Execution failed for AZTA: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:55,972 - ERROR - Execution failed for AZZ: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:55,992 - ERROR - Execution failed for AZN: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:56,168 - ERROR - Execution failed for AZI: Spot data missing for AZI near 2023-01-01
+2026-03-02 14:35:56,322 - ERROR - Execution failed for AZO: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:56,327 - ERROR - Execution failed for AZTR: Spot data missing for AZTR near 2023-01-01
+2026-03-02 14:35:56,546 - ERROR - Execution failed for BAC: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:56,584 - ERROR - Execution failed for BA: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:56,640 - ERROR - Execution failed for BAH: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:56,655 - ERROR - Execution failed for BAFN: Polygon Global Error for BAFN: No call contracts found for BAFN as of 2023-01-01
+2026-03-02 14:35:56,656 - ERROR - Execution failed for BANC: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:56,693 - ERROR - Execution failed for BALL: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:56,704 - ERROR - Execution failed for BAND: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:56,721 - ERROR - Execution failed for BANF: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:56,737 - ERROR - Execution failed for BALY: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:56,765 - ERROR - Execution failed for BAM: Polygon Global Error for BAM: No call contracts found for BAM as of 2023-01-01
+2026-03-02 14:35:56,898 - ERROR - Execution failed for BANR: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:56,920 - ERROR - Execution failed for BANX: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:56,935 - ERROR - Execution failed for BAOS: Polygon Global Error for BAOS: No call contracts found for BAOS as of 2023-01-01
+2026-03-02 14:35:56,953 - ERROR - Execution failed for BACQ: Spot data missing for BACQ near 2023-01-01
+2026-03-02 14:35:56,988 - ERROR - Execution failed for BAER: Spot data missing for BAER near 2023-01-01
+2026-03-02 14:35:57,006 - ERROR - Execution failed for BAP: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:57,068 - ERROR - Execution failed for BARK: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:57,079 - ERROR - Execution failed for BATL: Polygon Global Error for BATL: No call contracts found for BATL as of 2023-01-01
+2026-03-02 14:35:57,245 - ERROR - Execution failed for BANL: Spot data missing for BANL near 2023-01-01
+2026-03-02 14:35:57,355 - ERROR - Execution failed for BATRA: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:57,368 - ERROR - Execution failed for BATRK: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:57,633 - ERROR - Execution failed for BBCP: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:57,634 - ERROR - Execution failed for BAX: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:57,651 - ERROR - Execution failed for BBDC: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:57,721 - ERROR - Execution failed for BBAI: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:57,844 - ERROR - Execution failed for BBGI: Polygon Global Error for BBGI: No call contracts found for BBGI as of 2023-01-01
+2026-03-02 14:35:57,852 - ERROR - Execution failed for BBIO: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:57,860 - ERROR - Execution failed for BBBY: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:57,893 - ERROR - Execution failed for BB: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:57,922 - ERROR - Execution failed for BBLG: Polygon Global Error for BBLG: No call contracts found for BBLG as of 2023-01-01
+2026-03-02 14:35:57,983 - ERROR - Execution failed for BBU: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:58,006 - ERROR - Execution failed for BBSI: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:58,065 - ERROR - Execution failed for BBCQ: Spot data missing for BBCQ near 2023-01-01
+2026-03-02 14:35:58,145 - ERROR - Execution failed for BBWI: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:58,220 - ERROR - Execution failed for BBW: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:58,240 - ERROR - Execution failed for BBUC: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:58,240 - ERROR - Execution failed for BAYA: Spot data missing for BAYA near 2023-01-01
+2026-03-02 14:35:58,350 - ERROR - Execution failed for BBNX: Spot data missing for BBNX near 2023-01-01
+2026-03-02 14:35:58,382 - ERROR - Execution failed for BC: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:58,385 - ERROR - Execution failed for BBT: Spot data missing for BBT near 2023-01-01
+2026-03-02 14:35:58,382 - ERROR - Execution failed for BBOT: Spot data missing for BBOT near 2023-01-01
+2026-03-02 14:35:58,400 - ERROR - Execution failed for BCAB: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:58,463 - ERROR - Execution failed for BCAL: Polygon Global Error for BCAL: No call contracts found for BCAL as of 2023-01-01
+2026-03-02 14:35:58,534 - ERROR - Execution failed for BBY: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:58,786 - ERROR - Execution failed for BCBP: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:58,813 - ERROR - Execution failed for BCC: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:58,870 - ERROR - Execution failed for BCDA: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:58,883 - ERROR - Execution failed for BCE: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:59,075 - ERROR - Execution failed for BCML: Polygon Global Error for BCML: No call contracts found for BCML as of 2023-01-01
+2026-03-02 14:35:59,109 - ERROR - Execution failed for BCO: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:59,131 - ERROR - Execution failed for BCPC: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:59,142 - ERROR - Execution failed for BCAX: Spot data missing for BCAX near 2023-01-01
+2026-03-02 14:35:59,176 - ERROR - Execution failed for BCAR: Spot data missing for BCAR near 2023-01-01
+2026-03-02 14:35:59,190 - ERROR - Execution failed for BACC: Spot data missing for BACC near 2023-01-01
+2026-03-02 14:35:59,215 - ERROR - Execution failed for BCSF: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:59,232 - ERROR - Execution failed for BCRX: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:59,240 - ERROR - Execution failed for BCTX: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:59,240 - ERROR - Execution failed for BCG: Spot data missing for BCG near 2023-01-01
+2026-03-02 14:35:59,309 - ERROR - Execution failed for BDC: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:59,433 - ERROR - Execution failed for BCHT: Spot data missing for BCHT near 2023-01-01
+2026-03-02 14:35:59,499 - ERROR - Execution failed for BCIC: Spot data missing for BCIC near 2023-01-01
+2026-03-02 14:35:59,505 - ERROR - Execution failed for BDL: Polygon Global Error for BDL: No call contracts found for BDL as of 2023-01-01
+2026-03-02 14:35:59,535 - ERROR - Execution failed for BDSX: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:59,581 - ERROR - Execution failed for BCTXL: Spot data missing for BCTXL near 2023-01-01
+2026-03-02 14:35:59,596 - ERROR - Execution failed for BDN: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:35:59,614 - ERROR - Execution failed for BDCI: Spot data missing for BDCI near 2023-01-01
+2026-03-02 14:35:59,660 - ERROR - Execution failed for BCSS: Spot data missing for BCSS near 2023-01-01
+2026-03-02 14:35:59,848 - ERROR - Execution failed for BDMD: Spot data missing for BDMD near 2023-01-01
+2026-03-02 14:35:59,876 - ERROR - Execution failed for BDTX: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:00,073 - ERROR - Execution failed for BE: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:00,178 - ERROR - Execution failed for BEAM: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:00,179 - ERROR - Execution failed for BEAT: Polygon Global Error for BEAT: No call contracts found for BEAT as of 2023-01-01
+2026-03-02 14:36:00,201 - ERROR - Execution failed for BDX: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:00,264 - ERROR - Execution failed for BEBE: Polygon Global Error for BEBE: No call contracts found for BEBE as of 2023-01-01
+2026-03-02 14:36:00,313 - ERROR - Execution failed for BEEM: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:00,429 - ERROR - Execution failed for BELFB: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:00,439 - ERROR - Execution failed for BEN: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:00,520 - ERROR - Execution failed for BEPC: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:00,555 - ERROR - Execution failed for BF.A: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:00,613 - ERROR - Execution failed for BFAM: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:00,633 - ERROR - Execution failed for BF.B: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:00,650 - ERROR - Execution failed for BEAG: Spot data missing for BEAG near 2023-01-01
+2026-03-02 14:36:00,778 - ERROR - Execution failed for BEP: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:00,897 - ERROR - Execution failed for BENF: Spot data missing for BENF near 2023-01-01
+2026-03-02 14:36:00,948 - ERROR - Execution failed for BEEP: Spot data missing for BEEP near 2023-01-01
+2026-03-02 14:36:00,951 - ERROR - Execution failed for BETR: Spot data missing for BETR near 2023-01-01
+2026-03-02 14:36:00,978 - ERROR - Execution failed for BETA: Spot data missing for BETA near 2023-01-01
+2026-03-02 14:36:01,023 - ERROR - Execution failed for BFH: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:01,038 - ERROR - Execution failed for BFLY: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:01,076 - ERROR - Execution failed for BFC: Polygon Global Error for BFC: No call contracts found for BFC as of 2023-01-01
+2026-03-02 14:36:01,101 - ERROR - Execution failed for BFRI: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:01,192 - ERROR - Execution failed for BFS: Polygon Global Error for BFS: No call contracts found for BFS as of 2023-01-01
+2026-03-02 14:36:01,243 - ERROR - Execution failed for BELFA: Polygon Global Error for BELFA: No call contracts found for BELFA as of 2023-01-01
+2026-03-02 14:36:01,331 - ERROR - Execution failed for BG: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:01,429 - ERROR - Execution failed for BGLC: Polygon Global Error for BGLC: No call contracts found for BGLC as of 2023-01-01
+2026-03-02 14:36:01,483 - ERROR - Execution failed for BFRG: Spot data missing for BFRG near 2023-01-01
+2026-03-02 14:36:01,736 - ERROR - Execution failed for BGI: Polygon Global Error for BGI: No call contracts found for BGI as of 2023-01-01
+2026-03-02 14:36:01,800 - ERROR - Execution failed for BGIN: Spot data missing for BGIN near 2023-01-01
+2026-03-02 14:36:01,824 - ERROR - Execution failed for BGSF: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:01,865 - ERROR - Execution failed for BHAT: Polygon Global Error for BHAT: No call contracts found for BHAT as of 2023-01-01
+2026-03-02 14:36:01,875 - ERROR - Execution failed for BH: Polygon Global Error for BH: No call contracts found for BH as of 2023-01-01
+2026-03-02 14:36:01,897 - ERROR - Execution failed for BHB: Polygon Global Error for BHB: No call contracts found for BHB as of 2023-01-01
+2026-03-02 14:36:01,909 - ERROR - Execution failed for BFST: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:02,029 - ERROR - Execution failed for BGM: Spot data missing for BGM near 2023-01-01
+2026-03-02 14:36:02,135 - ERROR - Execution failed for BHC: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:02,212 - ERROR - Execution failed for BHF: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:02,212 - ERROR - Execution failed for BHFAL: Polygon Global Error for BHFAL: No call contracts found for BHFAL as of 2023-01-01
+2026-03-02 14:36:02,217 - ERROR - Execution failed for BGL: Spot data missing for BGL near 2023-01-01
+2026-03-02 14:36:02,259 - ERROR - Execution failed for BGS: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:02,263 - ERROR - Execution failed for BGMS: Spot data missing for BGMS near 2023-01-01
+2026-03-02 14:36:02,270 - ERROR - Execution failed for BGSI: Spot data missing for BGSI near 2023-01-01
+2026-03-02 14:36:02,279 - ERROR - Execution failed for BHFAM: Polygon Global Error for BHFAM: No call contracts found for BHFAM as of 2023-01-01
+2026-03-02 14:36:02,312 - ERROR - Execution failed for BESS: Spot data missing for BESS near 2023-01-01
+2026-03-02 14:36:02,380 - ERROR - Execution failed for BH.A: Polygon Global Error for BH.A: No call contracts found for BH.A as of 2023-01-01
+2026-03-02 14:36:02,390 - ERROR - Execution failed for BHE: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:02,420 - ERROR - Execution failed for BGC: Spot data missing for BGC near 2023-01-01
+2026-03-02 14:36:02,506 - ERROR - Execution failed for BHFAN: Polygon Global Error for BHFAN: No call contracts found for BHFAN as of 2023-01-01
+2026-03-02 14:36:02,544 - ERROR - Execution failed for BHM: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:02,577 - ERROR - Execution failed for BHFAO: Polygon Global Error for BHFAO: No call contracts found for BHFAO as of 2023-01-01
+2026-03-02 14:36:02,584 - ERROR - Execution failed for BHR: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:02,765 - ERROR - Execution failed for BHVN: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:02,875 - ERROR - Execution failed for BHRB: Polygon Global Error for BHRB: No call contracts found for BHRB as of 2023-01-01
+2026-03-02 14:36:02,890 - ERROR - Execution failed for BIAF: Polygon Global Error for BIAF: No call contracts found for BIAF as of 2023-01-01
+2026-03-02 14:36:03,219 - ERROR - Execution failed for BIIB: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:03,276 - ERROR - Execution failed for BIO: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:03,304 - ERROR - Execution failed for BIOX: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:03,311 - ERROR - Execution failed for BIP: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:03,334 - ERROR - Execution failed for BIPC: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:03,466 - ERROR - Execution failed for BILL: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:03,524 - ERROR - Execution failed for BIVI: Polygon Global Error for BIVI: No call contracts found for BIVI as of 2023-01-01
+2026-03-02 14:36:03,531 - ERROR - Execution failed for BIRD: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:03,546 - ERROR - Execution failed for BITF: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:03,552 - ERROR - Execution failed for BHST: Spot data missing for BHST near 2023-01-01
+2026-03-02 14:36:03,604 - ERROR - Execution failed for BJDX: Polygon Global Error for BJDX: No call contracts found for BJDX as of 2023-01-01
+2026-03-02 14:36:03,692 - ERROR - Execution failed for BK: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:03,729 - ERROR - Execution failed for BJ: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:03,803 - ERROR - Execution failed for BIOA: Spot data missing for BIOA near 2023-01-01
+2026-03-02 14:36:03,924 - ERROR - Execution failed for BIO.B: Spot data missing for BIO.B near 2023-01-01
+2026-03-02 14:36:03,960 - ERROR - Execution failed for BIYA: Spot data missing for BIYA near 2023-01-01
+2026-03-02 14:36:04,007 - ERROR - Execution failed for BJRI: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:04,046 - ERROR - Execution failed for BKD: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:04,069 - ERROR - Execution failed for BKH: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:04,074 - ERROR - Execution failed for BIXI: Spot data missing for BIXI near 2023-01-01
+2026-03-02 14:36:04,076 - ERROR - Execution failed for BIRK: Spot data missing for BIRK near 2023-01-01
+2026-03-02 14:36:04,066 - ERROR - Execution failed for BKE: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:04,122 - ERROR - Execution failed for BIII: Spot data missing for BIII near 2023-01-01
+2026-03-02 14:36:04,126 - ERROR - Execution failed for BKKT: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:04,378 - ERROR - Execution failed for BKU: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:04,386 - ERROR - Execution failed for BKTI: Polygon Global Error for BKTI: No call contracts found for BKTI as of 2023-01-01
+2026-03-02 14:36:04,399 - ERROR - Execution failed for BKSY: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:04,444 - ERROR - Execution failed for BKR: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:04,448 - ERROR - Execution failed for BKHA: Spot data missing for BKHA near 2023-01-01
+2026-03-02 14:36:04,567 - ERROR - Execution failed for BKYI: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:04,595 - ERROR - Execution failed for BL: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:04,713 - ERROR - Execution failed for BLBD: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:04,979 - ERROR - Execution failed for BLCO: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:04,991 - ERROR - Execution failed for BLD: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:05,117 - ERROR - Execution failed for BKV: Spot data missing for BKV near 2023-01-01
+2026-03-02 14:36:05,133 - ERROR - Execution failed for BLDP: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:05,229 - ERROR - Execution failed for BKNG: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:05,237 - ERROR - Execution failed for BLFY: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:05,239 - ERROR - Execution failed for BLIN: Polygon Global Error for BLIN: No call contracts found for BLIN as of 2023-01-01
+2026-03-02 14:36:05,279 - ERROR - Execution failed for BLDR: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:05,287 - ERROR - Execution failed for BLFS: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:05,452 - ERROR - Execution failed for BLMN: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:05,473 - ERROR - Execution failed for BLKB: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:05,477 - ERROR - Execution failed for BLND: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:05,729 - ERROR - Execution failed for BLK: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:05,754 - ERROR - Execution failed for BLNK: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:05,947 - ERROR - Execution failed for BLX: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:05,996 - ERROR - Execution failed for BLIV: Spot data missing for BLIV near 2023-01-01
+2026-03-02 14:36:06,016 - ERROR - Execution failed for BLZE: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:06,033 - ERROR - Execution failed for BLRK: Spot data missing for BLRK near 2023-01-01
+2026-03-02 14:36:06,053 - ERROR - Execution failed for BLSH: Spot data missing for BLSH near 2023-01-01
+2026-03-02 14:36:06,080 - ERROR - Execution failed for BMEA: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:06,104 - ERROR - Execution failed for BMBL: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:06,126 - ERROR - Execution failed for BLLN: Spot data missing for BLLN near 2023-01-01
+2026-03-02 14:36:06,132 - ERROR - Execution failed for BMI: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:06,188 - ERROR - Execution failed for BLNE: Spot data missing for BLNE near 2023-01-01
+2026-03-02 14:36:06,252 - ERROR - Execution failed for BMNR: Polygon Global Error for BMNR: No call contracts found for BMNR as of 2023-01-01
+2026-03-02 14:36:06,361 - ERROR - Execution failed for BMO: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:06,381 - ERROR - Execution failed for BMGL: Spot data missing for BMGL near 2023-01-01
+2026-03-02 14:36:06,440 - ERROR - Execution failed for BMM: Spot data missing for BMM near 2023-01-01
+2026-03-02 14:36:06,448 - ERROR - Execution failed for BLZR: Spot data missing for BLZR near 2023-01-01
+2026-03-02 14:36:06,476 - ERROR - Execution failed for BMRC: Polygon Global Error for BMRC: No call contracts found for BMRC as of 2023-01-01
+2026-03-02 14:36:06,583 - ERROR - Execution failed for BLUW: Spot data missing for BLUW near 2023-01-01
+2026-03-02 14:36:06,723 - ERROR - Execution failed for BMRN: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:06,728 - ERROR - Execution failed for BMR: Spot data missing for BMR near 2023-01-01
+2026-03-02 14:36:06,737 - ERROR - Execution failed for BMHL: Spot data missing for BMHL near 2023-01-01
+2026-03-02 14:36:06,801 - ERROR - Execution failed for BMRA: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:06,852 - ERROR - Execution failed for BN: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:06,952 - ERROR - Execution failed for BMY: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:07,023 - ERROR - Execution failed for BNED: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:07,076 - ERROR - Execution failed for BNGO: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:07,150 - ERROR - Execution failed for BNRG: Polygon Global Error for BNRG: No call contracts found for BNRG as of 2023-01-01
+2026-03-02 14:36:07,223 - ERROR - Execution failed for BNL: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:07,241 - ERROR - Execution failed for BNS: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:07,249 - ERROR - Execution failed for BNTC: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:07,279 - ERROR - Execution failed for BNAI: Spot data missing for BNAI near 2023-01-01
+2026-03-02 14:36:07,338 - ERROR - Execution failed for BNBX: Spot data missing for BNBX near 2023-01-01
+2026-03-02 14:36:07,370 - ERROR - Execution failed for BNC: Spot data missing for BNC near 2023-01-01
+2026-03-02 14:36:07,390 - ERROR - Execution failed for BOC: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:07,463 - ERROR - Execution failed for BNKK: Spot data missing for BNKK near 2023-01-01
+2026-03-02 14:36:07,512 - ERROR - Execution failed for BOH: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:07,620 - ERROR - Execution failed for BOKF: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:07,677 - ERROR - Execution failed for BOLT: Polygon Global Error for BOLT: No call contracts found for BOLT as of 2023-01-01
+2026-03-02 14:36:07,678 - ERROR - Execution failed for BNT: Spot data missing for BNT near 2023-01-01
+2026-03-02 14:36:07,737 - ERROR - Execution failed for BON: Polygon Global Error for BON: No call contracts found for BON as of 2023-01-01
+2026-03-02 14:36:07,748 - ERROR - Execution failed for BNZI: Spot data missing for BNZI near 2023-01-01
+2026-03-02 14:36:07,831 - ERROR - Execution failed for BOOM: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:07,943 - ERROR - Execution failed for BOF: Spot data missing for BOF near 2023-01-01
+2026-03-02 14:36:08,042 - ERROR - Execution failed for BOOT: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:08,042 - ERROR - Execution failed for BOSC: Polygon Global Error for BOSC: No call contracts found for BOSC as of 2023-01-01
+2026-03-02 14:36:08,042 - ERROR - Execution failed for BOTJ: Polygon Global Error for BOTJ: No call contracts found for BOTJ as of 2023-01-01
+2026-03-02 14:36:08,048 - ERROR - Execution failed for BOLD: Spot data missing for BOLD near 2023-01-01
+2026-03-02 14:36:08,178 - ERROR - Execution failed for BOXL: Polygon Global Error for BOXL: No call contracts found for BOXL as of 2023-01-01
+2026-03-02 14:36:08,246 - ERROR - Execution failed for BOX: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:08,247 - ERROR - Execution failed for BPAC: Polygon Global Error for BPAC: No call contracts found for BPAC as of 2023-01-01
+2026-03-02 14:36:08,253 - ERROR - Execution failed for BORR: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:08,344 - ERROR - Execution failed for BPOP: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:08,410 - ERROR - Execution failed for BPYPN: Polygon Global Error for BPYPN: No call contracts found for BPYPN as of 2023-01-01
+2026-03-02 14:36:08,442 - ERROR - Execution failed for BPYPM: Polygon Global Error for BPYPM: No call contracts found for BPYPM as of 2023-01-01
+2026-03-02 14:36:08,447 - ERROR - Execution failed for BPRN: Polygon Global Error for BPRN: No call contracts found for BPRN as of 2023-01-01
+2026-03-02 14:36:08,471 - ERROR - Execution failed for BOW: Spot data missing for BOW near 2023-01-01
+2026-03-02 14:36:08,504 - ERROR - Execution failed for BPYPO: Polygon Global Error for BPYPO: No call contracts found for BPYPO as of 2023-01-01
+2026-03-02 14:36:08,521 - ERROR - Execution failed for BQ: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:08,602 - ERROR - Execution failed for BR: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:08,722 - ERROR - Execution failed for BRAG: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:08,722 - ERROR - Execution failed for BPRE: Spot data missing for BPRE near 2023-01-01
+2026-03-02 14:36:08,825 - ERROR - Execution failed for BOBS: Spot data missing for BOBS near 2023-01-01
+2026-03-02 14:36:08,856 - ERROR - Execution failed for BRBS: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:08,899 - ERROR - Execution failed for BRC: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:08,925 - ERROR - Execution failed for BRBR: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:09,128 - ERROR - Execution failed for BRCC: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:09,153 - ERROR - Execution failed for BRFH: Polygon Global Error for BRFH: No call contracts found for BRFH as of 2023-01-01
+2026-03-02 14:36:09,251 - ERROR - Execution failed for BRK.A: Polygon Global Error for BRK.A: No call contracts found for BRK.A as of 2023-01-01
+2026-03-02 14:36:09,372 - ERROR - Execution failed for BRKR: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:09,378 - ERROR - Execution failed for BRN: Polygon Global Error for BRN: No call contracts found for BRN as of 2023-01-01
+2026-03-02 14:36:09,400 - ERROR - Execution failed for BRLT: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:09,457 - ERROR - Execution failed for BRIA: Spot data missing for BRIA near 2023-01-01
+2026-03-02 14:36:09,457 - ERROR - Execution failed for BRAI: Spot data missing for BRAI near 2023-01-01
+2026-03-02 14:36:09,468 - ERROR - Execution failed for BRO: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:09,496 - ERROR - Execution failed for BODI: Spot data missing for BODI near 2023-01-01
+2026-03-02 14:36:09,675 - ERROR - Execution failed for BRSP: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:09,775 - ERROR - Execution failed for BROS: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:09,777 - ERROR - Execution failed for BRTX: Polygon Global Error for BRTX: No call contracts found for BRTX as of 2023-01-01
+2026-03-02 14:36:09,749 - ERROR - Execution failed for BRK.B: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:09,813 - ERROR - Execution failed for BRLS: Spot data missing for BRLS near 2023-01-01
+2026-03-02 14:36:09,853 - ERROR - Execution failed for BRT: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:09,891 - ERROR - Execution failed for BRCB: Spot data missing for BRCB near 2023-01-01
+2026-03-02 14:36:09,996 - ERROR - Execution failed for BRZE: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:10,128 - ERROR - Execution failed for BRSL: Spot data missing for BRSL near 2023-01-01
+2026-03-02 14:36:10,150 - ERROR - Execution failed for BSM: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:10,190 - ERROR - Execution failed for BSET: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:10,205 - ERROR - Execution failed for BSBK: Polygon Global Error for BSBK: No call contracts found for BSBK as of 2023-01-01
+2026-03-02 14:36:10,247 - ERROR - Execution failed for BSVN: Polygon Global Error for BSVN: No call contracts found for BSVN as of 2023-01-01
+2026-03-02 14:36:10,255 - ERROR - Execution failed for BRX: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:10,305 - ERROR - Execution failed for BSX: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:10,314 - ERROR - Execution failed for BSRR: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:10,323 - ERROR - Execution failed for BSY: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:10,486 - ERROR - Execution failed for BRR: Spot data missing for BRR near 2023-01-01
+2026-03-02 14:36:10,570 - ERROR - Execution failed for BTBD: Polygon Global Error for BTBD: No call contracts found for BTBD as of 2023-01-01
+2026-03-02 14:36:10,577 - ERROR - Execution failed for BSAA: Spot data missing for BSAA near 2023-01-01
+2026-03-02 14:36:10,602 - ERROR - Execution failed for BTCS: Polygon Global Error for BTCS: No call contracts found for BTCS as of 2023-01-01
+2026-03-02 14:36:10,635 - ERROR - Execution failed for BTAI: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:10,616 - ERROR - Execution failed for BTBT: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:10,781 - ERROR - Execution failed for BRID: Polygon Global Error for BRID: No call contracts found for BRID as of 2023-01-01
+2026-03-02 14:36:10,844 - ERROR - Execution failed for BTG: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:11,035 - ERROR - Execution failed for BTMD: Polygon Global Error for BTMD: No call contracts found for BTMD as of 2023-01-01
+2026-03-02 14:36:11,117 - ERROR - Execution failed for BTDR: Spot data missing for BTDR near 2023-01-01
+2026-03-02 14:36:11,117 - ERROR - Execution failed for BTE: Spot data missing for BTE near 2023-01-01
+2026-03-02 14:36:11,127 - ERROR - Execution failed for BTOG: Polygon Global Error for BTOG: No call contracts found for BTOG as of 2023-01-01
+2026-03-02 14:36:11,259 - ERROR - Execution failed for BTU: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:11,429 - ERROR - Execution failed for BTTC: Polygon Global Error for BTTC: No call contracts found for BTTC as of 2023-01-01
+2026-03-02 14:36:11,450 - ERROR - Execution failed for BUSE: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:11,488 - ERROR - Execution failed for BTQ: Spot data missing for BTQ near 2023-01-01
+2026-03-02 14:36:11,632 - ERROR - Execution failed for BURL: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:11,642 - ERROR - Execution failed for BUR: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:11,647 - ERROR - Execution failed for BTM: Spot data missing for BTM near 2023-01-01
+2026-03-02 14:36:11,726 - ERROR - Execution failed for BV: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:11,795 - ERROR - Execution failed for BUDA: Spot data missing for BUDA near 2023-01-01
+2026-03-02 14:36:11,842 - ERROR - Execution failed for BURU: Spot data missing for BURU near 2023-01-01
+2026-03-02 14:36:11,873 - ERROR - Execution failed for BW: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:11,894 - ERROR - Execution failed for BVS: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:11,933 - ERROR - Execution failed for BWA: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:12,009 - ERROR - Execution failed for BTCT: Spot data missing for BTCT near 2023-01-01
+2026-03-02 14:36:12,061 - ERROR - Execution failed for BTGO: Spot data missing for BTGO near 2023-01-01
+2026-03-02 14:36:12,167 - ERROR - Execution failed for BWB: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:12,218 - ERROR - Execution failed for BWBBP: Polygon Global Error for BWBBP: No call contracts found for BWBBP as of 2023-01-01
+2026-03-02 14:36:12,295 - ERROR - Execution failed for BWEN: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:12,368 - ERROR - Execution failed for BVFL: Spot data missing for BVFL near 2023-01-01
+2026-03-02 14:36:12,387 - ERROR - Execution failed for BWFG: Polygon Global Error for BWFG: No call contracts found for BWFG as of 2023-01-01
+2026-03-02 14:36:12,423 - ERROR - Execution failed for BUUU: Spot data missing for BUUU near 2023-01-01
+2026-03-02 14:36:12,431 - ERROR - Execution failed for BULL: Spot data missing for BULL near 2023-01-01
+2026-03-02 14:36:12,512 - ERROR - Execution failed for BTSG: Spot data missing for BTSG near 2023-01-01
+2026-03-02 14:36:12,541 - ERROR - Execution failed for BWMN: Polygon Global Error for BWMN: No call contracts found for BWMN as of 2023-01-01
+2026-03-02 14:36:12,563 - ERROR - Execution failed for BWMX: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:12,587 - ERROR - Execution failed for BVC: Spot data missing for BVC near 2023-01-01
+2026-03-02 14:36:12,599 - ERROR - Execution failed for BTOC: Spot data missing for BTOC near 2023-01-01
+2026-03-02 14:36:12,613 - ERROR - Execution failed for BWXT: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:12,795 - ERROR - Execution failed for BXMT: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:12,850 - ERROR - Execution failed for BX: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:12,857 - ERROR - Execution failed for BXC: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:12,858 - ERROR - Execution failed for BWIN: Spot data missing for BWIN near 2023-01-01
+2026-03-02 14:36:12,861 - ERROR - Execution failed for BWLP: Spot data missing for BWLP near 2023-01-01
+2026-03-02 14:36:12,887 - ERROR - Execution failed for BXP: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:12,982 - ERROR - Execution failed for BXSL: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:13,097 - ERROR - Execution failed for BY: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:13,121 - ERROR - Execution failed for BYD: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:13,308 - ERROR - Execution failed for BYSI: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:13,354 - ERROR - Execution failed for BYRN: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:13,372 - ERROR - Execution failed for BYND: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:13,437 - ERROR - Execution failed for BZFD: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:13,489 - ERROR - Execution failed for BZH: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:13,568 - ERROR - Execution failed for CAAS: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:13,615 - ERROR - Execution failed for CAAP: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:13,617 - ERROR - Execution failed for C: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:13,719 - ERROR - Execution failed for BYFC: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:13,724 - ERROR - Execution failed for CABO: Polygon Global Error for CABO: No call contracts found for CABO as of 2023-01-01
+2026-03-02 14:36:13,795 - ERROR - Execution failed for BZAI: Spot data missing for BZAI near 2023-01-01
+2026-03-02 14:36:13,823 - ERROR - Execution failed for CACI: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:13,831 - ERROR - Execution failed for CABA: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:13,850 - ERROR - Execution failed for CACC: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:13,911 - ERROR - Execution failed for CADL: Polygon Global Error for CADL: No call contracts found for CADL as of 2023-01-01
+2026-03-02 14:36:13,976 - ERROR - Execution failed for CAE: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:14,136 - ERROR - Execution failed for CAC: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:14,152 - ERROR - Execution failed for CABR: Spot data missing for CABR near 2023-01-01
+2026-03-02 14:36:14,220 - ERROR - Execution failed for CAKE: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:14,283 - ERROR - Execution failed for CAL: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:14,299 - ERROR - Execution failed for CAH: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:14,364 - ERROR - Execution failed for CAG: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:14,412 - ERROR - Execution failed for CAEP: Spot data missing for CAEP near 2023-01-01
+2026-03-02 14:36:14,476 - ERROR - Execution failed for CALM: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:14,498 - ERROR - Execution failed for CALX: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:14,627 - ERROR - Execution failed for CAMP: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:14,681 - ERROR - Execution failed for CANG: Polygon Global Error for CANG: No call contracts found for CANG as of 2023-01-01
+2026-03-02 14:36:14,691 - ERROR - Execution failed for CAMT: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:14,684 - ERROR - Execution failed for CAPL: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:14,708 - ERROR - Execution failed for CAPR: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:14,765 - ERROR - Execution failed for CALC: Spot data missing for CALC near 2023-01-01
+2026-03-02 14:36:14,766 - ERROR - Execution failed for CAI: Spot data missing for CAI near 2023-01-01
+2026-03-02 14:36:14,986 - ERROR - Execution failed for CAPN: Spot data missing for CAPN near 2023-01-01
+2026-03-02 14:36:15,133 - ERROR - Execution failed for CALY: Spot data missing for CALY near 2023-01-01
+2026-03-02 14:36:15,167 - ERROR - Execution failed for CAR: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:15,176 - ERROR - Execution failed for CARE: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:15,209 - ERROR - Execution failed for CARG: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:15,294 - ERROR - Execution failed for CARR: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:15,295 - ERROR - Execution failed for CAPS: Spot data missing for CAPS near 2023-01-01
+2026-03-02 14:36:15,403 - ERROR - Execution failed for CARS: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:15,518 - ERROR - Execution failed for CASS: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:15,530 - ERROR - Execution failed for CATY: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:15,570 - ERROR - Execution failed for CASY: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:15,681 - ERROR - Execution failed for CAT: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:15,688 - ERROR - Execution failed for CATO: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:15,698 - ERROR - Execution failed for CASH: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:15,698 - ERROR - Execution failed for CAPT: Spot data missing for CAPT near 2023-01-01
+2026-03-02 14:36:15,768 - ERROR - Execution failed for CARL: Spot data missing for CARL near 2023-01-01
+2026-03-02 14:36:15,880 - ERROR - Execution failed for CART: Spot data missing for CART near 2023-01-01
+2026-03-02 14:36:15,930 - ERROR - Execution failed for CB: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:15,989 - ERROR - Execution failed for CBAT: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:15,995 - ERROR - Execution failed for CAVA: Spot data missing for CAVA near 2023-01-01
+2026-03-02 14:36:16,006 - ERROR - Execution failed for CBAN: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:16,010 - ERROR - Execution failed for CATX: Spot data missing for CATX near 2023-01-01
+2026-03-02 14:36:16,023 - ERROR - Execution failed for CBIO: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:16,026 - ERROR - Execution failed for CBFV: Polygon Global Error for CBFV: No call contracts found for CBFV as of 2023-01-01
+2026-03-02 14:36:16,123 - ERROR - Execution failed for CBL: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:16,288 - ERROR - Execution failed for BYAH: Spot data missing for BYAH near 2023-01-01
+2026-03-02 14:36:16,356 - ERROR - Execution failed for CBC: Spot data missing for CBC near 2023-01-01
+2026-03-02 14:36:16,483 - ERROR - Execution failed for CBK: Spot data missing for CBK near 2023-01-01
+2026-03-02 14:36:16,572 - ERROR - Execution failed for CBSH: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:16,577 - ERROR - Execution failed for CBRE: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:16,598 - ERROR - Execution failed for CBRL: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:16,688 - ERROR - Execution failed for CBOE: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:16,744 - ERROR - Execution failed for CBT: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:16,819 - ERROR - Execution failed for CBU: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:16,886 - ERROR - Execution failed for CBZ: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:16,887 - ERROR - Execution failed for CBLL: Spot data missing for CBLL near 2023-01-01
+2026-03-02 14:36:16,919 - ERROR - Execution failed for CCCC: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:16,948 - ERROR - Execution failed for CCBG: Polygon Global Error for CCBG: No call contracts found for CCBG as of 2023-01-01
+2026-03-02 14:36:16,960 - ERROR - Execution failed for CCB: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:17,002 - ERROR - Execution failed for CCD: Polygon Global Error for CCD: No call contracts found for CCD as of 2023-01-01
+2026-03-02 14:36:17,038 - ERROR - Execution failed for CC: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:17,056 - ERROR - Execution failed for CBNA: Spot data missing for CBNA near 2023-01-01
+2026-03-02 14:36:17,169 - ERROR - Execution failed for CCAP: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:17,199 - ERROR - Execution failed for CCEL: Polygon Global Error for CCEL: No call contracts found for CCEL as of 2023-01-01
+2026-03-02 14:36:17,284 - ERROR - Execution failed for CCC: Spot data missing for CCC near 2023-01-01
+2026-03-02 14:36:17,308 - ERROR - Execution failed for CBUS: Spot data missing for CBUS near 2023-01-01
+2026-03-02 14:36:17,350 - ERROR - Execution failed for CCEP: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:17,395 - ERROR - Execution failed for CBNK: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:17,467 - ERROR - Execution failed for CCEC: Spot data missing for CCEC near 2023-01-01
+2026-03-02 14:36:17,550 - ERROR - Execution failed for CCI: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:17,728 - ERROR - Execution failed for CCG: Spot data missing for CCG near 2023-01-01
+2026-03-02 14:36:17,826 - ERROR - Execution failed for CCK: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:17,828 - ERROR - Execution failed for CCHH: Spot data missing for CCHH near 2023-01-01
+2026-03-02 14:36:17,925 - ERROR - Execution failed for CCJ: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:17,935 - ERROR - Execution failed for CCII: Spot data missing for CCII near 2023-01-01
+2026-03-02 14:36:17,981 - ERROR - Execution failed for CCNE: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:18,000 - ERROR - Execution failed for CCRN: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:18,011 - ERROR - Execution failed for CCO: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:18,067 - ERROR - Execution failed for CCOI: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:18,205 - ERROR - Execution failed for CCS: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:18,235 - ERROR - Execution failed for CCL: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:18,289 - ERROR - Execution failed for CCIX: Spot data missing for CCIX near 2023-01-01
+2026-03-02 14:36:18,321 - ERROR - Execution failed for CCSI: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:18,378 - ERROR - Execution failed for CDE: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:18,409 - ERROR - Execution failed for CDLX: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:18,443 - ERROR - Execution failed for CDIO: Polygon Global Error for CDIO: No call contracts found for CDIO as of 2023-01-01
+2026-03-02 14:36:18,582 - ERROR - Execution failed for CCLD: Polygon Global Error for CCLD: No call contracts found for CCLD as of 2023-01-01
+2026-03-02 14:36:18,584 - ERROR - Execution failed for CDNA: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:18,635 - ERROR - Execution failed for CCTG: Spot data missing for CCTG near 2023-01-01
+2026-03-02 14:36:18,698 - ERROR - Execution failed for CCXI: Spot data missing for CCXI near 2023-01-01
+2026-03-02 14:36:18,787 - ERROR - Execution failed for CDNS: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:18,819 - ERROR - Execution failed for CDRE: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:18,864 - ERROR - Execution failed for CD: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:18,873 - ERROR - Execution failed for CDRO: Polygon Global Error for CDRO: No call contracts found for CDRO as of 2023-01-01
+2026-03-02 14:36:19,047 - ERROR - Execution failed for CDW: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:19,105 - ERROR - Execution failed for CDNL: Spot data missing for CDNL near 2023-01-01
+2026-03-02 14:36:19,118 - ERROR - Execution failed for CDXS: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:19,154 - ERROR - Execution failed for CDZI: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:19,202 - ERROR - Execution failed for CDP: Spot data missing for CDP near 2023-01-01
+2026-03-02 14:36:19,228 - ERROR - Execution failed for CECO: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:19,291 - ERROR - Execution failed for CELC: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:19,295 - ERROR - Execution failed for CEG: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:19,320 - ERROR - Execution failed for CE: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:19,393 - ERROR - Execution failed for CDTG: Spot data missing for CDTG near 2023-01-01
+2026-03-02 14:36:19,395 - ERROR - Execution failed for CDT: Spot data missing for CDT near 2023-01-01
+2026-03-02 14:36:19,503 - ERROR - Execution failed for CELH: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:19,566 - ERROR - Execution failed for CELZ: Polygon Global Error for CELZ: No call contracts found for CELZ as of 2023-01-01
+2026-03-02 14:36:19,594 - ERROR - Execution failed for CELU: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:19,626 - ERROR - Execution failed for CENN: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:19,712 - ERROR - Execution failed for CENT: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:19,744 - ERROR - Execution failed for CENX: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:19,759 - ERROR - Execution failed for CENTA: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:20,127 - ERROR - Execution failed for CEPF: Spot data missing for CEPF near 2023-01-01
+2026-03-02 14:36:20,223 - ERROR - Execution failed for CERS: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:20,290 - ERROR - Execution failed for CEPS: Spot data missing for CEPS near 2023-01-01
+2026-03-02 14:36:20,296 - ERROR - Execution failed for CEPU: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:20,309 - ERROR - Execution failed for CETX: Polygon Global Error for CETX: No call contracts found for CETX as of 2023-01-01
+2026-03-02 14:36:20,369 - ERROR - Execution failed for CETY: Polygon Global Error for CETY: No call contracts found for CETY as of 2023-01-01
+2026-03-02 14:36:20,381 - ERROR - Execution failed for CERT: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:20,387 - ERROR - Execution failed for CFBK: Polygon Global Error for CFBK: No call contracts found for CFBK as of 2023-01-01
+2026-03-02 14:36:20,387 - ERROR - Execution failed for CEPT: Spot data missing for CEPT near 2023-01-01
+2026-03-02 14:36:20,503 - ERROR - Execution failed for CEVA: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:20,505 - ERROR - Execution failed for CFFI: Polygon Global Error for CFFI: No call contracts found for CFFI as of 2023-01-01
+2026-03-02 14:36:20,602 - ERROR - Execution failed for CEPV: Spot data missing for CEPV near 2023-01-01
+2026-03-02 14:36:20,640 - ERROR - Execution failed for CF: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:20,654 - ERROR - Execution failed for CFFN: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:20,748 - ERROR - Execution failed for CFLT: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:20,829 - ERROR - Execution failed for CFG: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:20,831 - ERROR - Execution failed for CG: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:20,897 - ERROR - Execution failed for CFR: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:20,897 - ERROR - Execution failed for CEPO: Spot data missing for CEPO near 2023-01-01
+2026-03-02 14:36:21,003 - ERROR - Execution failed for CGABL: Polygon Global Error for CGABL: No call contracts found for CGABL as of 2023-01-01
+2026-03-02 14:36:21,120 - ERROR - Execution failed for CGAU: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:21,130 - ERROR - Execution failed for CFND: Spot data missing for CFND near 2023-01-01
+2026-03-02 14:36:21,255 - ERROR - Execution failed for CGC: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:21,273 - ERROR - Execution failed for CGBD: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:21,327 - ERROR - Execution failed for CGEM: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:21,343 - ERROR - Execution failed for CGNX: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:21,410 - ERROR - Execution failed for CGNT: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:21,475 - ERROR - Execution failed for CGEN: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:21,590 - ERROR - Execution failed for CGO: Polygon Global Error for CGO: No call contracts found for CGO as of 2023-01-01
+2026-03-02 14:36:21,600 - ERROR - Execution failed for CGTX: Polygon Global Error for CGTX: No call contracts found for CGTX as of 2023-01-01
+2026-03-02 14:36:21,654 - ERROR - Execution failed for CGCT: Spot data missing for CGCT near 2023-01-01
+2026-03-02 14:36:21,768 - ERROR - Execution failed for CHCI: Polygon Global Error for CHCI: No call contracts found for CHCI as of 2023-01-01
+2026-03-02 14:36:21,784 - ERROR - Execution failed for CHCT: Polygon Global Error for CHCT: No call contracts found for CHCT as of 2023-01-01
+2026-03-02 14:36:21,809 - ERROR - Execution failed for CHCO: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:21,900 - ERROR - Execution failed for CHD: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:21,901 - ERROR - Execution failed for CGTL: Spot data missing for CGTL near 2023-01-01
+2026-03-02 14:36:21,901 - ERROR - Execution failed for CGON: Spot data missing for CGON near 2023-01-01
+2026-03-02 14:36:21,928 - ERROR - Execution failed for CHAC: Spot data missing for CHAC near 2023-01-01
+2026-03-02 14:36:22,058 - ERROR - Execution failed for CHE: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:22,065 - ERROR - Execution failed for CHDN: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:22,167 - ERROR - Execution failed for CHAI: Spot data missing for CHAI near 2023-01-01
+2026-03-02 14:36:22,247 - ERROR - Execution failed for CHI: Polygon Global Error for CHI: No call contracts found for CHI as of 2023-01-01
+2026-03-02 14:36:22,276 - ERROR - Execution failed for CHH: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:22,280 - ERROR - Execution failed for CHAR: Spot data missing for CHAR near 2023-01-01
+2026-03-02 14:36:22,322 - ERROR - Execution failed for CHGG: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:22,359 - ERROR - Execution failed for CHKP: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:22,448 - ERROR - Execution failed for CHEF: zscore_strategy.ZScoreMispricingStrategy() got multiple values for keyword argument 'initial_capital'
+2026-03-02 14:36:22,919 - ERROR - Execution failed for CHEC: Spot data missing for CHEC near 2023-01-01

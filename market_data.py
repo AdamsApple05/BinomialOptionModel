@@ -1,139 +1,39 @@
-"""
-market_data.py
---------------
-Thin wrapper around the Polygon.io REST API (polygon-api-client).
-
-Install:
-    pip install polygon-api-client
-
-The public `polygon` package exposes `RESTClient` at the top level:
-    from polygon import RESTClient
-"""
-
-from __future__ import annotations
-
-from dataclasses import dataclass, field
-
 import pandas as pd
+from polygon import RESTClient
 
-from polygon import RESTClient  # pip install polygon-api-client
 
-
-@dataclass
 class MarketData:
-    """
-    Fetch underlying OHLCV and option bid/ask data from Polygon.io.
+    """Interface for Polygon.io historical data retrieval."""
 
-    Parameters
-    ----------
-    api_key : str
-        Your Polygon.io API key.
-    """
+    def __init__(self, api_key: str):
+        self.client = RESTClient(api_key)
 
-    api_key: str
-    _client: RESTClient = field(init=False, repr=False)
+    def get_spot_at_date(self, symbol: str, date: str) -> float:
+        """Finds the first valid closing price on or after the requested date."""
+        current_date = pd.to_datetime(date)
+        for _ in range(10):
+            try:
+                aggs = self.client.get_aggs(symbol, 1, "day", current_date.strftime(
+                    '%Y-%m-%d'), current_date.strftime('%Y-%m-%d'))
+                if aggs:
+                    return aggs[0].close
+            except:
+                pass
+            current_date += pd.Timedelta(days=1)
+        raise ValueError(f"Spot data missing for {symbol} near {date}")
 
-    def __post_init__(self) -> None:
-        self._client = RESTClient(api_key=self.api_key)
+    def find_optimal_ticker(self, symbol, start_date, expiry_days, option_type):
+        """Identifies the best-fit 180D 10% OTM contract as of the start date."""
+        spot = self.get_spot_at_date(symbol, start_date)
+        target_strike = spot * 1.10 if option_type == "call" else spot * 0.90
+        target_dt = pd.to_datetime(start_date) + pd.Timedelta(days=expiry_days)
 
-    # ------------------------------------------------------------------
-    # Underlying
-    # ------------------------------------------------------------------
-
-    def get_underlying_daily(
-        self,
-        symbol: str,
-        start_date: str,
-        end_date: str,
-    ) -> pd.DataFrame:
-        """
-        Return daily OHLCV for *symbol* between *start_date* and *end_date*.
-
-        Returns
-        -------
-        DataFrame indexed by date with columns:
-            open, high, low, close, volume
-        """
-        rows = []
-        for agg in self._client.list_aggs(
-            ticker=symbol,
-            multiplier=1,
-            timespan="day",
-            from_=start_date,
-            to=end_date,
-            limit=50_000,
-        ):
-            rows.append(
-                {
-                    "date": pd.to_datetime(agg.timestamp, unit="ms").tz_localize(None),
-                    "open": agg.open,
-                    "high": agg.high,
-                    "low": agg.low,
-                    "close": agg.close,
-                    "volume": agg.volume,
-                }
-            )
-
-        if not rows:
-            return pd.DataFrame(columns=["open", "high", "low", "close", "volume"])
-
-        df = pd.DataFrame(rows).sort_values("date").set_index("date")
-        df.index = pd.to_datetime(df.index)
-        return df
-
-    # ------------------------------------------------------------------
-    # Options
-    # ------------------------------------------------------------------
-
-    def option_daily_close_quote(
-        self,
-        option_ticker: str,
-        start_date: str,
-        end_date: str,
-        tz: str = "America/New_York",
-    ) -> pd.DataFrame:
-        """
-        Fetches daily closing aggregates for the option contract.
-
-        Returns
-        -------
-        DataFrame indexed by date with columns:
-            bid, ask, mid, spread, bid_size, ask_size
-        """
-        if not option_ticker.startswith("O:"):
-            option_ticker = "O:" + option_ticker
-
-        rows = []
-        # Use list_aggs instead of list_quotes to get clean daily OHLC
-        for agg in self._client.list_aggs(
-            ticker=option_ticker,
-            multiplier=1,
-            timespan="day",
-            from_=start_date,
-            to=end_date,
-            limit=50_000,
-        ):
-            rows.append(
-                {
-                    "date": pd.to_datetime(agg.timestamp, unit="ms").tz_localize(None),
-                    "close": agg.close,
-                }
-            )
-
-        if not rows:
-            return pd.DataFrame(columns=["bid", "ask", "mid", "spread", "bid_size", "ask_size"])
-
-        df = pd.DataFrame(rows).sort_values("date").set_index("date")
-        df.index = pd.to_datetime(df.index)
-
-        # Approximate the bid/ask and mid using the daily closing price
-        # (Assuming a 1% spread for backtesting simulation)
-        df["mid"] = df["close"]
-        df["bid"] = df["close"] * 0.99
-        df["ask"] = df["close"] * 1.01
-        df["spread"] = df["ask"] - df["bid"]
-        df["bid_size"] = 10
-        df["ask_size"] = 10
-
-        # Return ONLY the required option columns so 'close' does not collide with the underlying's 'close'
-        return df[["bid", "ask", "mid", "spread", "bid_size", "ask_size"]]
+        try:
+            contracts = list(self.client.list_options_contracts(
+                underlying_ticker=symbol, limit=1000, as_of=start_date))
+            best = min(contracts, key=lambda c: abs((pd.to_datetime(
+                c.expiration_date) - target_dt).days) * 2 + abs(c.strike_price - target_strike))
+            return best.ticker
+        except Exception as e:
+            raise RuntimeError(
+                f"Polygon Discovery Error for {symbol}: {str(e)}")
