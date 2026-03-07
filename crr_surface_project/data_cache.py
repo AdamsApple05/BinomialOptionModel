@@ -58,12 +58,14 @@ class DataCache:
         return self._und_path(symbol, year).exists()
 
     def read_underlying(self, symbol: str, year: int) -> pd.DataFrame:
-        df = pd.read_csv(self._und_path(symbol, year), parse_dates=["date"], index_col="date")
-        df.index = pd.to_datetime(df.index)
+        df = pd.read_csv(self._und_path(symbol, year), parse_dates=["date"])
+        df["date"] = pd.to_datetime(df["date"]).dt.normalize()
+        df = df.set_index("date")
         return df
 
     def write_underlying(self, df: pd.DataFrame, symbol: str, year: int):
         out = df.reset_index() if df.index.name == "date" else df.copy()
+        out["date"] = pd.to_datetime(out["date"]).dt.normalize()
         out.to_csv(self._und_path(symbol, year), index=False)
 
     # ── Contract lists ────────────────────────────────────────────────────────
@@ -76,7 +78,7 @@ class DataCache:
 
     def read_contract_list(self, bucket_label: str, date_str: str) -> pd.DataFrame:
         _empty = pd.DataFrame(columns=["option_ticker", "strike", "expiry",
-                                        "contract_type", "bucket", "moneyness"])
+                                       "contract_type", "bucket", "moneyness"])
         path = self._contract_path(bucket_label, date_str)
         try:
             df = pd.read_csv(path)
@@ -84,7 +86,7 @@ class DataCache:
             return _empty
         if df.empty or "expiry" not in df.columns:
             return _empty
-        df["expiry"] = pd.to_datetime(df["expiry"])
+        df["expiry"] = pd.to_datetime(df["expiry"]).dt.normalize()
         return df
 
     def write_contract_list(self, df: pd.DataFrame, bucket_label: str, date_str: str):
@@ -101,12 +103,14 @@ class DataCache:
         return self._opt_path(ticker, year).exists()
 
     def read_option_ohlc(self, ticker: str, year: int) -> pd.DataFrame:
-        df = pd.read_csv(self._opt_path(ticker, year), parse_dates=["date"], index_col="date")
-        df.index = pd.to_datetime(df.index)
+        df = pd.read_csv(self._opt_path(ticker, year), parse_dates=["date"])
+        df["date"] = pd.to_datetime(df["date"]).dt.normalize()
+        df = df.set_index("date")
         return df
 
     def write_option_ohlc(self, df: pd.DataFrame, ticker: str, year: int):
         out = df.reset_index() if df.index.name == "date" else df.copy()
+        out["date"] = pd.to_datetime(out["date"]).dt.normalize()
         out.to_csv(self._opt_path(ticker, year), index=False)
 
 
@@ -156,7 +160,7 @@ class PolygonDownloader:
             from_=start, to=end, limit=50_000,
         ):
             rows.append({
-                "date": pd.to_datetime(agg.timestamp, unit="ms").tz_localize(None),
+                "date": pd.to_datetime(agg.timestamp, unit="ms").tz_localize(None).normalize(),
                 "open": agg.open, "high": agg.high,
                 "low": agg.low, "close": agg.close,
                 "volume": getattr(agg, "volume", None),
@@ -200,8 +204,10 @@ class PolygonDownloader:
                 continue
             spot = float(spot_series.loc[date])
 
-            exp_gte = (date + pd.Timedelta(days=bucket.min_dte)).strftime("%Y-%m-%d")
-            exp_lte = (date + pd.Timedelta(days=bucket.max_dte)).strftime("%Y-%m-%d")
+            exp_gte = (date + pd.Timedelta(days=bucket.min_dte)
+                       ).strftime("%Y-%m-%d")
+            exp_lte = (date + pd.Timedelta(days=bucket.max_dte)
+                       ).strftime("%Y-%m-%d")
 
             self.rl.wait()
             rows = []
@@ -230,7 +236,7 @@ class PolygonDownloader:
                         rows.append({
                             "option_ticker": ticker,
                             "strike": strike_f,
-                            "expiry": str(expiry),
+                            "expiry": str(pd.Timestamp(expiry).normalize()),
                             "contract_type": bucket.option_type,
                             "bucket": bucket.label,
                             "moneyness": m,
@@ -260,18 +266,6 @@ class PolygonDownloader:
         Each worker thread owns its own ``RESTClient`` instance to avoid
         shared-state issues. File writes are safe because every ticker maps
         to a unique file path.
-
-        Parameters
-        ----------
-        tickers : list[str]
-            Option ticker symbols to download.
-        year : int
-            Calendar year to fetch (``YYYY-01-01`` – ``YYYY-12-31``).
-        retry_max : int
-            Maximum retry attempts per ticker on transient HTTP errors.
-        max_workers : int
-            Number of concurrent download threads. Default ``50`` saturates
-            a paid-tier API connection without hitting server limits.
         """
         from concurrent.futures import ThreadPoolExecutor, as_completed
         try:
@@ -307,17 +301,19 @@ class PolygonDownloader:
                         from_=start, to=end, limit=50_000,
                     ):
                         rows.append({
-                            "date": pd.to_datetime(agg.timestamp, unit="ms").tz_localize(None),
+                            "date": pd.to_datetime(agg.timestamp, unit="ms").tz_localize(None).normalize(),
                             "open": agg.open, "high": agg.high,
                             "low": agg.low, "close": agg.close,
                             "volume": getattr(agg, "volume", None),
                         })
 
                     if rows:
-                        df = pd.DataFrame(rows).sort_values("date").set_index("date")
+                        df = pd.DataFrame(rows).sort_values(
+                            "date").set_index("date")
                         df.index = pd.to_datetime(df.index)
                     else:
-                        df = pd.DataFrame(columns=["open", "high", "low", "close", "volume"])
+                        df = pd.DataFrame(
+                            columns=["open", "high", "low", "close", "volume"])
                         df.index.name = "date"
 
                     cache.write_option_ohlc(df, ticker_key, year)
@@ -344,7 +340,8 @@ class PolygonDownloader:
                     else:
                         failed += 1
 
-        print(f"  Year {year}: {downloaded} downloaded, {skipped} cached, {failed} failed")
+        print(
+            f"  Year {year}: {downloaded} downloaded, {skipped} cached, {failed} failed")
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -362,8 +359,8 @@ class CachedMarketData:
         self.cache = cache
 
     def get_underlying_daily(self, symbol: str, start_date: str, end_date: str) -> pd.DataFrame:
-        start_ts = pd.Timestamp(start_date)
-        end_ts = pd.Timestamp(end_date)
+        start_ts = pd.Timestamp(start_date).normalize()
+        end_ts = pd.Timestamp(end_date).normalize()
         years = list(range(start_ts.year, end_ts.year + 1))
 
         frames = []
@@ -371,7 +368,8 @@ class CachedMarketData:
             if self.cache.has_underlying(symbol, year):
                 frames.append(self.cache.read_underlying(symbol, year))
             else:
-                df = self._live.get_underlying_daily(symbol, f"{year}-01-01", f"{year}-12-31")
+                df = self._live.get_underlying_daily(
+                    symbol, f"{year}-01-01", f"{year}-12-31")
                 if not df.empty:
                     self.cache.write_underlying(df, symbol, year)
                 frames.append(df)
@@ -381,7 +379,8 @@ class CachedMarketData:
             return pd.DataFrame(columns=["open", "high", "low", "close", "volume"])
 
         combined = pd.concat(non_empty)
-        combined = combined[~combined.index.duplicated(keep="first")].sort_index()
+        combined = combined[~combined.index.duplicated(
+            keep="first")].sort_index()
         mask = (combined.index >= start_ts) & (combined.index <= end_ts)
         return combined.loc[mask]
 
@@ -392,16 +391,18 @@ class CachedMarketData:
         end_date: str,
         assumed_spread_bps: float = 25.0,
     ) -> pd.DataFrame:
-        start_ts = pd.Timestamp(start_date)
-        end_ts = pd.Timestamp(end_date)
+        start_ts = pd.Timestamp(start_date).normalize()
+        end_ts = pd.Timestamp(end_date).normalize()
         years = list(range(start_ts.year, end_ts.year + 1))
 
-        ticker_key = option_ticker if option_ticker.startswith("O:") else "O:" + option_ticker
+        ticker_key = option_ticker if option_ticker.startswith(
+            "O:") else "O:" + option_ticker
 
         raw_frames = []
         for year in years:
             if self.cache.has_option_ohlc(ticker_key, year):
-                raw_frames.append(self.cache.read_option_ohlc(ticker_key, year))
+                raw_frames.append(
+                    self.cache.read_option_ohlc(ticker_key, year))
             else:
                 # Fall back to live for this year
                 df_live = self._live.get_option_daily_aggs(
@@ -458,7 +459,8 @@ class CachedUniverseBuilder:
     """
 
     def __init__(self, api_key: str, cache: DataCache, underlying_symbol: str = "SPY"):
-        self._live = OptionUniverseBuilder(api_key=api_key, underlying_symbol=underlying_symbol)
+        self._live = OptionUniverseBuilder(
+            api_key=api_key, underlying_symbol=underlying_symbol)
         self.cache = cache
 
     def list_contracts(self, as_of: str, spot: float, bucket: BucketSpec) -> pd.DataFrame:
@@ -466,7 +468,7 @@ class CachedUniverseBuilder:
             df = self.cache.read_contract_list(bucket.label, as_of)
             if df.empty or "expiry" not in df.columns:
                 return df
-            df["expiry"] = pd.to_datetime(df["expiry"])
+            df["expiry"] = pd.to_datetime(df["expiry"]).dt.normalize()
             return df
 
         # Fall back to live

@@ -39,21 +39,17 @@ END_DATE = "2024-12-31"
 def _json_safe(obj):
     """Recursively convert non-JSON-serializable types for json.dump."""
     if isinstance(obj, dict):
-        return {k: _json_safe(v) for k, v in obj.items()}
+        # NEW: Convert Timestamp keys to strings before recursing
+        return {
+            (str(k.date()) if isinstance(k, pd.Timestamp) else k): _json_safe(v)
+            for k, v in obj.items()
+        }
     if isinstance(obj, (list, tuple)):
         return [_json_safe(x) for x in obj]
-    if isinstance(obj, pd.DataFrame):
-        return obj.to_dict(orient="records")
     if isinstance(obj, pd.Series):
-        return obj.to_dict()
-    if isinstance(obj, (np.integer,)):
-        return int(obj)
-    if isinstance(obj, (np.floating,)):
-        return None if np.isnan(obj) else float(obj)
-    if isinstance(obj, (np.bool_,)):
-        return bool(obj)
-    if isinstance(obj, float) and math.isnan(obj):
-        return None
+        # NEW: Ensure Series index (keys) are converted to strings
+        return {str(k.date()): _json_safe(v) for k, v in obj.to_dict().items()}
+    # ... (keep existing logic for int, float, bool, and Timestamp values)
     if isinstance(obj, pd.Timestamp):
         return str(obj.date())
     return obj
@@ -115,15 +111,19 @@ def main():
         all_results[label] = result
 
         # Save CSVs
-        result["equity"].to_csv(OUTPUT_DIR / f"equity_{label}.csv", index=False)
-        result["trades"].to_csv(OUTPUT_DIR / f"trades_{label}.csv", index=False)
-        result["signals"].to_csv(OUTPUT_DIR / f"signals_{label}.csv", index=False)
+        result["equity"].to_csv(
+            OUTPUT_DIR / f"equity_{label}.csv", index=False)
+        result["trades"].to_csv(
+            OUTPUT_DIR / f"trades_{label}.csv", index=False)
+        result["signals"].to_csv(
+            OUTPUT_DIR / f"signals_{label}.csv", index=False)
 
         eq = result["equity"]
         pnl = eq["daily_pnl"].fillna(0.0)
         print(f"  Days: {len(eq)}")
         print(f"  Total P&L: ${pnl.sum():,.2f}")
-        print(f"  Entries: {(result['trades']['action'].str.startswith('ENTRY')).sum() if not result['trades'].empty else 0}")
+        print(
+            f"  Entries: {(result['trades']['action'].str.startswith('ENTRY')).sum() if not result['trades'].empty else 0}")
 
     # Load SPY prices from cache for benchmark comparison
     print("\nLoading SPY prices for benchmark metrics ...")
@@ -133,7 +133,8 @@ def main():
             spy_frames.append(cache.read_underlying("SPY", year))
     spy_prices = pd.concat(spy_frames) if spy_frames else pd.DataFrame()
     if not spy_prices.empty:
-        spy_prices = spy_prices[~spy_prices.index.duplicated(keep="first")].sort_index()
+        spy_prices = spy_prices[~spy_prices.index.duplicated(
+            keep="first")].sort_index()
 
     # Compute extended metrics for each bucket
     print("\nComputing extended metrics ...")
@@ -151,11 +152,13 @@ def main():
 
         # Save per-trade detail
         if isinstance(metrics.get("trade_detail"), pd.DataFrame) and not metrics["trade_detail"].empty:
-            metrics["trade_detail"].to_csv(OUTPUT_DIR / f"trade_detail_{label}.csv", index=False)
+            metrics["trade_detail"].to_csv(
+                OUTPUT_DIR / f"trade_detail_{label}.csv", index=False)
         if isinstance(metrics.get("monthly"), pd.DataFrame) and not metrics["monthly"].empty:
             metrics["monthly"].to_csv(OUTPUT_DIR / f"monthly_pnl_{label}.csv")
         if isinstance(metrics.get("yearly"), pd.DataFrame) and not metrics["yearly"].empty:
-            metrics["yearly"].to_csv(OUTPUT_DIR / f"yearly_summary_{label}.csv", index=False)
+            metrics["yearly"].to_csv(
+                OUTPUT_DIR / f"yearly_summary_{label}.csv", index=False)
 
         print(f"\n  {label}:")
         ov = metrics.get("overview", {})
@@ -165,8 +168,10 @@ def main():
         print(f"    Sharpe:     {ra.get('sharpe', float('nan')):>8.3f}")
         print(f"    Sortino:    {ra.get('sortino', float('nan')):>8.3f}")
         print(f"    Calmar:     {ra.get('calmar', float('nan')):>8.3f}")
-        print(f"    Max DD:     ${metrics['drawdown'].get('max_drawdown', 0):>11,.2f}")
-        print(f"    IR vs SPY:  {bm.get('information_ratio', float('nan')):>8.3f}")
+        print(
+            f"    Max DD:     ${metrics['drawdown'].get('max_drawdown', 0):>11,.2f}")
+        print(
+            f"    IR vs SPY:  {bm.get('information_ratio', float('nan')):>8.3f}")
 
     # Save metrics summary as JSON (non-DataFrame portions)
     print("\nSaving metrics summary ...")

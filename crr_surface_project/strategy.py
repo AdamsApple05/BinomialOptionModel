@@ -98,8 +98,8 @@ class StrategyConfig:
         (positive residual). Defaults to ``True``.
     """
 
-    entry_price_edge: float = 0.20
-    entry_iv_edge: float = 0.015
+    entry_price_edge: float = 0.05
+    entry_iv_edge: float = 0.001
     exit_iv_edge: float = 0.005
     max_holding_days: int = 10
     min_volume: int = 1
@@ -269,7 +269,8 @@ class CRRSurfaceDeltaHedgeStrategy:
 
             mid = float(opt["mid"].iloc[0])
             spread = float(opt["spread"].iloc[0])
-            volume = float(opt["volume"].iloc[0]) if pd.notna(opt["volume"].iloc[0]) else 0.0
+            volume = float(opt["volume"].iloc[0]) if pd.notna(
+                opt["volume"].iloc[0]) else 0.0
 
             dte = int((expiry - date).days)
             if dte <= 0 or mid <= 0 or volume < self.cfg.min_volume:
@@ -336,7 +337,8 @@ class CRRSurfaceDeltaHedgeStrategy:
         out_rows = []
 
         for _, row in chain_df.iterrows():
-            fitted_iv = predict_surface_iv(beta, row["spot"], row["strike"], row["T"])
+            fitted_iv = predict_surface_iv(
+                beta, row["spot"], row["strike"], row["T"])
 
             fair_price = crr_price_given_sigma(
                 S0=row["spot"], K=row["strike"], T=row["T"],
@@ -433,7 +435,8 @@ class CRRSurfaceDeltaHedgeStrategy:
         if cands.empty:
             return cands
 
-        cands["signal_strength"] = cands["abs_residual_price"] + 10.0 * cands["abs_residual_iv"]
+        cands["signal_strength"] = cands["abs_residual_price"] + \
+            10.0 * cands["abs_residual_iv"]
         return cands.sort_values("signal_strength", ascending=False)
 
     # ── Main backtest loop ────────────────────────────────────────────────────
@@ -477,9 +480,11 @@ class CRRSurfaceDeltaHedgeStrategy:
         RuntimeError
             If no underlying price data is returned for the requested period.
         """
-        und = self.md.get_underlying_daily(self.underlying_symbol, start_date, end_date)
+        und = self.md.get_underlying_daily(
+            self.underlying_symbol, start_date, end_date)
         if und.empty:
-            raise RuntimeError(f"No underlying data for {self.underlying_symbol}.")
+            raise RuntimeError(
+                f"No underlying data for {self.underlying_symbol}.")
 
         positions: List[Position] = []
         trade_rows: List[Dict] = []
@@ -511,7 +516,8 @@ class CRRSurfaceDeltaHedgeStrategy:
                 hedge_pnl = 0.0
 
                 if np.isfinite(pos.last_option_price):
-                    option_pnl = pos.side * pos.contracts * 100.0 * (option_mid - pos.last_option_price)
+                    option_pnl = pos.side * pos.contracts * \
+                        100.0 * (option_mid - pos.last_option_price)
 
                 if np.isfinite(pos.last_spot):
                     hedge_pnl = pos.hedge_shares * (spot - pos.last_spot)
@@ -564,7 +570,8 @@ class CRRSurfaceDeltaHedgeStrategy:
 
             if to_close:
                 close_set = set(to_close)
-                positions = [p for i, p in enumerate(positions) if i not in close_set]
+                positions = [p for i, p in enumerate(
+                    positions) if i not in close_set]
 
             # ── Build daily chain snapshot ────────────────────────────────
             contract_df = self.universe.list_contracts(
