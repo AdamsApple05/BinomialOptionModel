@@ -1,0 +1,47 @@
+# ── Python ───────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# ── Virtual environments ──────────────────────────────────────────────────────
+.venv/
+venv/
+env/
+ENV/
+
+# ── IDE / editor ──────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# ── Secrets ───────────────────────────────────────────────────────────────────
+.env
+.env.*
+secrets.py
+
+# ── Local data cache (populated by run_download.py) ───────────────────────────
+crr_surface_project/data/
+
+# ── Research outputs (large CSVs and PNGs) ────────────────────────────────────
+outputs/
+
+# ── Numba JIT cache ───────────────────────────────────────────────────────────
+crr_surface_project/__pycache__/
+
+# ── Jupyter ───────────────────────────────────────────────────────────────────
+.ipynb_checkpoints/
+*.ipynb
+
+# ── OS ────────────────────────────────────────────────────────────────────────
+*.log
+*.tmp

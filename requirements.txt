@@ -1,0 +1,7 @@
+numpy
+pandas
+numba
+polygon-api-client
+matplotlib
+scipy
+tqdm
