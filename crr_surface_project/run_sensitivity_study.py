@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from concurrent.futures import ProcessPoolExecutor, as_completed
 from tqdm import tqdm
-from run_research import GlobalConfig
+from config import GlobalConfig
 from strategy import StrategyConfig
 from universe import BEST_BUCKET
 from backtest import run_bucket_backtest

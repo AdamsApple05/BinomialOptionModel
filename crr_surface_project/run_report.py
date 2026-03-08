@@ -175,6 +175,8 @@ def main():
     REPORT_DIR.mkdir(parents=True, exist_ok=True)
     report_path = REPORT_DIR / "crr_surface_report.pdf"
 
+    figures_dir = REPORT_DIR / "figures"
+
     builder = ReportBuilder()
     builder.build(
         equity_dict=equity_dict,
@@ -182,9 +184,14 @@ def main():
         metrics=metrics,
         convergence_results=convergence_results,
     )
+
+    print("\nExporting individual figures as PNG ...")
+    builder.save_figures_png(figures_dir)
+
     builder.save_pdf(report_path)
 
     print(f"\nReport saved to: {report_path}")
+    print(f"Figures saved to: {figures_dir}")
 
 
 if __name__ == "__main__":

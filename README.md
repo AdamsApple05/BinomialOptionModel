@@ -23,7 +23,7 @@ a defined edge threshold and hedged delta-neutrally via the underlying ETF.
 
 On entry, the strategy computes the CRR delta and immediately hedges with
 the equivalent number of underlying SPY shares. The hedge is rebalanced when
-the delta error exceeds a configured threshold (default: 4 shares).
+the delta error exceeds a configured threshold (configurable; set to 4 shares in the run scripts).
 
 ### Option Buckets
 
@@ -64,8 +64,7 @@ crr_surface_project/
 │   ├── run_full_backtest.py    # Multi-year backtest using local cache
 │   ├── run_convergence.py      # CRR convergence analysis entry point
 │   ├── run_sensitivity_study.py# Parallel Sharpe sensitivity sweep
-│   ├── run_report.py           # Institutional PDF report generator
-│   └── utils.py                # Shared utilities
+│   └── run_report.py           # Institutional PDF report generator
 ├── outputs/                    # Generated CSVs, PNGs, and PDFs (git-ignored)
 ├── requirements.txt            # Python dependencies
 ├── .gitignore
@@ -171,30 +170,6 @@ produces four charts:
 2. Delta error vs. N (log-log)
 3. Computation time vs. N (log-log) — confirms O(N²) scaling
 4. Accuracy–speed Pareto frontier — justifies the default N=80
-
----
-
-## Institutional Report
-
-`run_report.py` generates a **15-page PDF** covering:
-
-| Page | Content |
-|------|---------|
-| 1 | Cover page |
-| 2 | Executive summary (metrics table) |
-| 3 | Equity curve + daily P&L |
-| 4 | Drawdown analysis |
-| 5 | Rolling Sharpe, vol, returns |
-| 6 | Monthly P&L heatmap |
-| 7 | Annual summary |
-| 8 | Benchmark comparison (vs. SPY B&H) |
-| 9 | Alpha statistical significance (t-test) |
-| 10 | Trade statistics |
-| 11 | Bucket comparison |
-| 12 | Market regime analysis |
-| 13 | CRR convergence curves |
-| 14 | Methodology |
-| 15 | Disclaimer |
 
 ---
 

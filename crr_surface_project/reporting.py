@@ -145,7 +145,7 @@ def _render_table(ax: plt.Axes, df: pd.DataFrame, title: str = "",
 # Individual page generators
 # ─────────────────────────────────────────────────────────────────────────────
 
-def _page_cover(report_date: str) -> plt.Figure:
+def _page_cover(report_date: str, date_range_str: str = "2022-2024") -> plt.Figure:
     fig = plt.figure(figsize=PAGE_SIZE)
     _apply_page_style(fig)
 
@@ -157,7 +157,7 @@ def _page_cover(report_date: str) -> plt.Figure:
                 color=LIGHT_BLUE, fontsize=11, fontweight="bold", transform=ax_top.transAxes)
     ax_top.text(0.05, 0.35, "CRR Binomial Surface Delta-Hedge Strategy",
                 color="white", fontsize=22, fontweight="bold", transform=ax_top.transAxes)
-    ax_top.text(0.05, 0.08, "SPY Options | 2022–2024 Backtest | Institutional Research Edition",
+    ax_top.text(0.05, 0.08, f"SPY Options | {date_range_str} Backtest | Institutional Research Edition",
                 color=LIGHT_BLUE, fontsize=12, transform=ax_top.transAxes)
 
     # Body
@@ -173,12 +173,12 @@ def _page_cover(report_date: str) -> plt.Figure:
         "entering positions when edges exceed defined thresholds and hedging delta exposure "
         "continuously via the underlying ETF.\n\n"
         "KEY HIGHLIGHTS\n\n"
-        "  • Strategy Universe:  SPY options (CBOE-listed), two distinct moneyness/DTE buckets\n"
-        "  • Signal Generation:  CRR binomial fair value vs. market mid price residual\n"
-        "  • Risk Management:    Delta-neutral hedging, max holding period, spread filters\n"
-        "  • Backtest Period:    January 2022 – December 2024 (3 full calendar years)\n"
-        "  • Data Source:        Polygon.io daily OHLC aggregates\n"
-        "  • Model:              American CRR binomial tree (N=80 steps, Numba-compiled)"
+        "  - Strategy Universe:  SPY options (CBOE-listed), two distinct moneyness/DTE buckets\n"
+        "  - Signal Generation:  CRR binomial fair value vs. market mid price residual\n"
+        "  - Risk Management:    Delta-neutral hedging, max holding period, spread filters\n"
+        f"  - Backtest Period:    {date_range_str}\n"
+        "  - Data Source:        Polygon.io daily OHLC aggregates\n"
+        "  - Model:              American CRR binomial tree (N=80 steps, Numba-compiled)"
     )
     ax.text(0.0, 0.95, desc, va="top", ha="left", color=TEXT_COLOR,
             fontsize=9.5, linespacing=1.6, transform=ax.transAxes,
@@ -241,7 +241,11 @@ def _page_exec_summary(metrics: Dict) -> plt.Figure:
                   "Max DD", "Win Rate", "IR vs SPY", "Ann. Alpha", "α p-value"]
 
     df_summary = pd.DataFrame(rows_data, columns=col_labels)
-    _render_table(axes_area, df_summary, title="Strategy Performance Summary  (Full Period: 2022–2024)")
+    first_ov = list(metrics.values())[0].get("overview", {}) if metrics else {}
+    start_yr = str(first_ov.get("start_date", ""))[:4]
+    end_yr = str(first_ov.get("end_date", ""))[:4]
+    period_str = f"{start_yr}-{end_yr}" if start_yr and end_yr else "Full Period"
+    _render_table(axes_area, df_summary, title=f"Strategy Performance Summary  ({period_str})")
 
     return fig
 
@@ -389,59 +393,63 @@ def _page_rolling_metrics(equity_dict: Dict[str, pd.DataFrame]) -> plt.Figure:
     _header_bar(fig, "Rolling Risk Metrics", "30-Day Rolling Sharpe, Volatility, and Returns")
     _footer(fig, "Page 5")
 
-    # Use best bucket (first entry)
-    label, equity = list(equity_dict.items())[0]
-    if equity.empty:
-        return fig
+    n_buckets = min(len(equity_dict), 2)
+    gs = gridspec.GridSpec(3, n_buckets, top=0.90, bottom=0.06, left=0.08, right=0.97,
+                           hspace=0.35, wspace=0.25)
 
-    df = equity.copy()
-    if "date" in df.columns:
-        df = df.set_index("date")
-    df.index = pd.to_datetime(df.index)
-    pnl = df["daily_pnl"].fillna(0.0)
+    colors_per_bucket = [MID_BLUE, ORANGE]
 
-    gs = gridspec.GridSpec(3, 1, top=0.90, bottom=0.06, left=0.08, right=0.97, hspace=0.35)
+    for col_idx, (label, equity) in enumerate(equity_dict.items()):
+        if col_idx >= 2 or equity.empty:
+            continue
 
-    # Rolling Sharpe
-    ax1 = fig.add_subplot(gs[0])
-    rs = rolling_sharpe(pnl, window=30)
-    ax1.plot(pnl.index, rs.values, color=MID_BLUE, linewidth=1.2)
-    ax1.axhline(0, color="black", linewidth=0.5)
-    ax1.axhline(2.0, color=GREEN, linewidth=0.8, linestyle="--", alpha=0.7, label="Sharpe=2.0")
-    ax1.fill_between(pnl.index, rs.values, 0,
-                     where=(rs.values > 0), alpha=0.2, color=GREEN)
-    ax1.fill_between(pnl.index, rs.values, 0,
-                     where=(rs.values <= 0), alpha=0.2, color=RED)
-    ax1.set_ylabel("30-Day Rolling Sharpe", fontsize=9)
-    ax1.legend(fontsize=8)
-    ax1.set_facecolor("#f8f9fa")
-    ax1.tick_params(labelsize=7)
-    ax1.grid(True, alpha=0.4, linewidth=0.5)
-    ax1.set_title(f"Rolling Metrics: {label.replace('_', ' ')}", fontsize=9,
-                  fontweight="bold", color=DARK_BLUE, loc="left")
+        df = equity.copy()
+        if "date" in df.columns:
+            df = df.set_index("date")
+        df.index = pd.to_datetime(df.index)
+        pnl = df["daily_pnl"].fillna(0.0)
+        bucket_color = colors_per_bucket[col_idx]
 
-    # Rolling volatility
-    ax2 = fig.add_subplot(gs[1], sharex=ax1)
-    rv = rolling_volatility(pnl, window=30)
-    ax2.plot(pnl.index, rv.values, color=ORANGE, linewidth=1.2)
-    ax2.set_ylabel("Annualized Volatility ($)", fontsize=9)
-    ax2.yaxis.set_major_formatter(matplotlib.ticker.FuncFormatter(lambda x, _: f"${x:,.0f}"))
-    ax2.set_facecolor("#f8f9fa")
-    ax2.tick_params(labelsize=7)
-    ax2.grid(True, alpha=0.4, linewidth=0.5)
+        # Rolling Sharpe
+        ax1 = fig.add_subplot(gs[0, col_idx])
+        rs = rolling_sharpe(pnl, window=30)
+        ax1.plot(pnl.index, rs.values, color=bucket_color, linewidth=1.2)
+        ax1.axhline(0, color="black", linewidth=0.5)
+        ax1.axhline(2.0, color=GREEN, linewidth=0.8, linestyle="--", alpha=0.7, label="Sharpe=2.0")
+        ax1.fill_between(pnl.index, rs.values, 0,
+                         where=(rs.values > 0), alpha=0.2, color=GREEN)
+        ax1.fill_between(pnl.index, rs.values, 0,
+                         where=(rs.values <= 0), alpha=0.2, color=RED)
+        ax1.set_ylabel("30-Day Rolling Sharpe", fontsize=8)
+        ax1.legend(fontsize=7)
+        ax1.set_facecolor("#f8f9fa")
+        ax1.tick_params(labelsize=7)
+        ax1.grid(True, alpha=0.4, linewidth=0.5)
+        ax1.set_title(f"Rolling Metrics: {label.replace('_', ' ')}", fontsize=8,
+                      fontweight="bold", color=DARK_BLUE, loc="left")
 
-    # Rolling 21-day returns
-    ax3 = fig.add_subplot(gs[2], sharex=ax1)
-    rr = rolling_returns(pnl, window=21)
-    pos = rr.values >= 0
-    ax3.bar(pnl.index[pos], rr.values[pos], color=GREEN, alpha=0.6, width=1)
-    ax3.bar(pnl.index[~pos], rr.values[~pos], color=RED, alpha=0.6, width=1)
-    ax3.axhline(0, color="black", linewidth=0.5)
-    ax3.set_ylabel("21-Day Return ($)", fontsize=9)
-    ax3.yaxis.set_major_formatter(matplotlib.ticker.FuncFormatter(lambda x, _: f"${x:,.0f}"))
-    ax3.set_facecolor("#f8f9fa")
-    ax3.tick_params(labelsize=7)
-    ax3.grid(True, alpha=0.4, linewidth=0.5)
+        # Rolling volatility
+        ax2 = fig.add_subplot(gs[1, col_idx], sharex=ax1)
+        rv = rolling_volatility(pnl, window=30)
+        ax2.plot(pnl.index, rv.values, color=ORANGE, linewidth=1.2)
+        ax2.set_ylabel("Ann. Volatility ($)", fontsize=8)
+        ax2.yaxis.set_major_formatter(matplotlib.ticker.FuncFormatter(lambda x, _: f"${x:,.0f}"))
+        ax2.set_facecolor("#f8f9fa")
+        ax2.tick_params(labelsize=7)
+        ax2.grid(True, alpha=0.4, linewidth=0.5)
+
+        # Rolling 21-day returns
+        ax3 = fig.add_subplot(gs[2, col_idx], sharex=ax1)
+        rr = rolling_returns(pnl, window=21)
+        pos = rr.values >= 0
+        ax3.bar(pnl.index[pos], rr.values[pos], color=GREEN, alpha=0.6, width=1)
+        ax3.bar(pnl.index[~pos], rr.values[~pos], color=RED, alpha=0.6, width=1)
+        ax3.axhline(0, color="black", linewidth=0.5)
+        ax3.set_ylabel("21-Day Return ($)", fontsize=8)
+        ax3.yaxis.set_major_formatter(matplotlib.ticker.FuncFormatter(lambda x, _: f"${x:,.0f}"))
+        ax3.set_facecolor("#f8f9fa")
+        ax3.tick_params(labelsize=7)
+        ax3.grid(True, alpha=0.4, linewidth=0.5)
 
     return fig
 
@@ -1208,6 +1216,19 @@ class ReportBuilder:
         if report_date is None:
             report_date = str(_date.today())
 
+        # Derive date range string from equity data
+        all_dates = []
+        for eq in equity_dict.values():
+            if not eq.empty:
+                col = eq["date"] if "date" in eq.columns else eq.index
+                all_dates.extend(pd.to_datetime(col).tolist())
+        if all_dates:
+            start_yr = min(all_dates).year
+            end_yr = max(all_dates).year
+            date_range_str = f"{start_yr}-{end_yr}" if start_yr != end_yr else str(start_yr)
+        else:
+            date_range_str = "Multi-Year"
+
         plt.rcParams.update({
             "font.family": "DejaVu Sans",
             "axes.titlesize": 10,
@@ -1217,7 +1238,7 @@ class ReportBuilder:
         })
 
         print("  Building page 1: Cover ...")
-        self.figures.append(_page_cover(report_date))
+        self.figures.append(_page_cover(report_date, date_range_str))
 
         print("  Building page 2: Executive Summary ...")
         self.figures.append(_page_exec_summary(metrics))
@@ -1274,3 +1295,29 @@ class ReportBuilder:
 
         print(f"\nReport saved: {path}")
         print(f"Total pages: {len(self.figures)}")
+
+    def save_figures_png(self, figures_dir: str | Path):
+        """
+        Save each report page as an individual high-DPI PNG for LaTeX inclusion.
+        Files are named: fig01_cover.png, fig02_exec_summary.png, etc.
+        Call this BEFORE save_pdf (save_pdf closes the figures).
+        """
+        figures_dir = Path(figures_dir)
+        figures_dir.mkdir(parents=True, exist_ok=True)
+
+        page_names = [
+            "cover", "exec_summary", "equity_curve", "drawdown",
+            "rolling_metrics", "monthly_pnl", "yearly_summary",
+            "benchmark", "alpha_significance", "trade_statistics",
+            "bucket_comparison", "regime_analysis", "convergence",
+            "methodology", "disclaimer",
+        ]
+
+        for i, fig in enumerate(self.figures):
+            name = page_names[i] if i < len(page_names) else f"page{i+1:02d}"
+            out_path = figures_dir / f"fig{i+1:02d}_{name}.png"
+            fig.savefig(str(out_path), dpi=DPI, bbox_inches="tight",
+                        facecolor="white")
+            print(f"  Saved figure: {out_path.name}")
+
+        print(f"\nAll figures saved to: {figures_dir}")

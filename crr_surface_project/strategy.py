@@ -109,6 +109,9 @@ class StrategyConfig:
     max_spread_frac: float = 0.40
     trade_rich_options: bool = True
     trade_cheap_options: bool = True
+    dd_min_positions: int = 1
+    max_contracts: int = 3
+    use_signal_strength_sizing: bool = True
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -439,6 +442,43 @@ class CRRSurfaceDeltaHedgeStrategy:
             10.0 * cands["abs_residual_iv"]
         return cands.sort_values("signal_strength", ascending=False)
 
+    # ── Position sizing helpers ───────────────────────────────────────────────
+
+    def _scaled_max_positions(self, cum_pnl_history: list) -> int:
+        """
+        Reduce max open positions when current drawdown is a large fraction of
+        the historical max drawdown.  Scales linearly from max_open_positions
+        (at zero drawdown) down to dd_min_positions (at 100% of max drawdown).
+        """
+        if len(cum_pnl_history) < 10:
+            return self.cfg.max_open_positions
+        arr = np.array(cum_pnl_history, dtype=float)
+        peak = np.maximum.accumulate(arr)
+        dd_series = arr - peak
+        historical_max_dd = dd_series.min()   # most negative value
+        if historical_max_dd >= 0:
+            return self.cfg.max_open_positions
+        current_dd = dd_series[-1]
+        dd_ratio = current_dd / historical_max_dd   # 0 = no DD, 1 = at historical worst
+        min_pos = self.cfg.dd_min_positions
+        max_pos = self.cfg.max_open_positions
+        scaled = max_pos - dd_ratio * (max_pos - min_pos)
+        return max(min_pos, int(round(scaled)))
+
+    def _signal_contracts(self, signal_strength: float, candidates_df) -> int:
+        """
+        Size contracts proportional to signal strength relative to the average
+        signal on this day, capped at max_contracts.
+        """
+        if not self.cfg.use_signal_strength_sizing or candidates_df.empty:
+            return 1
+        avg_strength = float(candidates_df["signal_strength"].mean())
+        if avg_strength <= 0:
+            return 1
+        ratio = signal_strength / avg_strength
+        # ratio=1 -> 1 contract, ratio=2 -> 2 contracts, capped at max_contracts
+        return max(1, min(int(round(ratio)), self.cfg.max_contracts))
+
     # ── Main backtest loop ────────────────────────────────────────────────────
 
     def run_backtest(self, start_date: str, end_date: str) -> Dict[str, pd.DataFrame]:
@@ -490,6 +530,8 @@ class CRRSurfaceDeltaHedgeStrategy:
         trade_rows: List[Dict] = []
         equity_rows: List[Dict] = []
         signal_rows: List[Dict] = []
+        cum_pnl_history: List[float] = []
+        running_cum_pnl: float = 0.0
 
         for date in tqdm(list(und.index), desc=f"Steps={self.steps}", leave=False):
             spot = float(und.loc[date, "close"])
@@ -606,17 +648,19 @@ class CRRSurfaceDeltaHedgeStrategy:
             cands = self.generate_candidates(surface_df)
 
             # ── Enter new positions ───────────────────────────────────────
-            if not cands.empty and len(positions) < self.cfg.max_open_positions:
+            position_limit = self._scaled_max_positions(cum_pnl_history)
+            if not cands.empty and len(positions) < position_limit:
                 already_open = {p.option_ticker for p in positions}
 
                 for _, row in cands.iterrows():
-                    if len(positions) >= self.cfg.max_open_positions:
+                    if len(positions) >= position_limit:
                         break
                     if row["option_ticker"] in already_open:
                         continue
 
                     side = int(row["signal_side"])
-                    contracts = 1
+                    contracts = self._signal_contracts(
+                        float(row["signal_strength"]), cands)
                     delta = float(row["surface_delta"])
                     hedge_shares = -side * contracts * 100.0 * delta
 
@@ -659,6 +703,8 @@ class CRRSurfaceDeltaHedgeStrategy:
                         "hedge_shares": hedge_shares,
                     })
 
+            running_cum_pnl += daily_pnl
+            cum_pnl_history.append(running_cum_pnl)
             equity_rows.append({
                 "date": date,
                 "bucket": self.bucket.label,

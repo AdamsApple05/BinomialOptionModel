@@ -69,12 +69,15 @@ def main():
         exit_iv_edge=0.001,
         max_holding_days=10,
         min_volume=1,
-        max_open_positions=5,
+        max_open_positions=10,
         delta_rehedge_threshold_shares=4.0,
         min_chain_size=6,
         max_spread_frac=0.60,
         trade_rich_options=True,
         trade_cheap_options=True,
+        dd_min_positions=2,
+        max_contracts=3,
+        use_signal_strength_sizing=True,
     )
 
     cache = DataCache(DATA_DIR)
