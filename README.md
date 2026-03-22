@@ -32,12 +32,14 @@ the delta error exceeds a configured threshold (configurable; set to 4 shares in
 | `PUT_30_60_OTM` | Put | 30–60 | 0.92–0.99 | Primary bucket — high signal density, accurate CRR fit |
 | `CALL_120_150_ATM` | Call | 120–150 | 0.98–1.02 | Control bucket — lower accuracy, sparse signals |
 
-### Backtest Results (Q1 2024, live API)
+### Backtest Results (2022–2024, 753 trading days)
 
-| Bucket | Sharpe | Total P&L | Max DD | Win Rate | Entries |
-|--------|--------|-----------|--------|----------|---------|
-| PUT_30_60_OTM | 2.74 | $6,938 | −$974 | 56.7% | 125 |
-| CALL_120_150_ATM | 1.23 | $5,225 | −$2,532 | 52.4% | 82 |
+| Bucket | Sharpe | Sortino | Calmar | Total P&L | Max DD | Win Rate | Entries |
+|--------|--------|---------|--------|-----------|--------|----------|---------|
+| PUT_30_60_OTM | 3.41 | 3.96 | 8.16 | $126,523 | −$5,190 | 55.3% | 667 |
+| CALL_120_150_ATM | 1.49 | 1.92 | — | $47,488 | −$11,108 | 58.5% | 301 |
+
+Out-of-sample Sharpe (2023–2024, unseen during parameter optimisation): **2.03**.
 
 ---
 
@@ -63,8 +65,11 @@ crr_surface_project/
 │   ├── run_download.py         # One-time data download to local cache
 │   ├── run_full_backtest.py    # Multi-year backtest using local cache
 │   ├── run_convergence.py      # CRR convergence analysis entry point
+│   ├── run_param_sweep.py      # Grid search parameter optimiser (2022 train set)
 │   ├── run_sensitivity_study.py# Parallel Sharpe sensitivity sweep
 │   └── run_report.py           # Institutional PDF report generator
+├── paper/
+│   └── main.tex                # LaTeX source for the research paper
 ├── outputs/                    # Generated CSVs, PNGs, and PDFs (git-ignored)
 ├── requirements.txt            # Python dependencies
 ├── .gitignore
@@ -84,7 +89,7 @@ crr_surface_project/
 ### Installation
 
 ```bash
-git clone https://github.com/your-username/crr_surface_project.git
+git clone https://github.com/AdamsApple05/BinomialOptionModel.git
 cd crr_surface_project
 pip install -r requirements.txt
 export POLYGON_API_KEY="your_key_here"
