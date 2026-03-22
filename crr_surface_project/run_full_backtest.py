@@ -39,7 +39,6 @@ END_DATE = "2024-12-31"
 def _json_safe(obj):
     """Recursively convert non-JSON-serializable types for json.dump."""
     if isinstance(obj, dict):
-        # NEW: Convert Timestamp keys to strings before recursing
         return {
             (str(k.date()) if isinstance(k, pd.Timestamp) else k): _json_safe(v)
             for k, v in obj.items()
@@ -47,9 +46,7 @@ def _json_safe(obj):
     if isinstance(obj, (list, tuple)):
         return [_json_safe(x) for x in obj]
     if isinstance(obj, pd.Series):
-        # NEW: Ensure Series index (keys) are converted to strings
         return {str(k.date()): _json_safe(v) for k, v in obj.to_dict().items()}
-    # ... (keep existing logic for int, float, bool, and Timestamp values)
     if isinstance(obj, pd.Timestamp):
         return str(obj.date())
     return obj
@@ -64,8 +61,8 @@ def main():
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
     strat_cfg = StrategyConfig(
-        entry_price_edge=0.15,
-        entry_iv_edge=0.003,
+        entry_price_edge=0.10,
+        entry_iv_edge=0.002,
         exit_iv_edge=0.001,
         max_holding_days=10,
         min_volume=1,

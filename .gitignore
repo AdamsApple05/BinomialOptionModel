@@ -27,6 +27,7 @@ Thumbs.db
 # ── Secrets ───────────────────────────────────────────────────────────────────
 .env
 .env.*
+!.env.example
 secrets.py
 
 # ── Local data cache (populated by run_download.py) ───────────────────────────
@@ -45,3 +46,7 @@ crr_surface_project/__pycache__/
 # ── OS ────────────────────────────────────────────────────────────────────────
 *.log
 *.tmp
+
+# ── Paper / upload artifacts ──────────────────────────────────────────────────
+overleaf_upload.zip
+*.zip

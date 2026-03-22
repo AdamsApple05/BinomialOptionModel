@@ -1,3 +1,16 @@
+"""
+run_sensitivity_study.py
+Parallel sensitivity sweep of CRR step count (25-300) against annualised
+Sharpe ratio and wall-clock execution time per pricing call.
+
+Usage (from project root):
+    python crr_surface_project/run_sensitivity_study.py
+
+Requires: POLYGON_API_KEY environment variable (live API calls are made).
+Outputs:
+    outputs/sensitivity_analysis_data.csv
+    outputs/sensitivity_analysis_curve.png
+"""
 import time
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -61,7 +74,7 @@ def main():
     # 1. Save Data Points to CSV
     df = pd.DataFrame(results).sort_values("steps")
     df.to_csv("outputs/sensitivity_analysis_data.csv", index=False)
-    print("\n✅ Data points saved to outputs/sensitivity_analysis_data.csv")
+    print("\nData points saved to outputs/sensitivity_analysis_data.csv")
 
     # 2. Save High-Res Curve Photo
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(16, 6))
@@ -74,14 +87,14 @@ def main():
 
     ax2.plot(df['steps'], df['time_sec'], marker='s',
              color='#d62728', linewidth=2.5)
-    ax2.set_title('Execution Time Scaling (O(N²))', fontweight='bold')
+    ax2.set_title('Execution Time Scaling (O(N^2))', fontweight='bold')
     ax2.set_xlabel('CRR Steps')
     ax2.set_ylabel('Time (Seconds)')
     ax2.grid(True, alpha=0.3)
 
     plt.tight_layout()
     plt.savefig('outputs/sensitivity_analysis_curve.png')
-    print("✅ Curve photo saved to outputs/sensitivity_analysis_curve.png")
+    print("Curve saved to outputs/sensitivity_analysis_curve.png")
 
 
 if __name__ == "__main__":
