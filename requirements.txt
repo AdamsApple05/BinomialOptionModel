@@ -5,3 +5,4 @@ polygon-api-client
 matplotlib
 scipy
 tqdm
+

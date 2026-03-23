@@ -37,7 +37,9 @@ crr_surface_project/data/
 outputs/
 
 # ── Numba JIT cache ───────────────────────────────────────────────────────────
-crr_surface_project/__pycache__/
+**/__pycache__/
+*.nbc
+*.nbi
 
 # ── Jupyter ───────────────────────────────────────────────────────────────────
 .ipynb_checkpoints/
@@ -47,6 +49,6 @@ crr_surface_project/__pycache__/
 *.log
 *.tmp
 
-# ── Paper / upload artifacts ──────────────────────────────────────────────────
+# ── Upload artifacts ──────────────────────────────────────────────────────────
 overleaf_upload.zip
 *.zip

@@ -1,6 +1,6 @@
 """
 run_param_sweep.py
-Grid-search parameter optimisation on the 2018–2021 train period.
+Grid-search parameter optimisation on the 2022 train period.
 
 Sweeps entry_price_edge × entry_iv_edge × max_holding_days and selects
 the combination that maximises the annualised Sharpe ratio subject to a
@@ -11,14 +11,14 @@ Usage (from project root):
     python crr_surface_project/run_param_sweep.py
 
 Prerequisites:
-    run_download.py must have been run with START_YEAR = 2018 so that
-    the 2018-2021 data is present in the local cache.
+    run_download.py must have been run so that 2022 data is present
+    in the local cache.
 
 Outputs (in outputs/param_sweep/):
     sweep_results.csv          All 75 (params, sharpe, max_dd, pnl, win_rate)
     heatmap_sharpe.png         Sharpe heatmap: price_edge x iv_edge (3 subplots for holding_days)
     heatmap_maxdd.png          Max-drawdown heatmap (same layout)
-    yearly_breakdown.csv       Per-year Sharpe for the best params (2018-2021)
+    yearly_breakdown.csv       Per-year Sharpe for best params — OOS years only (2023-2024)
     best_params.txt            Plain-text record of the chosen params + stats
 """
 from __future__ import annotations
@@ -79,7 +79,7 @@ FIXED_PARAMS = dict(
     use_signal_strength_sizing=True,
     trade_rich_options=True,
     trade_cheap_options=True,
-    exit_iv_edge=0.001,
+    exit_iv_edge=0.0,   # disabled — not part of the sweep grid
 )
 
 MAX_WORKERS = 6
@@ -273,8 +273,12 @@ def _yearly_breakdown(
     data_dir: Path,
     output_dir: Path,
 ) -> None:
-    """Run one backtest per year (2022-2024) with the best params and save a CSV."""
-    years = [2022, 2023, 2024]
+    """Run one backtest per OOS year (2023-2024) with the best params and save a CSV.
+
+    2022 is intentionally excluded — it is the in-sample parameter optimisation year.
+    Including it here would conflate in-sample and OOS performance.
+    """
+    years = [2023, 2024]  # OOS only — 2022 is the train year
     rows  = []
 
     cache      = DataCache(data_dir)
@@ -320,7 +324,7 @@ def _yearly_breakdown(
     out = pd.DataFrame(rows)
     path = output_dir / "yearly_breakdown.csv"
     out.to_csv(path, index=False)
-    print(f"\n  Per-year breakdown (best params on train set):")
+    print(f"\n  Per-year OOS breakdown (best params from 2022 train):")
     print(out.to_string(index=False))
 
 
@@ -417,7 +421,7 @@ def main() -> None:
     # Save best params to text file
     best_txt = OUTPUT_DIR / "best_params.txt"
     with open(best_txt, "w") as f:
-        f.write("Best params selected from train period 2018-2021\n")
+        f.write("Best params selected from train period 2022\n")
         f.write(f"entry_price_edge  = {best['entry_price_edge']}\n")
         f.write(f"entry_iv_edge     = {best['entry_iv_edge']}\n")
         f.write(f"max_holding_days  = {int(best['max_holding_days'])}\n")
@@ -442,12 +446,11 @@ def main() -> None:
     print("=" * 65)
     print(f"1. Review heatmaps in {OUTPUT_DIR}")
     print("2. Confirm best params are on a broad Sharpe plateau (not a spike)")
-    print("3. Edit run_full_backtest.py:")
-    print(f"     START_DATE = '2018-01-01'")
+    print("3. Edit run_full_backtest.py if needed (START_DATE should be '2023-01-01' for OOS):")
     print(f"     entry_price_edge = {best['entry_price_edge']}")
     print(f"     entry_iv_edge    = {best['entry_iv_edge']}")
     print(f"     max_holding_days = {int(best['max_holding_days'])}")
-    print("4. Run OOS (2022-2024) first, then full 7-year backtest")
+    print("4. Run OOS (2023-2024) backtest: python run_full_backtest.py")
 
 
 if __name__ == "__main__":

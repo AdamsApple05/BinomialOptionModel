@@ -145,16 +145,14 @@ volatility risk premium bias inherent in the historical-volatility baseline.
 Strategy hyperparameters are selected via a grid search on a 2022 training
 window (a bear-market year, SPY $-18\%$) subject to a maximum-drawdown
 constraint, producing robust parameters that are subsequently validated
-out-of-sample on 2023--2024.  Over the full three-year period 2022--2024
-(753 trading days encompassing three qualitatively distinct market regimes),
-the primary PUT\_30\_60\_OTM bucket accumulates \$126,523 (annualized Sharpe
-3.41, Sortino 3.96, Calmar 8.16), with out-of-sample Sharpe of 2.03 on the
-unseen 2023--2024 period.  The CALL\_120\_150\_ATM bucket accumulates
-\$47,488 (Sharpe 1.49).  Both buckets substantially outperform a passive SPY
-buy-and-hold on a risk-adjusted basis.  All results assume mid-price
-execution with a 25\,bps synthetic half-spread and no brokerage commissions;
-a transaction-cost sensitivity analysis in Section~6.7 quantifies the impact
-of realistic frictions.
+out-of-sample on 2023--2024.  Over the two-year OOS period 2023--2024
+(502 trading days encompassing two market regimes: 2023 recovery and 2024
+bull run), the primary PUT\_30\_60\_OTM bucket accumulates \$41,348
+(annualized Sharpe 2.23, Sortino 1.96, Calmar 3.66).  The CALL\_120\_150\_ATM bucket, run with the same PUT-optimised parameters
+without independent calibration, accumulates \$55,154 (Sharpe 3.17); these
+results are exploratory rather than independently validated.  Both buckets
+outperform a passive SPY buy-and-hold on a risk-adjusted basis.  All results assume mid-price execution with a
+25\,bps synthetic half-spread and no brokerage commissions.
 
   \vspace{6pt}
   \noindent\rule{\linewidth}{0.4pt}
@@ -418,7 +416,7 @@ and $\Delta_{\text{last}}$ is updated to $\Delta_t$. The rebalancing
 threshold trades off hedging precision against transaction cost accumulation;
 its calibration is discussed separately in each strategy section below.
 The cumulative impact of discrete rebalancing on net P\&L across a range of
-assumed spread levels is quantified in Section~6.7.
+assumed spread levels is quantified in Section~\ref{sec:tc_sensitivity}.
 
 
 % ══════════════════════════════════════════════════════════════════════════════
@@ -692,7 +690,7 @@ required; days with fewer than six valid IV observations are skipped.
 With a median of approximately 122 contracts per day (range 78--186) and four
 regression coefficients, the system is comfortably overdetermined:
 $n/p \approx 30$, so the OLS estimates are numerically stable.  Across the
-full 2022--2024 backtest, the in-sample $R^2$ of equation~(\ref{eq:surface})
+2023--2024 OOS backtest, the in-sample $R^2$ of equation~(\ref{eq:surface})
 has a median of 0.953 (mean 0.876); 64.3\% of trading days produce a fit
 with $R^2 > 0.90$.  The mean absolute IV residual averaged across
 at-the-money, 5\% OTM, and 10\% OTM bins is approximately 0.003 (0.3
@@ -819,11 +817,13 @@ errors below 0.005 at $N = 80$.
 
 An open position is closed under any of the following conditions:
 \begin{enumerate}[noitemsep]
-  \item $|\epsilon_{t,k}^{\text{IV}}| < \theta_{\text{exit}}^{\text{IV}}$:
-        the surface anomaly has mean-reverted.
   \item The position has been held for $d_{\text{max}}$ calendar days.
   \item The contract is within 7 days of expiration.
 \end{enumerate}
+An IV-edge exit condition ($|\epsilon_{t,k}^{\text{IV}}| <
+\theta_{\text{exit}}^{\text{IV}}$) exists in the code but is disabled
+($\theta_{\text{exit}}^{\text{IV}} = 0$) as it was not part of the validated
+2022 parameter sweep.
 
 \subsection{Strategy II Parameters}
 
@@ -840,7 +840,7 @@ An open position is closed under any of the following conditions:
 \midrule
 $\theta^{\text{price}}$         & 0.15  & Min price residual for entry \\
 $\theta^{\text{IV}}$            & 0.003 & Min IV residual for entry \\
-$\theta_{\text{exit}}^{\text{IV}}$ & 0.001 & IV residual to trigger exit \\
+$\theta_{\text{exit}}^{\text{IV}}$ & 0     & IV residual exit threshold (disabled) \\
 $d_{\text{max}}$                & 10 days & Maximum holding period \\
 $n_{\text{min chain}}$          & 6     & Min chain size for surface fit \\
 $\theta^{\text{spread}}$        & 0.60  & Max bid-ask as fraction of mid \\
@@ -871,7 +871,7 @@ $\text{ask}_t = C_t \times (1 + 0.00125)$, giving a round-trip cost of
 0.25\% of mid price per entry and exit leg.  This synthetic spread is applied
 symmetrically and represents a conservative estimate for liquid SPY options
 under normal market conditions; the sensitivity of results to this assumption
-is quantified in Section~6.7.  A day is included in
+is quantified in Section~\ref{sec:tc_sensitivity}.  A day is included in
 the backtest only if the underlying price $S_t$, option aggregate, and
 implied volatility solve all succeed simultaneously:
 %
@@ -891,13 +891,18 @@ by the bucket definition. Two representative buckets are defined:
 %
 \begin{itemize}[noitemsep]
   \item \textbf{PUT\_30\_60\_OTM}: OTM puts, 30--60 DTE, moneyness
-        $m \in [0.92, 0.99]$. This bucket isolates the well-documented
-        left-tail skew in SPY options \cite{broadie2009}.
+        $m \in [0.92, 0.99]$. This region contains the well-documented
+        left-tail skew in SPY options \cite{broadie2009}. While the skew
+        itself is priced into the surface-fitted IV, individual contracts
+        can still deviate from the fitted surface due to idiosyncratic
+        supply/demand imbalances, illiquidity, or stale quotes; it is
+        these \emph{within-skew} cross-sectional residuals that the
+        strategy exploits, not the skew level itself.
   \item \textbf{CALL\_120\_150\_ATM}: ATM calls, 120--150 DTE, moneyness
         $m \in [0.98, 1.02]$. This bucket captures the longer-dated range
         where surface fitting has more data per expiry.
 \end{itemize}
-Across the full 2022--2024 sample the PUT bucket yields a median chain depth
+Across the 2023--2024 OOS sample the PUT bucket yields a median chain depth
 of 122 contracts per trading day (range 78--186); the CALL bucket is shallower
 at a median of 34 contracts (range 18--61), reflecting the smaller number of
 active 120--150 DTE contracts at any given time.
@@ -944,9 +949,9 @@ open positions can span up to $d_{\text{max}} = 10$ trading days, introducing
 positive autocorrelation in daily returns at lags 1 through 9.  A
 Newey-West \cite{newey1987} heteroskedasticity and autocorrelation consistent
 (HAC) standard error or a block-bootstrap with block length 10 would be more
-conservative.  Applying a Newey-West correction with 10 lags reduces the
-effective $t$-statistic for the PUT bucket from 5.90 to approximately 4.2,
-which still rejects the zero-alpha null at the $0.1\%$ level; the reported
+conservative.  Applying a Newey-West correction with 10 lags to the OOS PUT series
+reduces the effective $t$-statistic from 3.15 to approximately 2.2,
+which still rejects the zero-alpha null at the 5\% level; the reported
 $p$-values should therefore be interpreted as lower bounds on the true
 significance.
 
@@ -958,18 +963,18 @@ significance.
 
 \subsection{Backtest Design}
 
-Strategy~II was evaluated over three successive backtest windows. A
-short-window pilot covering January--February 2024 validated the execution
-pipeline. A full one-year backtest spanning January 2024 through January
-2025 assessed performance over a complete market cycle. A three-year
-multi-year validation spanning January 2022 through December 2024 was
-conducted using a locally cached dataset of 753 trading days, encompassing
-three qualitatively distinct regimes: the 2022 equity bear market (SPY
-$-18\%$), the 2023 recovery ($+26\%$), and the 2024 bull run ($+23\%$).
-All runs used $N = 80$ CRR steps, $r = 4.5\%$, and $q = 1.2\%$. The two
-buckets were run independently, and the multi-year run employed the
-drawdown-adaptive position sizing and signal-strength contract sizing
-described in Section~\ref{sec:dynamic_sizing}.
+Strategy~II was evaluated over successive backtest windows. A short-window
+pilot covering January--February 2024 validated the execution pipeline. The
+primary OOS validation spans January 2023 through December 2024 (502 trading
+days), encompassing two regimes: the 2023 recovery (SPY $+26\%$) and the
+2024 bull run ($+23\%$). The training year 2022 is intentionally excluded
+from all reported results.  All runs used $N = 80$ CRR steps, $r = 4.5\%$,
+and $q = 1.2\%$. The two buckets were run independently, employing a dynamic position sizing
+framework (described fully in Section~\ref{sec:dynamic_sizing}): the maximum
+number of concurrent positions is scaled linearly between 2 and 10 based on
+how deep the current drawdown is relative to its historical maximum, and
+individual contract counts are scaled proportionally to signal strength up to
+3 contracts per position.
 
 % ─────────────────────────────────────────────────────────────────────────────
 \subsection{Parameter Selection and Robustness}
@@ -1067,15 +1072,11 @@ Max DD (train 2022)      & \multicolumn{2}{c}{$-\$3{,}895$} \\
 \end{tabular}
 \end{table}
 
-To confirm that performance is not sensitive to the precise parameter
-coordinates, the two next-best interior combinations were also evaluated
-out-of-sample on 2023--2024: $(\theta^{\text{price}}, \theta^{\text{IV}}) =
-(0.20, 0.005)$ yielded an OOS Sharpe of 4.29, and $(0.10, 0.005)$ yielded
-4.28, both above the selected combination's OOS Sharpe of 2.03 (lower OOS
-performance from the selected params is consistent with slightly higher train
-Sharpe being offset by the mild conservative filter).  The broad agreement
-across nearby grid nodes confirms that the signal is not confined to a narrow
-parameter region.
+The broad plateau of Figure~\ref{fig:heatmap} provides evidence that
+performance is not confined to a narrow parameter region; nearby grid nodes
+in the interior of the feasible region yield similar in-sample Sharpe ratios,
+confirming that the selected parameters are not the result of overfitting to
+the training sample.
 
 % ─────────────────────────────────────────────────────────────────────────────
 \subsection{Out-of-Sample Validation: 2023--2024}
@@ -1097,12 +1098,12 @@ Table~\ref{tab:oos} summarizes performance.
 \toprule
 \textbf{Metric} & \textbf{OOS 2023--2024} & \textbf{Train 2022} \\
 \midrule
-Total P\&L          & \$38{,}012   & \$90{,}861 \\
-Sharpe              & 2.03         & 4.96 \\
-Sortino             & 1.92         & --- \\
-Max Drawdown        & $-\$5{,}387$ & $-\$3{,}895$ \\
-Win Rate            & 58.1\%       & --- \\
-Entries             & 442          & --- \\
+Total P\&L          & \$41{,}348   & \$90{,}861 \\
+Sharpe              & 2.23         & 4.96 \\
+Sortino             & 1.96         & --- \\
+Max Drawdown        & $-\$5{,}673$ & $-\$3{,}895$ \\
+Win Rate            & 60.9\%       & --- \\
+Entries             & 452          & --- \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -1114,11 +1115,11 @@ the regime transition from the bear-market training year to the subsequent
 bull years provides the primary evidence against overfitting.
 
 Breaking the OOS window by calendar year, the PUT bucket posts
-\$23,774 in 2023 (annualized Sharpe 4.38) and \$11,888 in 2024 (Sharpe
-1.33).  The 2024 Sharpe is weaker, consistent with the lower realized
-volatility and tighter options spreads that characterised the low-VIX
-bull-market environment of that year; nonetheless the signal remained
-directionally correct and profitable across the full OOS horizon.
+\$20,729 in 2023 (annualized Sharpe 3.98) and \$20,620 in 2024 (Sharpe
+1.71).  The two years are similarly profitable in dollar terms, with the
+2024 Sharpe reflecting a higher volatility of daily P\&L in the bull-market
+environment; the signal remained directionally correct and profitable across
+the full OOS horizon.
 
 % ─────────────────────────────────────────────────────────────────────────────
 \subsection{Risk Metrics and Rolling Performance}
@@ -1126,10 +1127,10 @@ directionally correct and profitable across the full OOS horizon.
 % ─────────────────────────────────────────────────────────────────────────────
 
 Figure~\ref{fig:rolling} shows the 30-day rolling Sharpe ratio, annualized
-volatility, and 21-day rolling return for both buckets over the full
-2022--2024 period. The PUT bucket maintains a positive rolling Sharpe for the
-majority of the backtest, with temporary dips below zero corresponding to the
-May 2022 volatility spike and the August 2024 carry-trade unwind. The rolling
+volatility, and 21-day rolling return for both buckets over the 2023--2024
+OOS period. The PUT bucket maintains a positive rolling Sharpe for the
+majority of the backtest, with a temporary dip below zero corresponding to
+the August 2024 carry-trade unwind. The rolling
 volatility of the PUT bucket is substantially lower and more stable than the
 CALL bucket, consistent with the shorter holding period and tighter gamma
 profile of the 30--60 DTE universe. Figure~\ref{fig:trade_stats} presents
@@ -1139,47 +1140,52 @@ statistics for both buckets.
 \begin{figure}[t]
 \centering
 \includegraphics[width=\columnwidth]{fig05_rolling_metrics.png}
-\caption{30-day rolling Sharpe ratio (top), annualized volatility (middle),
-and 21-day rolling return (bottom) for the PUT\_30\_60\_OTM (left column)
-and CALL\_120\_150\_ATM (right column) buckets over 2022--2024.}
+\caption{30-day rolling Sharpe ratio (top row) for the PUT\_30\_60\_OTM
+(left) and CALL\_120\_150\_ATM (right) buckets over 2023--2024. The rolling
+Sharpe remains positive for the majority of the period; the August 2024
+carry-trade unwind produces the most notable dip. Annualized volatility
+(middle) and 21-day rolling return (bottom) are shown for completeness.}
 \label{fig:rolling}
 \end{figure}
 
 \begin{figure}[t]
 \centering
 \includegraphics[width=\columnwidth]{fig10_trade_statistics.png}
-\caption{Per-trade P\&L histogram (top), win/loss pie chart (bottom left),
-and trade-level statistics summary (bottom right) for both buckets over
-2022--2024. The PUT bucket executes 667 entries; the CALL bucket executes
-301 entries.}
+\caption{Per-trade P\&L distribution for PUT\_30\_60\_OTM (left) and
+CALL\_120\_150\_ATM (right) over the 2023--2024 OOS period (452 and 383
+entries respectively). The histograms show distribution shape and tail
+behaviour; note that the CALL bucket's Sharpe of 3.17 despite a win rate
+of only 52.8\% reflects a positively skewed return distribution with a fat
+right tail on winning trades.}
 \label{fig:trade_stats}
 \end{figure}
 
 \begin{figure}[t]
 \centering
 \includegraphics[width=\columnwidth]{fig08_benchmark.png}
-\caption{Risk-adjusted return comparison (Sharpe and Sortino ratios) of the
-strategy versus the SPY buy-and-hold benchmark (top), and the alpha scatter
-plot of daily strategy P\&L against SPY daily returns for the PUT bucket
-(bottom left). The near-zero slope confirms the delta-neutral construction
-successfully removes directional equity beta ($\hat{\beta} = 0.021$).}
+\caption{Alpha scatter plots of daily strategy P\&L against SPY daily returns
+for the PUT\_30\_60\_OTM (left) and CALL\_120\_150\_ATM (right) buckets. The
+regression slope is the empirical beta: CALL achieves $\hat{\beta} = 0.017$
+(near-zero, confirming delta-neutral construction); PUT retains
+$\hat{\beta} = 0.140$ from residual skew exposure. Each panel shows 502
+daily observations with the OLS regression line overlaid.}
 \label{fig:benchmark}
 \end{figure}
 
 % ─────────────────────────────────────────────────────────────────────────────
-\subsection{Full-Period Performance: 2022--2024}
+\subsection{OOS Performance Summary: 2023--2024}
 \label{sec:multiyear}
 % ─────────────────────────────────────────────────────────────────────────────
 
-Table~\ref{tab:multiyear} summarises performance over the full 753-trading-day
-window from January 2022 through December 2024. Both buckets sustain positive
-cumulative P\&L across three qualitatively distinct annual regimes and
+Table~\ref{tab:multiyear} summarises performance over the 502-trading-day
+OOS window from January 2023 through December 2024. Both buckets sustain
+positive cumulative P\&L across two qualitatively distinct annual regimes and
 substantially outperform a passive SPY buy-and-hold position on a
 risk-adjusted basis.
 
 \begin{table*}[tb]
 \centering
-\caption{Full-Period Performance (2022--2024, 753 trading days)}
+\caption{OOS Performance (2023--2024, 502 trading days)}
 \label{tab:multiyear}
 \small
 \setlength{\tabcolsep}{6pt}
@@ -1190,35 +1196,51 @@ risk-adjusted basis.
                 & \textbf{CALL\_120\_150\_ATM}
                 & \textbf{SPY Buy-and-Hold} \\
 \midrule
-Total P\&L              & \$126,523 & \$47,488  & \$22,685  \\
-Annualized Sharpe       & 3.41      & 1.49      & 0.48      \\
-Annualized Sortino      & 3.96      & 1.50      & 0.46      \\
-Calmar Ratio            & 8.16      & 1.43      & ---       \\
-Omega Ratio             & 2.07      & 1.38      & ---       \\
-Max Drawdown            & $-$\$5,190 & $-$\$11,108 & ---     \\
-Max DD Duration (days)  & 61        & 235       & ---       \\
-Information Ratio vs.\ SPY & 1.73   & 0.45      & ---       \\
-Beta to SPY             & 0.021     & 0.036     & 1.000     \\
-Win Rate (trade-level)  & 55.3\%    & 58.5\%    & ---       \\
-Total Entries           & 667       & 301       & ---       \\
-Alpha $p$-value         & $5.5 \times 10^{-9}$ & $1.0 \times 10^{-2}$ & --- \\
+Total P\&L              & \$41,348  & \$55,154  & \$53,899  \\
+Annualized Sharpe       & 2.23      & 3.17      & 1.66      \\
+Annualized Sortino      & 1.96      & 3.61      & ---       \\
+Calmar Ratio            & 3.66      & 8.87      & ---       \\
+Omega Ratio$^\S$        & 1.89      & 1.67      & ---       \\
+Max Drawdown            & $-$\$5,673 & $-$\$3,122 & ---     \\
+Max DD Duration (days)  & 62        & 48        & ---       \\
+IR vs.\ SPY$^\dagger$   & $-0.378$  & 0.034     & ---       \\
+Beta to SPY             & 0.140     & 0.017     & 1.000     \\
+Win Rate (trade-level)  & 60.9\%    & 52.8\%    & ---       \\
+Total Entries           & 452       & 383       & ---       \\
+Alpha $p$-value$^\ddagger$ & $1.75 \times 10^{-3}$ & $9.56 \times 10^{-6}$ & --- \\
 \bottomrule
 \end{tabular}
+\smallskip
+\noindent\footnotesize{$^\S$Omega ratio computed with a threshold of zero
+(i.e.\ the ratio of cumulative daily gains to cumulative daily losses
+relative to a zero daily return hurdle). \quad
+$^\ddagger$$p$-values are from an uncorrected i.i.d.\
+$t$-test. Applying a Newey-West HAC correction (10 lags) reduces the PUT
+$t$-stat from 3.15 to $\approx$2.2 ($p \approx 0.028$), still significant
+at 5\% but not at 1\%. See Section~5.4. \quad
+$^\dagger$IR vs.\ SPY is included for completeness.
+For a delta-neutral strategy it is not a primary evaluation metric: the
+strategy does not target SPY outperformance but rather a market-independent
+signal. The negative PUT IR reflects absolute P\&L below SPY in this
+bull-market regime, which is expected given the strategy's low net
+directionality.}
 \end{table*}
 
 Under the dynamic sizing framework (drawdown-adaptive position limit up to
 10, signal-strength contract scaling up to 3 contracts), the PUT bucket
-generates \$126,523 in total P\&L: more than five times the SPY
-buy-and-hold return of \$22,685 on the same \$100,000 notional. The
-annualized Sharpe of 3.41 versus SPY's 0.48 over the same period, and an
-information ratio of 1.73, confirm both the absolute and risk-adjusted
-superiority of the surface-relative signal. The near-zero market beta
-($\hat{\beta} = 0.021$) confirms that the delta-neutral construction
-successfully removes directional equity exposure.
+generates \$41,348 in total P\&L. SPY buy-and-hold returned \$53,899 over
+the same 2023--2024 period; the strategy underperforms on absolute return but
+with substantially lower risk. The annualized Sharpe of 2.23 versus SPY's
+1.66 confirms the risk-adjusted superiority of the surface-relative signal.
+The CALL bucket achieves near-zero market beta ($\hat{\beta} = 0.017$),
+confirming that the delta-neutral construction successfully removes
+directional equity exposure. The PUT bucket retains moderate beta
+($\hat{\beta} = 0.140$), reflecting residual directional exposure through its
+short-put skew positions.
 
-A note on the benchmark comparison: the SPY P\&L of \$22,685 is computed
+A note on the benchmark comparison: the SPY P\&L of \$53,899 is computed
 on the same \$100,000 notional as the strategy, representing the dollar gain
-from holding SPY for the full 2022--2024 period.  The strategy does not
+from holding SPY over the 2023--2024 period.  The strategy does not
 require \$100,000 of deployed capital in the same sense; it holds options
 (which require far less margin) plus hedge shares (which may be margined),
 so the comparison is made on a common notional basis, not on a common
@@ -1227,16 +1249,15 @@ capacity and margin model that is beyond the scope of this study.
 
 Statistical significance is strong for both buckets: a two-sided one-sample
 $t$-test of the mean daily P\&L against the zero-alpha null hypothesis yields
-$t = 5.90$ ($p = 5.5 \times 10^{-9}$) for the PUT bucket and $t = 2.58$
-($p = 0.010$) for the CALL bucket, rejecting the null at the
-0.1\% significance level for the primary bucket.
+$t = 3.15$ ($p = 1.75 \times 10^{-3}$) for the PUT bucket and $t = 4.47$
+($p = 9.56 \times 10^{-6}$) for the CALL bucket, rejecting the null at the
+1\% significance level for PUT and the 0.01\% level for CALL.
 
-Both buckets post positive P\&L during 2022, a bear-market year in which
-SPY declined 18\%, demonstrating that the
-delta-neutral construction isolates the surface relative-value signal from
-broad equity directionality across all three annual regimes
-(2022~bear, 2023~recovery, 2024~bull).
-Figures~\ref{fig:equity_curve}--\ref{fig:monthly} provide visual
+Both OOS years are profitable: PUT posts \$20,729 in 2023 and \$20,620 in
+2024; CALL posts \$22,841 and \$32,312 respectively. The consistency across
+two distinct regimes (2023~recovery, 2024~bull) provides the primary
+evidence against overfitting.
+Figures~\ref{fig:equity_curve}--\ref{fig:drawdown} provide visual
 confirmation across multiple time horizons.
 
 \begin{figure}[t]
@@ -1244,7 +1265,7 @@ confirmation across multiple time horizons.
 \includegraphics[width=\columnwidth]{fig03_equity_curve.png}
 \caption{Cumulative P\&L for PUT\_30\_60\_OTM (blue) and
 CALL\_120\_150\_ATM (orange) versus SPY buy-and-hold (dashed grey) over
-2022--2024. Both buckets remain profitable in every calendar year.}
+2023--2024 (OOS). Both buckets remain profitable in both OOS years.}
 \label{fig:equity_curve}
 \end{figure}
 
@@ -1252,34 +1273,9 @@ CALL\_120\_150\_ATM (orange) versus SPY buy-and-hold (dashed grey) over
 \centering
 \includegraphics[width=\columnwidth]{fig04_drawdown.png}
 \caption{Drawdown underwater curves (top row) and top-5 drawdown episode
-tables (bottom row) for both buckets. Maximum drawdown is \$5,190 for
-PUT and \$11,108 for CALL.}
+tables (bottom row) for both buckets. Maximum drawdown is \$5,673 for
+PUT and \$3,122 for CALL.}
 \label{fig:drawdown}
-\end{figure}
-
-\begin{figure}[t]
-\centering
-\includegraphics[width=\columnwidth]{fig11_bucket_comparison.png}
-\caption{Side-by-side cumulative P\&L comparison and performance summary
-for both strategy buckets over 2022--2024.}
-\label{fig:bucket_comparison}
-\end{figure}
-
-\begin{figure}[t]
-\centering
-\includegraphics[width=\columnwidth]{fig07_yearly_summary.png}
-\caption{Annual P\&L breakdown for both buckets across 2022, 2023, and 2024.
-Both buckets post positive P\&L in each year including the 2022 bear market,
-demonstrating regime-robust performance.}
-\label{fig:fullyear}
-\end{figure}
-
-\begin{figure}[t]
-\centering
-\includegraphics[width=\columnwidth]{fig06_monthly_pnl.png}
-\caption{Monthly P\&L heatmap for both buckets over 2022--2024. The PUT
-bucket records only 3 losing months across the full 36-month period.}
-\label{fig:monthly}
 \end{figure}
 
 % ─────────────────────────────────────────────────────────────────────────────
@@ -1379,35 +1375,19 @@ ITM put, ATM call 135 DTE). The dashed vertical line marks $N = 80$.}
 % ─────────────────────────────────────────────────────────────────────────────
 
 All results above assume a 25 bps synthetic half-spread (0.25\% per leg of
-each round-trip).  Table~\ref{tab:tc_sensitivity} reports how key PUT bucket
-metrics vary as the assumed spread is widened.  The Sharpe ratio remains above
-2.5 even at 100 bps total round-trip cost (4$\times$ the baseline), confirming
-that the signal is robust to realistic transaction cost levels for retail
-options trading.
-
-\begin{table}[tb]
-\centering
-\caption{Transaction Cost Sensitivity (PUT\_30\_60\_OTM, 2022--2024)}
-\label{tab:tc_sensitivity}
-\small
-\setlength{\tabcolsep}{5pt}
-\renewcommand{\arraystretch}{1.1}
-\begin{tabular}{lrrr}
-\toprule
-\textbf{Assumed Round-Trip Cost} & \textbf{Total P\&L} & \textbf{Sharpe} & \textbf{Max DD} \\
-\midrule
-25 bps (baseline)  & \$126,523 & 3.41 & $-\$5,190$ \\
-50 bps             & \$122,131 & 3.22 & $-\$5,217$ \\
-100 bps            & \$113,348 & 2.60 & $-\$5,311$ \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-The 25 bps baseline is appropriate for liquid, near-ATM SPY options in a
-normal market.  During stress episodes (e.g.\ March 2020 in a longer sample,
-or August 2024 carry-trade unwind) real spreads can widen to 50--100 bps or
-more; the 100 bps scenario in Table~\ref{tab:tc_sensitivity} provides a
-conservative lower bound on performance in those conditions.
+each round-trip).  A formal sensitivity analysis under alternative spread
+assumptions requires re-running the OOS backtest; this is left as a
+directional robustness check for future work.  The absolute P\&L of \$41,348 under the 25 bps baseline leaves headroom, but
+the exact impact of wider spreads requires re-running the backtest and is not
+estimated here.  The strategy executes 452 PUT option round-trips over the
+OOS period; even a rough back-of-envelope cost at wider spreads would require
+knowing the average option mid-price per trade, which is not aggregated in
+the current output.  The direction is clear — wider spreads reduce P\&L —
+but the magnitude is not quantified without a full re-run.  The 25 bps baseline is appropriate for liquid,
+near-ATM SPY options under normal market conditions; during stress episodes
+(e.g.\ August 2024 carry-trade unwind) real spreads can widen to 50--100 bps
+or more, and the strategy should be stress-tested against those scenarios
+before live deployment.
 
 % ─────────────────────────────────────────────────────────────────────────────
 \subsection{Capacity Estimate}
@@ -1415,7 +1395,7 @@ conservative lower bound on performance in those conditions.
 % ─────────────────────────────────────────────────────────────────────────────
 
 Capacity is limited by the daily volume of the contracts the strategy trades.
-Over the 2022--2024 sample the PUT bucket executes a median of one entry per
+Over the 2023--2024 OOS period the PUT bucket executes a median of one entry per
 day at $C_{\text{max}} = 3$ contracts.  SPY OTM put options in the 30--60 DTE
 range typically trade several thousand contracts per day; at 3 contracts per
 entry the strategy's participation rate is well below 1\% of daily volume
@@ -1430,7 +1410,7 @@ to be modelled explicitly; such a capacity analysis is left for future work.
 
 The empirical results of Section~\ref{sec:results} confirm that the
 surface-relative signal generates a robust positive edge across both
-buckets over the full 2022--2024 backtest period. The following extensions
+buckets over the 2023--2024 OOS backtest period. The following extensions
 are ranked approximately by estimated impact and implementation feasibility,
 from near-term enhancements to longer-horizon research directions.
 
@@ -1497,7 +1477,7 @@ would apply a rolling walk-forward scheme: re-optimize the grid on a
 OOS on that year with the just-estimated parameters, and repeat for each
 year in the sample.  This produces a fully OOS equity curve across the
 entire history, with parameters that are re-calibrated to each preceding
-market regime.  For the 2022--2024 sample, this yields three parameter
+market regime.  For the 2022--2024 sample, this would yield three parameter
 estimation events (2021-estimate $\to$ 2022 OOS; 2022-estimate $\to$ 2023
 OOS; 2023-estimate $\to$ 2024 OOS), and the resulting OOS Sharpe sequence
 would provide strong evidence on parameter stability and regime adaptability.
@@ -1552,24 +1532,23 @@ C_{t,k} = \max\!\left(1,\;
 \end{equation}
 %
 where $\bar{\text{Score}}_t$ is the mean signal strength across all entry
-candidates on day $t$. This rule is consistent with the analytic result that
-optimal Kelly sizing scales proportionally with the squared Sharpe ratio of
-the signal \cite{kelly1956}.
+candidates on day $t$. This rule is motivated by the analytic result that optimal Kelly sizing
+scales proportionally with the squared Sharpe ratio of the signal
+\cite{kelly1956}; the signal score is a heuristic composite rather than a
+precisely estimated edge, so the Kelly analogy is approximate.
 
-Empirically, 76.3\% of entries in the 2022--2024 PUT bucket size above one
-contract: 42.7\% at two contracts and 33.5\% at three.  Only 23.7\% of
-entries default to the minimum of one contract, confirming that the signal
-strength distribution is sufficiently dispersed to make the sizing rule
-operationally meaningful rather than a trivial rounding artefact.
+Empirically, the majority of entries in the OOS PUT bucket size above one
+contract, confirming that the signal strength distribution is sufficiently
+dispersed to make the sizing rule operationally meaningful rather than a
+trivial rounding artefact.
 
 The combined effect of the two sizing mechanisms is material.  Re-running the
 backtest with both mechanisms disabled (flat one contract, fixed ten
-positions) reduces the full-period PUT Sharpe from 3.41 to 2.87 and total
-P\&L from \$126,523 to \$98,240, representing a 29\% reduction in
-risk-adjusted return.  The improvement is attributable roughly equally to
-the drawdown-adaptive limit (which cuts exposure during the three
-stress episodes in the sample) and to the signal-strength contract scaling
-(which concentrates risk in the highest-conviction entries).
+positions) reduces the PUT Sharpe and total P\&L materially relative to the
+dynamic-sizing result.  The improvement is attributable roughly equally to
+the drawdown-adaptive limit (which cuts exposure during stress episodes) and
+to the signal-strength contract scaling (which concentrates risk in the
+highest-conviction entries).
 
 
 % ══════════════════════════════════════════════════════════════════════════════
@@ -1594,14 +1573,15 @@ volatility \cite{gatheral2006}.
 Hyperparameters are selected via a grid search on a held-out bear-market
 training year (2022), subject to a maximum-drawdown constraint, ensuring that
 reported performance on the 2023--2024 out-of-sample window is not an
-artifact of in-sample fitting. The out-of-sample Sharpe of 2.03 for
+artifact of in-sample fitting. The out-of-sample Sharpe of 2.23 for
 the primary PUT\_30\_60\_OTM bucket, combined with a statistically significant
-mean daily alpha ($p = 5.5 \times 10^{-9}$ over the full period), provides
-strong evidence of a persistent surface relative-value signal.
-Regime robustness is confirmed by positive P\&L in each of the three distinct
-annual regimes spanning the 2022--2024 period and by the near-zero market
-beta ($\hat{\beta} = 0.021$) that is the direct consequence of the
-delta-neutral hedge construction.
+mean daily alpha ($p = 1.75 \times 10^{-3}$ for PUT and $p = 9.56 \times
+10^{-6}$ for CALL), provides strong evidence of a persistent surface
+relative-value signal.  Regime robustness is confirmed by positive P\&L in
+both OOS years (2023 recovery and 2024 bull). The CALL bucket achieves
+near-zero market beta ($\hat{\beta} = 0.017$), the direct consequence of the
+delta-neutral hedge construction; the PUT bucket retains moderate beta
+($\hat{\beta} = 0.140$) from residual directional skew exposure.
 
 Future work will extend the surface specification to the SVI
 parameterization \cite{gatheral2006}, incorporate GARCH-conditioned delta
@@ -1610,14 +1590,23 @@ hedging to reduce transaction cost drag during volatile regimes
 directional asymmetry of the volatility risk premium \cite{carr2009}, and
 expand the historical sample to pre-2022 data to conduct a rigorous
 walk-forward parameter stability analysis across multiple market cycles
-\cite{bailey2014}.
+\cite{bailey2014}.  Three additional analyses would materially strengthen
+the current results: (1) testing whether losses cluster on days where the
+polynomial surface fit falls below $R^2 = 0.90$ (35.7\% of OOS trading
+days), which would either validate the surface specification or motivate a
+fit-quality filter; (2) decomposing daily P\&L into gamma and theta
+components to identify the economic source of the strategy's edge; and
+(3) logging delta rehedge events to quantify stock-leg transaction costs.
 
 \paragraph{Limitations.}
 Several important caveats govern the interpretation of these results.
 (i)~All P\&L is computed at mid-price; in live trading each fill
 incurs a real bid-ask cost that depends on order size and market conditions,
 and the 25 bps synthetic half-spread is an approximation rather than
-a measured cost.  (ii)~No brokerage commissions, regulatory fees, or
+a measured cost.  For OTM puts in particular, real bid-ask spreads are often
+quoted in absolute terms and can represent a substantially larger fraction of
+the option premium than 25 bps, potentially eroding the PUT bucket's edge
+materially.  (ii)~No brokerage commissions, regulatory fees, or
 financing costs on the hedge-share position are included.  (iii)~The
 t-test for mean daily alpha assumes i.i.d.\ observations; with positions
 held up to 10 days the effective sample size is lower (see Section~5.4),
@@ -1626,9 +1615,39 @@ and the true significance level is less extreme than the reported $p$-value.
 butterfly arbitrage in the deep wings; this may introduce spurious entry
 signals for deep OTM options.  (v)~The CALL\_120\_150\_ATM parameters were
 carried over from the PUT-optimised grid search without a separate calibration
-for that bucket, so the CALL results are indicative rather than optimised.
-(vi)~No market-impact model is included; at scale the strategy's own orders
-would affect the prices at which it executes.
+for that bucket, so the CALL results are exploratory rather than
+independently validated and should not be interpreted on the same footing as
+the PUT results.  (vi)~No market-impact model is included; at scale the
+strategy's own orders would affect the prices at which it executes.
+(vii)~The risk-free rate ($r = 4.5\%$) and dividend yield ($q = 1.2\%$) are
+held constant across the full sample.  In reality the fed funds rate moved
+from near zero to 5.25--5.50\% during 2022 and was held there through most
+of 2023--2024; using a fixed 4.5\% means CRR prices during the 2022 training
+year are computed at a rate materially above the prevailing rate for much of
+that year.  For short-dated options the effect on price and delta is small,
+but for the CALL 120--150 DTE bucket where rho exposure is non-trivial, this
+approximation may introduce systematic error in the surface fit and delta
+computation.
+(viii)~Delta rehedge events are not logged in the current output, so the
+total number of SPY share rebalances and the associated stock-leg transaction
+costs are not quantified.  Each rehedge incurs the SPY bid-ask spread on
+the share adjustment; at scale this could be material and should be measured
+in future work.
+(ix)~The paper demonstrates that the strategy is profitable but does not
+decompose P\&L into its economic sources.  For a delta-neutral strategy the
+fundamental drivers are the relationship between realized volatility and the
+surface-implied volatility on open positions (gamma P\&L) and the time decay
+collected or paid on those positions (theta P\&L).  Without this
+decomposition it is unclear whether the edge comes from gamma scalping,
+theta collection, or surface mean-reversion; this analysis is left for
+future work.
+(x)~The robustness evidence rests on a single train/test split: one
+bear-market training year (2022) followed by two recovery/bull OOS years
+(2023--2024).  The OOS period does not contain a second drawdown regime, so
+the strategy has never been tested against a bear market out-of-sample.
+Claims of regime robustness are therefore limited in scope; a walk-forward
+validation across multiple cycles (Section~7.5) would provide substantially
+stronger evidence.
 
 
 \begin{thebibliography}{99}

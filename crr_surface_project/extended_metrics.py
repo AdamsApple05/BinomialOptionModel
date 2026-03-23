@@ -36,7 +36,7 @@ def sortino_ratio(
     downside_std = math.sqrt((downside ** 2).mean())
     if downside_std == 0:
         return float("nan")
-    return float((daily_pnl.mean() / downside_std) * math.sqrt(periods_per_year))
+    return float(((daily_pnl.mean() - target_return) / downside_std) * math.sqrt(periods_per_year))
 
 
 def calmar_ratio(daily_pnl: pd.Series, periods_per_year: int = 252) -> float:
@@ -269,14 +269,15 @@ def yearly_summary(equity: pd.DataFrame, periods_per_year: int = 252) -> pd.Data
     rows = []
     for year, grp in df.groupby("year"):
         pnl = grp["daily_pnl"].fillna(0.0)
+        actual_days = len(pnl)  # use actual trading days in this year, not a fixed 252
         cum = pnl.cumsum()
         dd = drawdown_series(cum)
         rows.append({
             "year": year,
             "total_pnl": float(pnl.sum()),
-            "sharpe": sharpe_ratio(pnl, periods_per_year),
-            "sortino": sortino_ratio(pnl, periods_per_year=periods_per_year),
-            "calmar": calmar_ratio(pnl, periods_per_year),
+            "sharpe": sharpe_ratio(pnl, actual_days),
+            "sortino": sortino_ratio(pnl, periods_per_year=actual_days),
+            "calmar": calmar_ratio(pnl, actual_days),
             "max_drawdown": float(dd.min()),
             "win_rate": float((pnl > 0).mean()),
             "trading_days": len(pnl),
@@ -300,24 +301,28 @@ def trade_pnl_series(trades: pd.DataFrame, equity: pd.DataFrame) -> pd.DataFrame
     entries = trades[trades["action"].str.startswith("ENTRY")].copy()
     exits = trades[trades["action"] == "EXIT"].copy()
 
+    used_exit_indices: set = set()
     records = []
     for _, entry in entries.iterrows():
         ticker = entry["option_ticker"]
         matching = exits[
             (exits["option_ticker"] == ticker) &
-            (exits["date"] >= entry["date"])
+            (exits["date"] >= entry["date"]) &
+            (~exits.index.isin(used_exit_indices))
         ].sort_values("date")
 
         if matching.empty:
             continue
 
         exit_row = matching.iloc[0]
+        used_exit_indices.add(exit_row.name)
         side = int(entry.get("side", 1))
         entry_price = float(entry.get("market_mid", entry.get("option_mid", np.nan)))
         exit_price = float(exit_row.get("option_mid", np.nan))
 
+        contracts = int(entry.get("contracts", 1))
         if np.isfinite(entry_price) and np.isfinite(exit_price):
-            trade_pnl = side * 1 * 100.0 * (exit_price - entry_price)
+            trade_pnl = side * contracts * 100.0 * (exit_price - entry_price)
         else:
             trade_pnl = float("nan")
 

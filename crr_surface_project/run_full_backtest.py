@@ -1,6 +1,9 @@
 """
 run_full_backtest.py
-Multi-year backtest using locally cached Polygon data (2022-2024).
+Out-of-sample backtest using locally cached Polygon data (2023-2024).
+
+Parameters are fixed from the 2022 training sweep (run_param_sweep.py).
+2022 is intentionally excluded here — it is the in-sample optimisation year.
 
 Usage (from project root):
     python crr_surface_project/run_full_backtest.py
@@ -16,6 +19,7 @@ from __future__ import annotations
 import json
 import math
 import os
+from concurrent.futures import ProcessPoolExecutor, as_completed
 from pathlib import Path
 
 import numpy as np
@@ -32,8 +36,36 @@ SCRIPT_DIR = Path(__file__).parent
 DATA_DIR = SCRIPT_DIR / "data"
 OUTPUT_DIR = SCRIPT_DIR.parent / "outputs" / "multi_year"
 
-START_DATE = "2022-01-01"
+START_DATE = "2023-01-01"   # OOS period — 2022 is the param-sweep train year
 END_DATE = "2024-12-31"
+
+MAX_WORKERS = 2  # one process per bucket — set to 1 to run sequentially
+
+
+def _run_bucket(args):
+    """Module-level worker so ProcessPoolExecutor can pickle it on Windows."""
+    label, bucket, api_key, start, end, rfr, dy, steps, spread_bps, strat_cfg, data_dir_str = args
+    from data_cache import DataCache, CachedMarketData, CachedUniverseBuilder
+    from config import GlobalConfig
+    cfg = GlobalConfig()
+    cache = DataCache(Path(data_dir_str))
+    cached_md = CachedMarketData(api_key=api_key, cache=cache)
+    cached_universe = CachedUniverseBuilder(api_key=api_key, cache=cache, underlying_symbol=cfg.underlying_symbol)
+    print(f"\n{'=' * 60}\nRunning backtest: {label}  ({start} -> {end})\n{'=' * 60}")
+    result = run_bucket_backtest(
+        api_key=api_key,
+        bucket=bucket,
+        start_date=start,
+        end_date=end,
+        risk_free_rate=rfr,
+        dividend_yield=dy,
+        crr_steps=steps,
+        assumed_spread_bps=spread_bps,
+        strategy_config=strat_cfg,
+        market_data_provider=cached_md,
+        universe_builder=cached_universe,
+    )
+    return label, result
 
 
 def _json_safe(obj):
@@ -63,7 +95,7 @@ def main():
     strat_cfg = StrategyConfig(
         entry_price_edge=0.10,
         entry_iv_edge=0.002,
-        exit_iv_edge=0.001,
+        exit_iv_edge=0.0,   # disabled — not evaluated in the 2022 param sweep
         max_holding_days=10,
         min_volume=1,
         max_open_positions=10,
@@ -88,47 +120,44 @@ def main():
         WORST_BUCKET.label: WORST_BUCKET,
     }
 
+    args_list = [
+        (label, bucket, cfg.api_key, START_DATE, END_DATE,
+         cfg.risk_free_rate, cfg.dividend_yield, cfg.crr_steps,
+         cfg.assumed_spread_bps, strat_cfg, str(DATA_DIR))
+        for label, bucket in buckets.items()
+    ]
+
     all_results = {}
 
-    for label, bucket in buckets.items():
-        print(f"\n{'=' * 60}")
-        print(f"Running backtest: {label}  ({START_DATE} -> {END_DATE})")
-        print("=" * 60)
+    with ProcessPoolExecutor(max_workers=MAX_WORKERS) as pool:
+        futures = {pool.submit(_run_bucket, args): args[0] for args in args_list}
+        for fut in as_completed(futures):
+            bucket_label = futures[fut]
+            try:
+                label, result = fut.result()
+            except Exception as exc:
+                print(f"\n  [{bucket_label}] ERROR: {exc}")
+                continue
+            all_results[label] = result
 
-        result = run_bucket_backtest(
-            api_key=cfg.api_key,
-            bucket=bucket,
-            start_date=START_DATE,
-            end_date=END_DATE,
-            risk_free_rate=cfg.risk_free_rate,
-            dividend_yield=cfg.dividend_yield,
-            crr_steps=cfg.crr_steps,
-            assumed_spread_bps=cfg.assumed_spread_bps,
-            strategy_config=strat_cfg,
-            market_data_provider=cached_md,
-            universe_builder=cached_universe,
-        )
-        all_results[label] = result
+            # Save CSVs — must be inside the loop so every bucket is saved
+            result["equity"].to_csv(
+                OUTPUT_DIR / f"equity_{label}.csv", index=False)
+            result["trades"].to_csv(
+                OUTPUT_DIR / f"trades_{label}.csv", index=False)
+            result["signals"].to_csv(
+                OUTPUT_DIR / f"signals_{label}.csv", index=False)
 
-        # Save CSVs
-        result["equity"].to_csv(
-            OUTPUT_DIR / f"equity_{label}.csv", index=False)
-        result["trades"].to_csv(
-            OUTPUT_DIR / f"trades_{label}.csv", index=False)
-        result["signals"].to_csv(
-            OUTPUT_DIR / f"signals_{label}.csv", index=False)
-
-        eq = result["equity"]
-        pnl = eq["daily_pnl"].fillna(0.0)
-        print(f"  Days: {len(eq)}")
-        print(f"  Total P&L: ${pnl.sum():,.2f}")
-        print(
-            f"  Entries: {(result['trades']['action'].str.startswith('ENTRY')).sum() if not result['trades'].empty else 0}")
+            eq = result["equity"]
+            pnl = eq["daily_pnl"].fillna(0.0)
+            print(f"  [{label}] Days: {len(eq)}")
+            print(f"  [{label}] Total P&L: ${pnl.sum():,.2f}")
+            print(f"  [{label}] Entries: {(result['trades']['action'].str.startswith('ENTRY')).sum() if not result['trades'].empty else 0}")
 
     # Load SPY prices from cache for benchmark comparison
     print("\nLoading SPY prices for benchmark metrics ...")
     spy_frames = []
-    for year in [2022, 2023, 2024]:
+    for year in [2023, 2024]:  # match OOS date range
         if cache.has_underlying("SPY", year):
             spy_frames.append(cache.read_underlying("SPY", year))
     spy_prices = pd.concat(spy_frames) if spy_frames else pd.DataFrame()

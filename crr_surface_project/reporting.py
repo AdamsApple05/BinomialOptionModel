@@ -145,7 +145,7 @@ def _render_table(ax: plt.Axes, df: pd.DataFrame, title: str = "",
 # Individual page generators
 # ─────────────────────────────────────────────────────────────────────────────
 
-def _page_cover(report_date: str, date_range_str: str = "2022-2024") -> plt.Figure:
+def _page_cover(report_date: str, date_range_str: str = "2023-2024") -> plt.Figure:
     fig = plt.figure(figsize=PAGE_SIZE)
     _apply_page_style(fig)
 
@@ -582,97 +582,57 @@ def _page_benchmark_comparison(metrics: Dict, spy_prices: pd.DataFrame,
     _header_bar(fig, "Benchmark Comparison", "Strategy vs. SPY Buy-and-Hold")
     _footer(fig, "Page 8")
 
-    gs = gridspec.GridSpec(2, 2, top=0.90, bottom=0.06, left=0.07, right=0.97,
-                           hspace=0.45, wspace=0.3)
+    # Bar chart removed — scatter plots are the primary content
+    gs = gridspec.GridSpec(1, 2, top=0.90, bottom=0.06, left=0.07, right=0.97,
+                           wspace=0.35)
 
-    # Grouped bar chart: Sharpe + Sortino + Total Return
-    ax1 = fig.add_subplot(gs[0, :])
-    labels_list = list(metrics.keys())
-    metrics_to_plot = ["strategy_sharpe", "benchmark_sharpe", "strategy_sortino", "benchmark_sortino"]
-    labels_display = ["Strat Sharpe", "SPY Sharpe", "Strat Sortino", "SPY Sortino"]
+    labels_list = list(equity_dict.keys())
+    scatter_colors = [MID_BLUE, ORANGE]
 
-    x = np.arange(len(labels_list))
-    width = 0.18
-    colors_bars = [MID_BLUE, LIGHT_GRAY, ORANGE, LIGHT_GRAY]
+    for col_idx, (bucket_label, bucket_equity) in enumerate(equity_dict.items()):
+        if col_idx >= 2:
+            break
+        ax = fig.add_subplot(gs[0, col_idx])
+        if not bucket_equity.empty and not spy_prices.empty:
+            df = bucket_equity.copy()
+            if "date" in df.columns:
+                df = df.set_index("date")
+            df.index = pd.to_datetime(df.index)
 
-    for i, (metric_key, disp_label, color) in enumerate(zip(metrics_to_plot, labels_display, colors_bars)):
-        vals = []
-        for label in labels_list:
-            bm = metrics[label].get("benchmark", {})
-            v = bm.get(metric_key, float("nan"))
-            vals.append(float(v) if v is not None and not (isinstance(v, float) and math.isnan(v)) else 0.0)
-        offset = (i - 1.5) * width
-        bars = ax1.bar(x + offset, vals, width, label=disp_label, color=color,
-                       edgecolor="white", linewidth=0.5)
+            spy_closes = spy_prices["close"].sort_index()
+            spy_ret = spy_closes.pct_change().reindex(df.index, fill_value=0.0)
 
-    ax1.set_xticks(x)
-    ax1.set_xticklabels([l.replace("_", "\n") for l in labels_list], fontsize=8)
-    ax1.axhline(0, color="black", linewidth=0.5)
-    ax1.set_ylabel("Ratio", fontsize=9)
-    ax1.set_title("Risk-Adjusted Return Comparison: Strategy vs. SPY Buy-and-Hold", fontsize=9,
-                  fontweight="bold", color=DARK_BLUE)
-    ax1.legend(fontsize=8, ncol=4)
-    ax1.set_facecolor("#f8f9fa")
-    ax1.tick_params(labelsize=8)
-    ax1.grid(True, alpha=0.4, linewidth=0.5, axis="y")
+            pnl = df["daily_pnl"].fillna(0.0)
+            valid = (spy_ret.abs() < 0.1) & (pnl.abs() < pnl.std() * 5)
 
-    # Alpha scatter for best bucket
-    ax2 = fig.add_subplot(gs[1, 0])
-    best_label = list(equity_dict.keys())[0]
-    best_equity = equity_dict[best_label]
-    if not best_equity.empty and not spy_prices.empty:
-        df = best_equity.copy()
-        if "date" in df.columns:
-            df = df.set_index("date")
-        df.index = pd.to_datetime(df.index)
+            ax.scatter(spy_ret[valid], pnl[valid], alpha=0.3, s=8,
+                       color=scatter_colors[col_idx])
 
-        spy_closes = spy_prices["close"].sort_index()
-        spy_ret = spy_closes.pct_change().reindex(df.index, fill_value=0.0)
+            x_arr = spy_ret[valid].values
+            y_arr = pnl[valid].values
+            if len(x_arr) > 5 and np.std(x_arr) > 0:
+                coeffs = np.polyfit(x_arr, y_arr, 1)
+                x_line = np.linspace(x_arr.min(), x_arr.max(), 100)
+                ax.plot(x_line, np.polyval(coeffs, x_line), color=RED, linewidth=1.5,
+                        label=f"β={coeffs[0]:,.0f}, α={coeffs[1]:+.2f}/day")
 
-        pnl = df["daily_pnl"].fillna(0.0)
-        valid = (spy_ret.abs() < 0.1) & (pnl.abs() < pnl.std() * 5)
+            bm = metrics.get(bucket_label, {}).get("benchmark", {})
+            beta_val = bm.get("beta_to_spy")
+            r2_val = bm.get("r_squared")
+            subtitle = ""
+            if beta_val is not None and not math.isnan(float(beta_val)):
+                subtitle += f"β̂ = {float(beta_val):.3f}"
 
-        ax2.scatter(spy_ret[valid], pnl[valid], alpha=0.3, s=8, color=MID_BLUE)
-
-        # Regression line
-        x_arr = spy_ret[valid].values
-        y_arr = pnl[valid].values
-        if len(x_arr) > 5 and np.std(x_arr) > 0:
-            coeffs = np.polyfit(x_arr, y_arr, 1)
-            x_line = np.linspace(x_arr.min(), x_arr.max(), 100)
-            ax2.plot(x_line, np.polyval(coeffs, x_line), color=RED, linewidth=1.5,
-                     label=f"β={coeffs[0]:,.0f}, α={coeffs[1]:+.2f}/day")
-
-        ax2.axhline(0, color="black", linewidth=0.5)
-        ax2.axvline(0, color="black", linewidth=0.5)
-        ax2.set_xlabel("SPY Daily Return", fontsize=9)
-        ax2.set_ylabel("Strategy Daily P&L ($)", fontsize=9)
-        ax2.set_title(f"Alpha Scatter: {best_label.replace('_', ' ')}", fontsize=9,
-                      fontweight="bold", color=DARK_BLUE)
-        ax2.legend(fontsize=8)
-        ax2.set_facecolor("#f8f9fa")
-        ax2.tick_params(labelsize=7)
-        ax2.grid(True, alpha=0.4, linewidth=0.5)
-
-    # Benchmark metrics table
-    ax3 = fig.add_subplot(gs[1, 1])
-    rows = []
-    for label in labels_list:
-        bm = metrics[label].get("benchmark", {})
-        def _f(v):
-            if v is None or (isinstance(v, float) and math.isnan(v)):
-                return "—"
-            return f"{v:.3f}"
-        rows.append([
-            label.replace("_", " ")[:20],
-            f"${bm.get('strategy_total_pnl', 0):,.0f}",
-            f"${bm.get('benchmark_total_pnl', 0):,.0f}",
-            _f(bm.get("correlation_with_spy")),
-            _f(bm.get("beta_to_spy")),
-            _f(bm.get("information_ratio")),
-        ])
-    df_bm = pd.DataFrame(rows, columns=["Strategy", "Strat P&L", "SPY P&L", "Corr", "Beta", "IR"])
-    _render_table(ax3, df_bm, title="Benchmark Metrics Summary")
+            ax.axhline(0, color="black", linewidth=0.5)
+            ax.axvline(0, color="black", linewidth=0.5)
+            ax.set_xlabel("SPY Daily Return", fontsize=9)
+            ax.set_ylabel("Strategy Daily P&L ($)", fontsize=9)
+            ax.set_title(f"Alpha Scatter: {bucket_label.replace('_', ' ')}\n{subtitle}",
+                         fontsize=9, fontweight="bold", color=DARK_BLUE)
+            ax.legend(fontsize=8)
+            ax.set_facecolor("#f8f9fa")
+            ax.tick_params(labelsize=8)
+            ax.grid(True, alpha=0.4, linewidth=0.5)
 
     return fig
 
@@ -729,85 +689,37 @@ def _page_trade_statistics(metrics: Dict) -> plt.Figure:
     _header_bar(fig, "Trade-Level Analytics", "Per-Trade P&L Distribution & Statistics")
     _footer(fig, "Page 10")
 
-    gs = gridspec.GridSpec(2, 3, top=0.90, bottom=0.06, left=0.06, right=0.97,
-                           hspace=0.5, wspace=0.35)
+    gs = gridspec.GridSpec(1, 2, top=0.90, bottom=0.06, left=0.06, right=0.97,
+                           wspace=0.35)
 
     for col_offset, (label, m) in enumerate(metrics.items()):
         if col_offset >= 2:
             break
 
         trade_detail = m.get("trade_detail")
-        trade_stats = m.get("trades", {})
 
-        # P&L histogram
+        # P&L histogram (only panel — pie charts and stats table removed)
         ax1 = fig.add_subplot(gs[0, col_offset])
         if isinstance(trade_detail, pd.DataFrame) and not trade_detail.empty:
             pnl_vals = trade_detail["trade_pnl"].dropna()
             if len(pnl_vals) > 0:
-                ax1.hist(pnl_vals, bins=min(30, max(len(pnl_vals) // 3, 5)),
+                ax1.hist(pnl_vals, bins=min(40, max(len(pnl_vals) // 3, 5)),
                          color=MID_BLUE, alpha=0.7, edgecolor="white", linewidth=0.5)
-                ax1.axvline(0, color=RED, linewidth=1.2, linestyle="--")
+                ax1.axvline(0, color=RED, linewidth=1.2, linestyle="--", label="Zero")
                 ax1.axvline(float(pnl_vals.mean()), color=GREEN, linewidth=1.2,
                             linestyle="--", label=f"Mean: ${pnl_vals.mean():,.2f}")
-                ax1.set_xlabel("Trade P&L ($)", fontsize=8)
-                ax1.set_ylabel("Frequency", fontsize=8)
-                ax1.legend(fontsize=7)
-        ax1.set_title(f"P&L Dist: {label[:20].replace('_', ' ')}", fontsize=8,
-                      fontweight="bold", color=DARK_BLUE)
+                n_win = int((pnl_vals > 0).sum())
+                n_total = len(pnl_vals)
+                ax1.set_xlabel("Trade P&L ($)", fontsize=9)
+                ax1.set_ylabel("Frequency", fontsize=9)
+                ax1.legend(fontsize=8,
+                           title=f"Win rate: {n_win/n_total*100:.1f}%  n={n_total}",
+                           title_fontsize=8)
+        ax1.set_title(f"Per-Trade P&L Distribution\n{label.replace('_', ' ')}",
+                      fontsize=9, fontweight="bold", color=DARK_BLUE)
         ax1.set_facecolor("#f8f9fa")
-        ax1.tick_params(labelsize=7)
+        ax1.tick_params(labelsize=8)
         ax1.grid(True, alpha=0.3, linewidth=0.5)
-
-        # Win/loss pie
-        ax2 = fig.add_subplot(gs[1, col_offset])
-        if isinstance(trade_detail, pd.DataFrame) and not trade_detail.empty:
-            pnl_vals = trade_detail["trade_pnl"].dropna()
-            n_win = int((pnl_vals > 0).sum())
-            n_loss = int((pnl_vals <= 0).sum())
-            if n_win + n_loss > 0:
-                wedge_colors = [GREEN, RED]
-                ax2.pie([n_win, n_loss], labels=[f"Win ({n_win})", f"Loss ({n_loss})"],
-                        colors=wedge_colors, autopct="%1.1f%%",
-                        startangle=90, textprops={"fontsize": 8})
-        ax2.set_title("Win/Loss", fontsize=8, fontweight="bold", color=DARK_BLUE)
-
-    # Trade stats table (full width, bottom)
-    ax3 = fig.add_subplot(gs[:, 2])
-    all_rows = []
-    for label, m in metrics.items():
-        ts = m.get("trades", {})
-        def _f(v):
-            if v is None or (isinstance(v, float) and (math.isnan(v) or math.isinf(v))):
-                return "—"
-            return f"{v:.2f}"
-        all_rows.append(["Metric", label.replace("_", " ")[:18]])
-        all_rows.append(["Total Entries", str(ts.get("total_entries", "—"))])
-        all_rows.append(["Long Entries", str(ts.get("long_entries", "—"))])
-        all_rows.append(["Short Entries", str(ts.get("short_entries", "—"))])
-        all_rows.append(["Win Rate", f"{ts.get('win_rate', 0)*100:.1f}%" if ts.get('win_rate') else "—"])
-        all_rows.append(["Avg Holding Days", _f(ts.get("avg_holding_days"))])
-        all_rows.append(["Profit Factor", _f(ts.get("profit_factor"))])
-        all_rows.append(["Avg Winner ($)", f"${ts.get('avg_winner_pnl', 0):,.2f}" if ts.get('avg_winner_pnl') else "—"])
-        all_rows.append(["Avg Loser ($)", f"${ts.get('avg_loser_pnl', 0):,.2f}" if ts.get('avg_loser_pnl') else "—"])
-        all_rows.append(["Largest Win ($)", f"${ts.get('largest_win', 0):,.2f}" if ts.get('largest_win') else "—"])
-        all_rows.append(["Largest Loss ($)", f"${ts.get('largest_loss', 0):,.2f}" if ts.get('largest_loss') else "—"])
-        all_rows.append(["", ""])
-
-    if all_rows:
-        ax3.axis("off")
-        tbl = ax3.table(
-            cellText=all_rows,
-            loc="center", cellLoc="left",
-        )
-        tbl.auto_set_font_size(False)
-        tbl.set_fontsize(7.5)
-        for (r, c), cell in tbl.get_celld().items():
-            if all_rows[r][0] == "Metric":
-                cell.set_facecolor(DARK_BLUE)
-                cell.set_text_props(color="white", fontweight="bold")
-            elif r % 2 == 0:
-                cell.set_facecolor("#f0f4f8")
-            cell.set_edgecolor("#cccccc")
 
     return fig
 
@@ -1154,7 +1066,7 @@ RISKS AND LIMITATIONS
 4. Overfitting: Strategy parameters were not extensively tuned, but the backtest period
    may not be representative of future market conditions.
 5. Regime changes: The model was developed and tested in a specific macroeconomic regime
-   (2022–2024) characterized by elevated interest rates and a generally rising equity market.
+   (2023–2024) characterized by elevated interest rates and a generally rising equity market.
    Performance in different regimes (e.g., low-volatility, bear markets) may differ materially.
 6. Transaction costs: Brokerage commissions, exchange fees, and financing costs for short
    option positions are not modeled.

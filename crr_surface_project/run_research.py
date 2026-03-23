@@ -40,7 +40,7 @@ def main() -> None:
     strat_cfg = StrategyConfig(
         entry_price_edge=0.15,
         entry_iv_edge=0.003,
-        exit_iv_edge=0.001,
+        exit_iv_edge=0.0,   # disabled — not part of the validated param sweep
         max_holding_days=10,
         min_volume=1,
         max_open_positions=5,

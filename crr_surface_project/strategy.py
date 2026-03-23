@@ -494,7 +494,9 @@ class CRRSurfaceDeltaHedgeStrategy:
            or are within 7 DTE.
         4. Fetches the daily contract universe and builds a chain snapshot.
         5. Fits the IV surface and enriches contracts with CRR fair values.
-        6. Generates entry candidates and opens new positions subject to
+        6. Checks IV-edge exit condition against today's surface residuals
+           (only when ``exit_iv_edge > 0``).
+        7. Generates entry candidates and opens new positions subject to
            the position limit.
 
         Parameters
@@ -551,6 +553,26 @@ class CRRSurfaceDeltaHedgeStrategy:
                     assumed_spread_bps=self.assumed_spread_bps,
                 )
                 if opt_df.empty:
+                    # No price data today — still age the position and check
+                    # time-based exits so the position doesn't stay open forever.
+                    pos.days_held += 1
+                    if (pos.expiry - date).days < 7 or pos.days_held >= self.cfg.max_holding_days:
+                        trade_rows.append({
+                            "date": date,
+                            "bucket": pos.bucket,
+                            "action": "EXIT",
+                            "option_ticker": pos.option_ticker,
+                            "option_type": pos.option_type,
+                            "side": pos.side,
+                            "contracts": pos.contracts,
+                            "strike": pos.strike,
+                            "expiry": pos.expiry,
+                            "spot": spot,
+                            "option_mid": pos.last_option_price,
+                            "hedge_shares": pos.hedge_shares,
+                            "days_held": pos.days_held,
+                        })
+                        to_close.append(idx)
                     continue
 
                 option_mid = float(opt_df["mid"].iloc[0])
@@ -593,6 +615,9 @@ class CRRSurfaceDeltaHedgeStrategy:
                         pos.hedge_shares = desired_hedge
 
                 # ── Exit conditions ───────────────────────────────────────
+                # NOTE: exit_iv_edge is not checked here because the surface
+                # is not fitted until later in the daily loop. IV-based exit
+                # is handled in the post-surface pass below.
                 if (pos.expiry - date).days < 7 or pos.days_held >= self.cfg.max_holding_days:
                     trade_rows.append({
                         "date": date,
@@ -601,6 +626,7 @@ class CRRSurfaceDeltaHedgeStrategy:
                         "option_ticker": pos.option_ticker,
                         "option_type": pos.option_type,
                         "side": pos.side,
+                        "contracts": pos.contracts,
                         "strike": pos.strike,
                         "expiry": pos.expiry,
                         "spot": spot,
@@ -647,6 +673,35 @@ class CRRSurfaceDeltaHedgeStrategy:
             signal_rows.extend(surface_df.to_dict("records"))
             cands = self.generate_candidates(surface_df)
 
+            # ── IV-edge exit pass (requires fitted surface) ───────────────
+            # Check exit_iv_edge now that we have today's surface residuals.
+            # Build a lookup: option_ticker -> current |residual_iv| from surface_df
+            if self.cfg.exit_iv_edge > 0 and not surface_df.empty:
+                iv_resid_map = surface_df.set_index("option_ticker")["residual_iv"].abs().to_dict()
+                iv_to_close = []
+                for idx, pos in enumerate(positions):
+                    resid = iv_resid_map.get(pos.option_ticker)
+                    if resid is not None and np.isfinite(resid) and resid < self.cfg.exit_iv_edge:
+                        trade_rows.append({
+                            "date": date,
+                            "bucket": pos.bucket,
+                            "action": "EXIT",
+                            "option_ticker": pos.option_ticker,
+                            "option_type": pos.option_type,
+                            "side": pos.side,
+                            "contracts": pos.contracts,
+                            "strike": pos.strike,
+                            "expiry": pos.expiry,
+                            "spot": spot,
+                            "option_mid": pos.last_option_price,
+                            "hedge_shares": pos.hedge_shares,
+                            "days_held": pos.days_held,
+                        })
+                        iv_to_close.append(idx)
+                if iv_to_close:
+                    close_set = set(iv_to_close)
+                    positions = [p for i, p in enumerate(positions) if i not in close_set]
+
             # ── Enter new positions ───────────────────────────────────────
             position_limit = self._scaled_max_positions(cum_pnl_history)
             if not cands.empty and len(positions) < position_limit:
@@ -690,6 +745,7 @@ class CRRSurfaceDeltaHedgeStrategy:
                         "option_ticker": row["option_ticker"],
                         "option_type": row["option_type"],
                         "side": side,
+                        "contracts": contracts,
                         "strike": row["strike"],
                         "expiry": row["expiry"],
                         "spot": spot,

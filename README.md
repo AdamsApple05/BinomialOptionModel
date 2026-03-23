@@ -32,14 +32,16 @@ the delta error exceeds a configured threshold (configurable; set to 4 shares in
 | `PUT_30_60_OTM` | Put | 30–60 | 0.92–0.99 | Primary bucket — high signal density, accurate CRR fit |
 | `CALL_120_150_ATM` | Call | 120–150 | 0.98–1.02 | Control bucket — lower accuracy, sparse signals |
 
-### Backtest Results (2022–2024, 753 trading days)
+### Backtest Results (2023–2024 OOS, 502 trading days)
+
+Parameters fixed from 2022 training sweep. 2022 is the in-sample year and is excluded.
 
 | Bucket | Sharpe | Sortino | Calmar | Total P&L | Max DD | Win Rate | Entries |
 |--------|--------|---------|--------|-----------|--------|----------|---------|
-| PUT_30_60_OTM | 3.41 | 3.96 | 8.16 | $126,523 | −$5,190 | 55.3% | 667 |
-| CALL_120_150_ATM | 1.49 | 1.92 | — | $47,488 | −$11,108 | 58.5% | 301 |
+| PUT_30_60_OTM | 2.23 | 1.96 | 3.66 | $41,348 | −$5,673 | 60.9% | 452 |
+| CALL_120_150_ATM | 3.17 | 3.61 | 8.87 | $55,154 | −$3,122 | 52.8% | 383 |
 
-Out-of-sample Sharpe (2023–2024, unseen during parameter optimisation): **2.03**.
+SPY buy-and-hold over the same period: $53,899 / Sharpe 1.66.
 
 ---
 
@@ -111,7 +113,7 @@ python crr_surface_project/run_download.py
 # Step 2: CRR mathematical convergence analysis (~2-5 min, CPU only)
 python crr_surface_project/run_convergence.py
 
-# Step 3: Run 2022-2024 backtest using cached data
+# Step 3: Run 2023-2024 OOS backtest using cached data (2022 is the train year)
 python crr_surface_project/run_full_backtest.py
 
 # Step 4: Generate the 15-page institutional PDF report
